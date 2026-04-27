@@ -15,6 +15,28 @@ enable_product_lightbox: <boolean>
   {% assign object = section %}
 {% endif %}
 
+{% if stacked_gallery %}
+  <div class="product-gallery product-gallery--stacked">
+    {%- for media in product.media -%}
+      {%- if media.media_type == 'image' -%}
+        <div class="product-gallery__image">
+          <img
+            src="{{ media | img_url: '1200x' }}"
+            srcset="{{ media | img_url: '800x' }} 800w,
+                    {{ media | img_url: '1200x' }} 1200w,
+                    {{ media | img_url: '2000x' }} 2000w"
+            sizes="(min-width: 799px) 60vw, 100vw"
+            alt="{{ media.alt | escape }}"
+            width="{{ media.width }}"
+            height="{{ media.height }}"
+            loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+          >
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{% else %}
+
 {%- assign display_thumbnails = display_thumbnails | default: object.settings.display_thumbnails -%}
 {%- assign thumbnail_position = thumbnail_position | default: object.settings.thumbnail_position -%}
 {%- assign enable_thumbnail_slider = enable_thumbnail_slider | default: object.settings.enable_thumbnail_slider -%}
@@ -194,9 +216,6 @@ enable_product_lightbox: <boolean>
     {% endif %}
   {% endif %}
 </div>
-
-
-
-
+{% endif %}
 
 
