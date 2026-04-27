@@ -35,7 +35,7 @@
         "192cea91-c7c6-4704-820b-b2c0eadaee8c"
       ],
       "settings": {
-        "collection_breadcrumb": false,
+        "collection_breadcrumb": true,
         "collection_tags": true,
         "collection_sort": true,
         "show_sidebar": false,

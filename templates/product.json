@@ -19,7 +19,6 @@
     },
     "breadcrumbs": {
       "type": "product__breadcrumb",
-      "disabled": true,
       "settings": {
         "width": "standard",
         "padding_top": 20,
@@ -42,7 +41,7 @@
         "price": {
           "type": "price",
           "settings": {
-            "display_savings": false
+            "display_savings": true
           }
         },
         "text_jpBn9d": {
