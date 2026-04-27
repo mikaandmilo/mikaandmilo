@@ -375,3 +375,26 @@
     "url": "{{ shop.url }}"
   }
 </script>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    "url": "{{ shop.url }}"
+    {%- if settings.logo != blank -%}
+      ,"logo": {{ settings.logo | img_url: '400x' | prepend: 'https:' | json }}
+    {%- endif -%}
+    {%- assign sa_sep = '' -%}
+    {%- capture sameAs -%}
+      {%- if settings.facebook_link != blank -%}{{ sa_sep }}{{ settings.facebook_link | json }}{%- assign sa_sep = ',' -%}{%- endif -%}
+      {%- if settings.instagram_link != blank -%}{{ sa_sep }}{{ settings.instagram_link | json }}{%- assign sa_sep = ',' -%}{%- endif -%}
+      {%- if settings.pinterest_link != blank -%}{{ sa_sep }}{{ settings.pinterest_link | json }}{%- assign sa_sep = ',' -%}{%- endif -%}
+      {%- if settings.x_link != blank -%}{{ sa_sep }}{{ settings.x_link | json }}{%- assign sa_sep = ',' -%}{%- endif -%}
+      {%- if settings.tiktok_link != blank -%}{{ sa_sep }}{{ settings.tiktok_link | json }}{%- assign sa_sep = ',' -%}{%- endif -%}
+    {%- endcapture -%}
+    {%- if sameAs != blank -%}
+      ,"sameAs": [{{ sameAs }}]
+    {%- endif -%}
+  }
+</script>

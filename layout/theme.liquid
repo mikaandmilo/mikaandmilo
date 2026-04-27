@@ -9,7 +9,11 @@
   </script>
   <meta charset="utf-8">
   <meta http-equiv="cleartype" content="on">
-  <meta name="robots" content="index,follow">
+  {%- if current_tags -%}
+    <meta name="robots" content="noindex,follow">
+  {%- else -%}
+    <meta name="robots" content="index,follow">
+  {%- endif -%}
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="{{ settings.shop_bg_color }}">
   <link rel="canonical" href="{{ canonical_url }}">
