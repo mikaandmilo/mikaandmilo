@@ -42,6 +42,7 @@
   %}
 
   @media only screen and (min-width: 799px) {
+    /* Two-column layout: wide image strip left, sticky info right */
     #shopify-section-{{ id }} .product_section {
       align-items: flex-start;
     }
@@ -54,22 +55,32 @@
       top: 100px;
       align-self: flex-start;
     }
-    #shopify-section-{{ id }} .product-gallery--left-thumbnails .product-gallery__thumbnails {
-      width: 72px;
-      margin-right: 12px;
+
+    /* Stacked gallery: override Flickity carousel so all images show vertically */
+    #shopify-section-{{ id }} .product-gallery__main .flickity-viewport {
+      height: auto !important;
+      overflow: visible !important;
     }
-    #shopify-section-{{ id }} .product-gallery--left-thumbnails .product-gallery__main {
-      width: calc(100% - 84px);
+    #shopify-section-{{ id }} .product-gallery__main .flickity-slider {
+      position: static !important;
+      transform: none !important;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
-    #shopify-section-{{ id }} .is-slide-nav--true .product-gallery__thumbnail {
-      width: 100%;
-      margin-bottom: 6px;
-      opacity: 0.45;
-      transition: opacity 0.25s ease;
+    #shopify-section-{{ id }} .product-gallery__image {
+      position: static !important;
+      left: auto !important;
+      width: 100% !important;
     }
-    #shopify-section-{{ id }} .is-slide-nav--true .product-gallery__thumbnail.is-nav-selected,
-    #shopify-section-{{ id }} .is-slide-nav--true .product-gallery__thumbnail:hover {
-      opacity: 1;
+    #shopify-section-{{ id }} .product-gallery__image .image__container {
+      max-width: 100% !important;
+    }
+
+    /* Hide thumbnails and nav arrows on desktop */
+    #shopify-section-{{ id }} .product-gallery__thumbnails,
+    #shopify-section-{{ id }} .flickity-prev-next-button {
+      display: none !important;
     }
   }
 {% endstyle %}
