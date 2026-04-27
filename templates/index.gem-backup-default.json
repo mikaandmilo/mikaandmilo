@@ -1,0 +1,1182 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "163646991270dfc1ae": {
+      "type": "index__image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/mika-and-milo-award-winning-planet-friendly-knitwear-home-girls-banner_3500x_1_3500x_72201e62-26bb-450d-a8c7-5ac69aa9da38_1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/mika-and-milo-award-winning-planet-friendly-knitwear-home-girls-banner_3500x_1_3500x_72201e62-26bb-450d-a8c7-5ac69aa9da38_1.jpg",
+        "link": "shopify:\/\/collections\/award-winning-organic-cotton-cashmere-for-kids",
+        "pretext": "<p><strong>Award-Winning Knits for Little Dreamers<\/strong><\/p>",
+        "title": "Winner",
+        "subtitle": "<p><strong>Eco-friendly heirlooms designed to be loved & passed down<\/strong><\/p>",
+        "pretext_color": "#000000",
+        "heading_color": "#000000",
+        "subheading_color": "#000000",
+        "text_alignment": "center",
+        "text_horizontal_position": "center",
+        "text_vertical_position": "bottom",
+        "text_width": 40,
+        "background_color": "#ffffff",
+        "background_opacity": 77,
+        "border_color": "#ffffff",
+        "border_width": 0,
+        "button_1": "SHOP BESTSELLERS",
+        "button_1_link": "shopify:\/\/collections\/award-winning-organic-cotton-cashmere-for-kids",
+        "button_1_style": "button--primary",
+        "button_2": "",
+        "button_2_link": "",
+        "button_2_style": "button--primary",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_below_image": true,
+        "mobile_preheading": "A Knit For All Seasons:",
+        "mobile_heading": "Winner",
+        "mobile_subheading": "Best Children's Eco Brand 2024 & 2023",
+        "pretext_color_mobile": "rgba(0,0,0,0)",
+        "heading_color_mobile": "rgba(0,0,0,0)",
+        "subheading_color_mobile": "rgba(0,0,0,0)",
+        "text_alignment_mobile": "same_as_desktop",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "174652137385e35160": {
+      "type": "apps",
+      "blocks": {
+        "mega_scrolling_logos_scrolling_logos_block_XxmBD4": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-block\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "block_height": 133,
+            "marquee_text_gap": 100,
+            "background": "linear-gradient(106deg, rgba(255, 255, 255, 1) 1%, rgba(24, 119, 242, 1) 100%)",
+            "pattern_image": "shopify:\/\/shop_images\/download.jpg",
+            "pattern_image_size": "contain",
+            "animation_direction": "left",
+            "stop_on_hover": true,
+            "animation_speed": 100,
+            "logo_size": 80
+          }
+        },
+        "mega_scrolling_logos_scrolling_logos_item_Hkrikk": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-item\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/download.png",
+            "logo_link": "",
+            "open_in_new_tab": true
+          }
+        },
+        "mega_scrolling_logos_scrolling_logos_item_bmQtMi": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-item\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/vogue_1.png",
+            "logo_link": "",
+            "open_in_new_tab": true
+          }
+        },
+        "mega_scrolling_logos_scrolling_logos_item_Ekjf44": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-item\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/Vanity-Fair_1.jpg",
+            "logo_link": "",
+            "open_in_new_tab": true
+          }
+        },
+        "mega_scrolling_logos_scrolling_logos_item_DbLAXw": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-item\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/CWB_1_5c73c4d7-4c29-4c15-94c1-5221f711ae99.jpg",
+            "logo_link": "",
+            "open_in_new_tab": true
+          }
+        }
+      },
+      "block_order": [
+        "mega_scrolling_logos_scrolling_logos_block_XxmBD4",
+        "mega_scrolling_logos_scrolling_logos_item_Hkrikk",
+        "mega_scrolling_logos_scrolling_logos_item_bmQtMi",
+        "mega_scrolling_logos_scrolling_logos_item_Ekjf44",
+        "mega_scrolling_logos_scrolling_logos_item_DbLAXw"
+      ],
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "163646570117584186": {
+      "type": "index__heading",
+      "settings": {
+        "preheading": "<p><strong>Premium Cloud-Soft Knits Your Kids Will Love<\/strong><\/p>",
+        "title": "Multi Award-Winning Everyday Luxury",
+        "subheading": "<p><strong>Four  generations of Scottish heritage meets Inner Mongolian craftsmanship<\/strong><\/p><p>GOTS-Certified Organic Cotton\/ Cashmere Knits — Designed to Survive Playgrounds, Washing Machines, and Multiple Hand-Me-Downs—<\/p><p>Kind on Sensitive Skin and the Planet <\/p>",
+        "heading_alignment": "center",
+        "vertical_spacing": "medium",
+        "preheading_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)",
+        "subheading_color": "rgba(0,0,0,0)",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_alignment": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1636468715891aaf9c": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "",
+        "collection": "award-winning-organic-cotton-cashmere-for-kids",
+        "products_per": 6,
+        "products_limit": 10,
+        "align_height": false,
+        "collection_height": 200,
+        "button_label": "Shop Limited Stock",
+        "button_style": "button--primary",
+        "collection_style": "slider",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "animation": "none",
+        "collection_layout_mobile": "slider",
+        "mobile_products_per_row": "2",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1746522792c1d89434": {
+      "type": "apps",
+      "blocks": {
+        "mega_scrolling_logos_scrolling_logos_block_3hkBQ4": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-block\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "disabled": true,
+          "settings": {
+            "block_height": 130,
+            "marquee_text_gap": 100,
+            "background": "linear-gradient(90deg, rgba(24, 119, 242, 1), rgba(24, 119, 242, 1) 100%)",
+            "pattern_image": "shopify:\/\/shop_images\/download.jpg",
+            "pattern_image_size": "contain",
+            "animation_direction": "right",
+            "stop_on_hover": false,
+            "animation_speed": 100,
+            "logo_size": 64
+          }
+        },
+        "mega_scrolling_logos_scrolling_logos_item_wr9fGN": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-item\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/JDA21_Logo_Gold_e17ff4b4-81df-49af-972c-934ca2f6ad48.jpg",
+            "logo_link": "",
+            "open_in_new_tab": true
+          }
+        },
+        "mega_scrolling_logos_scrolling_logos_item_mjbVE4": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-item\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/JDA_2023_Transparent_BG_63531bdc-3bc5-4939-b86e-05120c4ac780.png",
+            "logo_link": "",
+            "open_in_new_tab": true
+          }
+        },
+        "mega_scrolling_logos_scrolling_logos_item_eMj3bU": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-item\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/JDA_2022_Logos-Gold_06dcbacb-f26c-49e6-9a5e-6b7ff5656614.png",
+            "logo_link": "",
+            "open_in_new_tab": true
+          }
+        },
+        "mega_scrolling_logos_scrolling_logos_item_6eYYiW": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-item\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/JDA_2024_Logos_Silver_881c3928-5c6e-461e-bca8-fbe5cbc6d4b5.jpg",
+            "logo_link": "",
+            "open_in_new_tab": true
+          }
+        },
+        "mega_scrolling_logos_scrolling_logos_item_gABd36": {
+          "type": "shopify:\/\/apps\/mega-scrolling-logos\/blocks\/scrolling-logos-item\/1c2a4a69-ea7f-44f8-b355-85e874ea2861",
+          "settings": {
+            "logo_img": "shopify:\/\/shop_images\/JDA2021_Silver_fd2f01bc-bf77-4948-81cb-1e953b441286.png",
+            "logo_link": "",
+            "open_in_new_tab": true
+          }
+        }
+      },
+      "block_order": [
+        "mega_scrolling_logos_scrolling_logos_block_3hkBQ4",
+        "mega_scrolling_logos_scrolling_logos_item_wr9fGN",
+        "mega_scrolling_logos_scrolling_logos_item_mjbVE4",
+        "mega_scrolling_logos_scrolling_logos_item_eMj3bU",
+        "mega_scrolling_logos_scrolling_logos_item_6eYYiW",
+        "mega_scrolling_logos_scrolling_logos_item_gABd36"
+      ],
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_testimonial_iDrH9N": {
+      "type": "index__testimonial",
+      "blocks": {
+        "image_iG3rYC": {
+          "type": "image",
+          "settings": {
+            "quote": "<p>\"Absolutely love the vibrant colour palette, soft to the touch cotton\/cashmere mix and the fact that my favourite jumpers are now machine washable!\"<\/p>",
+            "image": "shopify:\/\/shop_images\/JDA_2023_Logo_Gold.jpg",
+            "text": "<p>Bonita Turner<\/p><p>Editor of Junior<\/p>",
+            "info_text": "rgba(0,0,0,0)",
+            "info_background": "rgba(0,0,0,0)"
+          }
+        },
+        "image_8neEHG": {
+          "type": "image",
+          "settings": {
+            "quote": "<p>\"A lovely, fresh, more child-focused approach to cashmere. And a beautiful selection of jumpers.\"<\/p>",
+            "image": "shopify:\/\/shop_images\/JDA_2022_Logos-Gold_861c6d6c-7a6c-4824-aa20-2cd7280f0fd5.png",
+            "text": "<p>Charlotte Kewley<\/p><p>Children’s Stylist and content creator @thelittlestylist<\/p><p><\/p>",
+            "info_text": "rgba(0,0,0,0)",
+            "info_background": "rgba(0,0,0,0)"
+          }
+        },
+        "image_zJHezY": {
+          "type": "image",
+          "settings": {
+            "quote": "<p>\"Beautiful quality and timeless designs – a smart move making the move to a cashmere cotton blend.\"<\/p>",
+            "image": "shopify:\/\/shop_images\/JDA21_Logo_Gold_0ee80ddf-39f9-4d1d-a6ee-1ec0264552a5.jpg",
+            "text": "<p>George Reddings<\/p><p>Children’s fashion designer and founder of slow fashion brand, Colour Story @george_ggredd_<\/p><p><\/p>",
+            "info_text": "rgba(0,0,0,0)",
+            "info_background": "rgba(0,0,0,0)"
+          }
+        },
+        "image_VT7iCp": {
+          "type": "image",
+          "settings": {
+            "quote": "<p>\"Beautiful pieces. So lovely to hear a brand's backstory too.\" <\/p>",
+            "image": "shopify:\/\/shop_images\/JDA_2024_Logos_Silver.jpg",
+            "text": "<p><strong>Abi Campbell<\/strong><\/p><p>Children’s fashion photographer and brand consultant<\/p><p> @abicampbellphotography<\/p>",
+            "info_text": "rgba(0,0,0,0)",
+            "info_background": "rgba(0,0,0,0)"
+          }
+        },
+        "image_UU4tde": {
+          "type": "image",
+          "settings": {
+            "quote": "<p>\"These are the most beautiful, luxurious, sustainable pieces. They have a wonderful family design history and are perfect for future hand-me-downs.\"<\/p>",
+            "image": "shopify:\/\/shop_images\/JDA2021_Silver_edcf01cd-eff3-42d0-bdbc-ee80d372247f.png",
+            "text": "<p><strong>Emma McMenemy<\/strong>, <\/p><p>Content Creator<\/p><p>@emma_mcmenemy<\/p>",
+            "info_text": "rgba(0,0,0,0)",
+            "info_background": "rgba(0,0,0,0)"
+          }
+        },
+        "image_BeWFYX": {
+          "type": "image",
+          "settings": {
+            "quote": "<p>\"An absolutely beautiful way to present children’s cashmere. I love the soft colour palette and fashionable designs, while the details such as the thunder bolt and ruffles make this such a darling brand.\"<\/p>",
+            "image": "shopify:\/\/shop_images\/JDA_2023_Logo_Gold_e401601c-f611-4189-bf7e-d64ddbd2fd8c.jpg",
+            "text": "<p><strong>Yvadney Davis<\/strong><\/p><p>Children’s Stylist<\/p>",
+            "info_text": "rgba(0,0,0,0)",
+            "info_background": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "image_iG3rYC",
+        "image_8neEHG",
+        "image_zJHezY",
+        "image_VT7iCp",
+        "image_UU4tde",
+        "image_BeWFYX"
+      ],
+      "settings": {
+        "show_border": true,
+        "enable_images": true,
+        "crop_shape": "circle",
+        "card_alignment": "center",
+        "card_text": "rgba(0,0,0,0)",
+        "card_background": "rgba(0,0,0,0)",
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "show_arrows": true,
+        "show_navigation_dots": true,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_divider_WwpRNG": {
+      "type": "index__divider",
+      "settings": {
+        "divider_style": "short",
+        "divider_width": 2,
+        "divider_color": "rgba(0,0,0,0)",
+        "alignment": "center",
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_image_with_text_overlay_xKd6zM": {
+      "type": "index__image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3563_1_1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3563_1_1.jpg",
+        "link": "",
+        "pretext": "<p>BOYS<\/p>",
+        "title": "",
+        "subtitle": "",
+        "pretext_color": "#000000",
+        "heading_color": "#000000",
+        "subheading_color": "#000000",
+        "text_alignment": "left",
+        "text_horizontal_position": "left",
+        "text_vertical_position": "bottom",
+        "text_width": 60,
+        "background_color": "#ffffff",
+        "background_opacity": 50,
+        "border_color": "#ffffff",
+        "border_width": 0,
+        "button_1": "Shop Now",
+        "button_1_link": "shopify:\/\/collections\/award-winning-organic-cotton-cashmere-for-boys",
+        "button_1_style": "button--primary",
+        "button_2": "",
+        "button_2_link": "",
+        "button_2_style": "button--secondary",
+        "width": "half",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "fadeIn",
+        "mobile_text_below_image": true,
+        "mobile_preheading": "",
+        "mobile_heading": "",
+        "mobile_subheading": "",
+        "pretext_color_mobile": "rgba(0,0,0,0)",
+        "heading_color_mobile": "rgba(0,0,0,0)",
+        "subheading_color_mobile": "rgba(0,0,0,0)",
+        "text_alignment_mobile": "same_as_desktop",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "163646532648471a71": {
+      "type": "index__image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/LILYREDPUSSYBOW_6185da44-6d35-449c-ab84-8526f46950cd_1_1_1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/LILYREDPUSSYBOW_6185da44-6d35-449c-ab84-8526f46950cd_1_1_1.jpg",
+        "link": "",
+        "pretext": "",
+        "title": "",
+        "subtitle": "<p>GIRLS<\/p>",
+        "pretext_color": "#000000",
+        "heading_color": "#000000",
+        "subheading_color": "#000000",
+        "text_alignment": "left",
+        "text_horizontal_position": "left",
+        "text_vertical_position": "bottom",
+        "text_width": 60,
+        "background_color": "#ffffff",
+        "background_opacity": 50,
+        "border_color": "#ffffff",
+        "border_width": 0,
+        "button_1": "SHOP NOW",
+        "button_1_link": "shopify:\/\/collections\/award-winning-organic-cotton-cashmere-for-girls",
+        "button_1_style": "button--primary",
+        "button_2": "",
+        "button_2_link": "",
+        "button_2_style": "button--secondary",
+        "width": "half",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "fadeIn",
+        "mobile_text_below_image": true,
+        "mobile_preheading": "",
+        "mobile_heading": "",
+        "mobile_subheading": "",
+        "pretext_color_mobile": "rgba(0,0,0,0)",
+        "heading_color_mobile": "rgba(0,0,0,0)",
+        "subheading_color_mobile": "rgba(0,0,0,0)",
+        "text_alignment_mobile": "same_as_desktop",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_heading_ExFVtX": {
+      "type": "index__heading",
+      "disabled": true,
+      "settings": {
+        "preheading": "<p>The Lightning and Bolt Storm Series<\/p>",
+        "title": "Shop the Lightning Bolt",
+        "subheading": "<p>Our iconic lightning bolt design comes to life in a zingy tomato red, crafted from a dreamy blend of organic cotton with a hint of cashmere for that extra softness kids love. Every piece is lovingly knitted by skilled artisans in Inner Mongolia, the cashmere knitting capital of the world<\/p>",
+        "heading_alignment": "center",
+        "vertical_spacing": "medium",
+        "preheading_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)",
+        "subheading_color": "rgba(0,0,0,0)",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_alignment": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_divider_nrCQXg": {
+      "type": "index__divider",
+      "name": "Divider",
+      "settings": {
+        "divider_style": "short",
+        "divider_width": 2,
+        "divider_color": "rgba(0,0,0,0)",
+        "alignment": "center",
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_heading_DaNanz": {
+      "type": "index__heading",
+      "name": "Heading",
+      "settings": {
+        "preheading": "<p><strong>Unleash Your Little One's Superhero<\/strong><\/p>",
+        "title": "Knitted With Superpowers",
+        "subheading": "<p>\"My son loves his Lightning Jumper. He says that it gives him special \"lightning bolt\" super powers.\" <\/p><p>Suki, London<\/p>",
+        "heading_alignment": "center",
+        "vertical_spacing": "medium",
+        "preheading_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)",
+        "subheading_color": "rgba(0,0,0,0)",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_alignment": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_featured_collection_MRQ3hz": {
+      "type": "index__featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "title": "",
+        "collection": "award-winning-organic-cotton-cashmere-for-boys",
+        "products_per": 6,
+        "products_limit": 10,
+        "align_height": false,
+        "collection_height": 200,
+        "button_label": "shop bestsellers",
+        "button_style": "button--primary",
+        "collection_style": "slider",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "collection_layout_mobile": "slider",
+        "mobile_products_per_row": "2",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_gallery_T9VaTz": {
+      "type": "index__gallery",
+      "blocks": {
+        "image_JfXcCz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-11-18_at_14.01.15_1_1800x-2_1_1_600x_7a1247d1-bdbf-4571-9a42-ec2bb5227279.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-11-18_at_14.01.15_1_1800x-2_1_1_600x_7a1247d1-bdbf-4571-9a42-ec2bb5227279.jpg",
+            "link": "shopify:\/\/products\/boys-lightning-bolt-jumper-azure"
+          }
+        },
+        "image_6xLMXh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3563_1_600x_f73ef772-3332-4750-93a1-9925299e0fbc.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3563_1_600x_f73ef772-3332-4750-93a1-9925299e0fbc.jpg",
+            "link": "shopify:\/\/products\/boys-bolt-storm-jumper-chalk"
+          }
+        },
+        "image_wkRGWP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_69_double_3620_600x_e99de661-5ade-4183-b18f-a900ca3f9a06.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_69_double_3620_600x_e99de661-5ade-4183-b18f-a900ca3f9a06.jpg",
+            "link": "shopify:\/\/products\/boys-bolt-storm-jumper-azure"
+          }
+        },
+        "image_qBpDcW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3526_600x_e137d68c-5095-4de3-a98f-5c1af1a4414e.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3526_600x_e137d68c-5095-4de3-a98f-5c1af1a4414e.jpg",
+            "link": "shopify:\/\/products\/boys-lightning-bolt-jumper-chalk"
+          }
+        }
+      },
+      "block_order": [
+        "image_JfXcCz",
+        "image_6xLMXh",
+        "image_wkRGWP",
+        "image_qBpDcW"
+      ],
+      "disabled": true,
+      "name": "Gallery",
+      "settings": {
+        "gallery_type": "classic",
+        "images_per_row": 4,
+        "crop_images": false,
+        "enable_lightbox": true,
+        "overlay_color": "#000000",
+        "link_color": "#ffffff",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "mobile_layout": "stacked",
+        "crop_images_mobile": false,
+        "show_arrows": true,
+        "show_navigation_dots": true,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_image_with_text_7rCz4j": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "text_4zTQ4x": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "heading_size": "regular",
+            "text": "<p><strong>\"Knitting Love into Every Stitch—For This Generation and the Next\" <\/strong><\/p><p><strong>MIKA & MILO<\/strong> began with a simple belief: children’s knitwear should be as durable as it is delightful. Inspired by Mongolian cashmere herders and our founder’s own childhood hand-me-downs, we create heirloom-quality pieces designed to survive playground tumbles, washing machine cycles, and—most importantly—to be passed down with pride.<\/p><p>Every stitch is GOTS-certified organic, every seam ethically crafted, and every design tested by real kids because ‘it gives me super powers\" is our favorite compliment. Winner of 5 Junior Design Awards, including Best Children's Eco brand twice, <strong>MIKA & MILO<\/strong> is your kids' favourite new hand-me-downs. After all, surely our kids and the planet they will inherit deserve only the best. <\/p>",
+            "alignment": "left",
+            "vertical_position": "center",
+            "button_label": "LEARN MORE",
+            "link": "https:\/\/mika-milo.com\/pages\/awards",
+            "button_style": "button--primary",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "mobile_title": "",
+            "mobile_heading_size": "same_as_desktop",
+            "mobile_text": "",
+            "mobile_alignment": "same_as_desktop"
+          }
+        },
+        "image_6Y6YUD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screenshot_2025-04-22_at_12.41.43_AM_1288b95f-beab-41c7-aa05-a984a50e9751.png",
+            "mobile_image": "shopify:\/\/shop_images\/Screenshot_2025-04-22_at_12.41.43_AM.jpg",
+            "image_link": "shopify:\/\/pages\/awards"
+          }
+        }
+      },
+      "block_order": [
+        "text_4zTQ4x",
+        "image_6Y6YUD"
+      ],
+      "settings": {
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "mobile_text_position": "same_as_desktop",
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "grid_d7LEgQ": {
+      "type": "grid",
+      "blocks": {
+        "grid_item_krWMeQ": {
+          "type": "grid_item",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3526_b3e904a6-777d-444e-941e-b790d5b60dae.jpg",
+            "mobile_grid_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3526_b3e904a6-777d-444e-941e-b790d5b60dae.jpg",
+            "link": "shopify:\/\/products\/boys-lightning-bolt-jumper-chalk",
+            "heading": "Lightning Jumper",
+            "text": "",
+            "button_label": "SHOP NOW",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        },
+        "grid_item_mfEiMf": {
+          "type": "grid_item",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/Milo_Lightning_Jumper_26d30ab9-4d72-47f6-9f4e-9e1122af46f9.jpg",
+            "mobile_grid_image": "shopify:\/\/shop_images\/Milo_Lightning_Jumper_26d30ab9-4d72-47f6-9f4e-9e1122af46f9.jpg",
+            "link": "shopify:\/\/products\/boys-lightning-bolt-jumper-azure",
+            "heading": "Lightning Jumper",
+            "text": "",
+            "button_label": "SHOP NOW",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        },
+        "grid_item_kR38n9": {
+          "type": "grid_item",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3558.jpg",
+            "mobile_grid_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_66_group_3558.jpg",
+            "link": "shopify:\/\/products\/boys-bolt-storm-jumper-azure",
+            "heading": "Bolt Jumper",
+            "text": "",
+            "button_label": "SHOP NOW",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        },
+        "grid_item_mx4Gbm": {
+          "type": "grid_item",
+          "disabled": true,
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_69_double_3620_7b2ea05f-7e3c-4266-87f1-d26d6e9978f5.jpg",
+            "mobile_grid_image": "shopify:\/\/shop_images\/240107_MikaMilo__SHOT_69_double_3620_7b2ea05f-7e3c-4266-87f1-d26d6e9978f5.jpg",
+            "link": "shopify:\/\/products\/boys-bolt-storm-jumper-azure",
+            "heading": "Bolt Jumper",
+            "text": "",
+            "button_label": "learn more",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_krWMeQ",
+        "grid_item_mfEiMf",
+        "grid_item_kR38n9",
+        "grid_item_mx4Gbm"
+      ],
+      "disabled": true,
+      "settings": {
+        "column_count": 3,
+        "align_height": false,
+        "image_height": 300,
+        "border_radius": 0,
+        "enable_zoom": true,
+        "show_text_below_image": true,
+        "heading_size": "regular",
+        "text_alignment": "center",
+        "text_horizontal_position": "center",
+        "text_vertical_position": "middle",
+        "text_width": 80,
+        "text_color": "rgba(0,0,0,0)",
+        "overlay_background": "rgba(0,0,0,0)",
+        "overlay_background_opacity": 0,
+        "section_background_color": "rgba(0,0,0,0)",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "mobile_heading_size": "same_as_desktop",
+        "mobile_text_alignment": "same_as_desktop",
+        "mobile_text_horizontal_position": "same_as_desktop",
+        "mobile_text_vertical_position": "same_as_desktop",
+        "mobile_text_width": 100,
+        "mobile_layout": "slider",
+        "show_arrows": false,
+        "show_nav_buttons": true,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "1636467342bb58d7ec": {
+      "type": "index__collection-list",
+      "blocks": {
+        "1636467342bb58d7ec-1": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "bottoms",
+            "image": "shopify:\/\/shop_images\/LILYREDRUFFLEDTOP2_d84d1beb-a825-41bc-9317-e3b7230fa075.jpg",
+            "title": "Bottoms",
+            "button_label": "View products"
+          }
+        },
+        "1636467342bb58d7ec-0": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "tops",
+            "image": "shopify:\/\/shop_images\/Milo_Lightning_Jumper_26d30ab9-4d72-47f6-9f4e-9e1122af46f9.jpg",
+            "title": "Tops",
+            "button_label": "View Products"
+          }
+        },
+        "1636467342bb58d7ec-2": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "girls-dresses",
+            "image": "shopify:\/\/shop_images\/LILY_RED_PUSSY_BOW.jpg",
+            "title": "Dresses",
+            "button_label": "View products"
+          }
+        },
+        "14795c8a-3c7c-4f4b-9d4e-3bd49cd3c809": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "baby-collection",
+            "image": "shopify:\/\/shop_images\/230702_MikaMilo_SHOT_02_124.jpg",
+            "title": "Baby",
+            "button_label": "View products"
+          }
+        },
+        "collection_eR8cGE": {
+          "type": "collection",
+          "settings": {
+            "feature_collection": "",
+            "title": "",
+            "button_label": "View products"
+          }
+        }
+      },
+      "block_order": [
+        "1636467342bb58d7ec-1",
+        "1636467342bb58d7ec-0",
+        "1636467342bb58d7ec-2",
+        "14795c8a-3c7c-4f4b-9d4e-3bd49cd3c809",
+        "collection_eR8cGE"
+      ],
+      "disabled": true,
+      "settings": {
+        "collections_per_row": 4,
+        "align_height": false,
+        "collection_height": 240,
+        "enable_zoom": true,
+        "button_style": "button--secondary",
+        "overlay_text": "#ffffff",
+        "overlay_background": "#ffffff",
+        "overlay_background_opacity": 20,
+        "collection_title_below_image": true,
+        "width": "wide",
+        "show_gutter": false,
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "animation": "none",
+        "mobile_layout": "stacked",
+        "show_arrows": true,
+        "show_navigation_dots": true,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "grid_YLhGTM": {
+      "type": "grid",
+      "blocks": {
+        "grid_item_bpVgWz": {
+          "type": "grid_item",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/LILY_SIERRA_ANGEL_BACK.jpg",
+            "mobile_grid_image": "shopify:\/\/shop_images\/LILY_SIERRA_ANGEL_BACK.jpg",
+            "link": "shopify:\/\/products\/angel-jumper-for-girls-blush",
+            "heading": "Angel Jumper",
+            "text": "",
+            "button_label": "SHOP NOW",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        },
+        "grid_item_nFTirW": {
+          "type": "grid_item",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/230702_MikaMilo_SHOT_03_162.jpg",
+            "mobile_grid_image": "shopify:\/\/shop_images\/230702_MikaMilo_SHOT_03_162.jpg",
+            "link": "shopify:\/\/products\/angel-jumper-for-baby-girls-blush",
+            "heading": "Baby Angel",
+            "text": "",
+            "button_label": "SHOP NOW",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        },
+        "grid_item_crPhVL": {
+          "type": "grid_item",
+          "settings": {
+            "grid_image": "shopify:\/\/shop_images\/230702_MikaMilo_SHOT_40_2469_281ebb41-d4ed-43f5-9a78-ad9471341a6d.jpg",
+            "mobile_grid_image": "shopify:\/\/shop_images\/230702_MikaMilo_SHOT_40_2469_281ebb41-d4ed-43f5-9a78-ad9471341a6d.jpg",
+            "link": "shopify:\/\/products\/girls-angel-dress-blush",
+            "heading": "Angel Dress",
+            "text": "",
+            "button_label": "SHOP NOW",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_bpVgWz",
+        "grid_item_nFTirW",
+        "grid_item_crPhVL"
+      ],
+      "disabled": true,
+      "settings": {
+        "column_count": 3,
+        "align_height": false,
+        "image_height": 300,
+        "border_radius": 0,
+        "enable_zoom": true,
+        "show_text_below_image": true,
+        "heading_size": "regular",
+        "text_alignment": "center",
+        "text_horizontal_position": "center",
+        "text_vertical_position": "middle",
+        "text_width": 80,
+        "text_color": "rgba(0,0,0,0)",
+        "overlay_background": "rgba(0,0,0,0)",
+        "overlay_background_opacity": 0,
+        "section_background_color": "rgba(0,0,0,0)",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "mobile_heading_size": "same_as_desktop",
+        "mobile_text_alignment": "same_as_desktop",
+        "mobile_text_horizontal_position": "same_as_desktop",
+        "mobile_text_vertical_position": "same_as_desktop",
+        "mobile_text_width": 100,
+        "mobile_layout": "slider",
+        "show_arrows": false,
+        "show_nav_buttons": true,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "index_image_with_text_overlay_zQehwy": {
+      "type": "index__image-with-text-overlay",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/karl-wiggers--X401Lkrm0g-unsplash.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/karl-wiggers--X401Lkrm0g-unsplash.jpg",
+        "link": "",
+        "pretext": "<p>SAVING THE PLANET, ONE SWEATER AT A TIME<\/p>",
+        "title": "PROTECTING NATURE",
+        "subtitle": "",
+        "pretext_color": "#000000",
+        "heading_color": "#000000",
+        "subheading_color": "#000000",
+        "text_alignment": "center",
+        "text_horizontal_position": "center",
+        "text_vertical_position": "middle",
+        "text_width": 40,
+        "background_color": "#ffffff",
+        "background_opacity": 77,
+        "border_color": "#ffffff",
+        "border_width": 0,
+        "button_1": "LEARN MORE",
+        "button_1_link": "shopify:\/\/pages\/why-organic-cotton-blended-with-cashmere-is-such-a-lovely-choice-for-babies-and-children",
+        "button_1_style": "button--secondary",
+        "button_2": "",
+        "button_2_link": "",
+        "button_2_style": "button--secondary",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_below_image": true,
+        "mobile_preheading": "",
+        "mobile_heading": "",
+        "mobile_subheading": "",
+        "pretext_color_mobile": "rgba(0,0,0,0)",
+        "heading_color_mobile": "rgba(0,0,0,0)",
+        "subheading_color_mobile": "rgba(0,0,0,0)",
+        "text_alignment_mobile": "same_as_desktop",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16364687123c1e9830": {
+      "type": "index__heading",
+      "disabled": true,
+      "settings": {
+        "preheading": "",
+        "title": "Most-shopped right now",
+        "subheading": "<p>current crowd pleasers & exactly what you want to wear<\/p>",
+        "heading_alignment": "center",
+        "vertical_spacing": "medium",
+        "preheading_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)",
+        "subheading_color": "rgba(0,0,0,0)",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "padding_top": 60,
+        "padding_bottom": 20,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_alignment": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_video_X4zHH8": {
+      "type": "index__video",
+      "disabled": true,
+      "settings": {
+        "iframe_video": "https:\/\/youtu.be\/5qgyWn7dcCI",
+        "html5_video": "",
+        "autoplay": false,
+        "autoloop": true,
+        "mute_video": false,
+        "controls": true,
+        "aspect_ratio": "16:9",
+        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2024-08-30_at_13.10.14.jpg",
+        "pretext": "",
+        "title": "",
+        "subtitle": "",
+        "pretext_color": "#000000",
+        "heading_color": "#000000",
+        "subheading_color": "#000000",
+        "text_align": "center",
+        "horizontal_text_position": "center",
+        "vertical_text_position": "center",
+        "button_label": "Play Video",
+        "button_style": "button--secondary",
+        "text_width": 70,
+        "overlay_style": "text_only",
+        "video_overlay_color": "#ffffff",
+        "background_opacity": 77,
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 180,
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_below_video": true,
+        "pretext_color_mobile": "rgba(0,0,0,0)",
+        "heading_color_mobile": "rgba(0,0,0,0)",
+        "subheading_color_mobile": "rgba(0,0,0,0)",
+        "mobile_text_alignment": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_featured_collection_T3x9Lx": {
+      "type": "index__featured-collection",
+      "disabled": true,
+      "name": "Featured collection",
+      "settings": {
+        "title": "Your Favorite New Hand-Me-Downs",
+        "collection": "award-winning-organic-cotton-cashmere-for-girls",
+        "products_per": 5,
+        "products_limit": 10,
+        "align_height": false,
+        "collection_height": 200,
+        "button_label": "Shop Bestsellers Now",
+        "button_style": "button--primary",
+        "collection_style": "slider",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "collection_layout_mobile": "slider",
+        "mobile_products_per_row": "2",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_image_with_text_baA6PB": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "image_34wGj9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/goats_1200x_3b65f5b3-5f3b-4792-9c63-fa93f76c7b9e.webp",
+            "mobile_image": "shopify:\/\/shop_images\/goats_1200x_3b65f5b3-5f3b-4792-9c63-fa93f76c7b9e.webp",
+            "image_link": ""
+          }
+        },
+        "text_zpm8Yq": {
+          "type": "text",
+          "settings": {
+            "title": "FAMILY LEGACY",
+            "heading_size": "regular",
+            "text": "<p>For over a century, the Stevenson family has been at the heart of the woollen industry. It all began with Herbert Stevenson, who ran a woollen mill on the outskirts of Edinburgh, making his own brand of Scottish tweeds. When Drummond joined the business, their Macnab tweeds were sold across Europe and the US.<\/p><p>Peter Stevenson then introduced cashmere to the mix, traveling to Inner Mongolia over 40 years ago to source the world's finest fibres. Today, we continue to work with the same trusted partners whilst being based in Hong Kong, blending tradition with innovation to create timeless pieces for the next generation.<\/p>",
+            "alignment": "left",
+            "vertical_position": "center",
+            "button_label": "LEARN MORE",
+            "link": "shopify:\/\/pages\/family-legacy",
+            "button_style": "button--primary",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "mobile_title": "FAMILY LEGACY",
+            "mobile_heading_size": "same_as_desktop",
+            "mobile_text": "<p>The Stevensons have been working in the woollen industry for well over a century. It started with Herbert Stevenson who used to run a woollen mill producing his own brand of Scottish tweeds on the outskirts of Edinburgh. When Drummond joined the firm, their brand of Macnab tweeds was sold throughout Europe and the US. Peter then added cashmere to the mix. Peter first went up to Inner Mongolia over 40 years ago and the Stevensons have been working with the same cashmere partners up there ever since.<\/p>",
+            "mobile_alignment": "same_as_desktop"
+          }
+        }
+      },
+      "block_order": [
+        "image_34wGj9",
+        "text_zpm8Yq"
+      ],
+      "settings": {
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "mobile_text_position": "same_as_desktop",
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "17310516911990105c": {
+      "type": "apps",
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1741601323b19f4604": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "163646991270dfc1ae",
+    "174652137385e35160",
+    "163646570117584186",
+    "1636468715891aaf9c",
+    "1746522792c1d89434",
+    "index_testimonial_iDrH9N",
+    "index_divider_WwpRNG",
+    "index_image_with_text_overlay_xKd6zM",
+    "163646532648471a71",
+    "index_heading_ExFVtX",
+    "index_divider_nrCQXg",
+    "index_heading_DaNanz",
+    "index_featured_collection_MRQ3hz",
+    "index_gallery_T9VaTz",
+    "index_image_with_text_7rCz4j",
+    "grid_d7LEgQ",
+    "1636467342bb58d7ec",
+    "grid_YLhGTM",
+    "index_image_with_text_overlay_zQehwy",
+    "16364687123c1e9830",
+    "index_video_X4zHH8",
+    "index_featured_collection_T3x9Lx",
+    "index_image_with_text_baA6PB",
+    "17310516911990105c",
+    "1741601323b19f4604"
+  ]
+}

@@ -1,0 +1,335 @@
+{% doc %}
+  @prompt
+    Shopify section that shows a smooth, infinite marquee loop
+    
+    Background color #B38B9D
+    
+    Separate speed controls for mobile and desktop, can it be infinite loop
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-marquee-container-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_top }}px 0 {{ block.settings.padding_bottom }}px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .ai-marquee-track-{{ ai_gen_id }} {
+    display: inline-flex;
+    animation: ai-marquee-scroll-{{ ai_gen_id }} var(--ai-marquee-duration-{{ ai_gen_id }}) linear infinite;
+    will-change: transform;
+  }
+
+  .ai-marquee-content-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: {{ block.settings.item_spacing }}px;
+    padding-right: {{ block.settings.item_spacing }}px;
+    flex-shrink: 0;
+  }
+
+  .ai-marquee-item-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .ai-marquee-separator-{{ ai_gen_id }} {
+    color: {{ block.settings.separator_color }};
+    font-size: {{ block.settings.font_size }}px;
+    flex-shrink: 0;
+  }
+
+  @keyframes ai-marquee-scroll-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-marquee-container-{{ ai_gen_id }} {
+      --ai-marquee-duration-{{ ai_gen_id }}: {{ block.settings.speed_mobile }}s;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-marquee-container-{{ ai_gen_id }} {
+      --ai-marquee-duration-{{ ai_gen_id }}: {{ block.settings.speed_desktop }}s;
+    }
+  }
+{% endstyle %}
+
+<infinite-marquee-{{ ai_gen_id }}
+  class="ai-marquee-container-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-marquee-track-{{ ai_gen_id }}">
+    <div class="ai-marquee-content-{{ ai_gen_id }}">
+      {% for i in (1..5) %}
+        {% assign text_key = 'text_' | append: i %}
+        {% assign text_value = block.settings[text_key] %}
+        {% if text_value != blank %}
+          <span class="ai-marquee-item-{{ ai_gen_id }}">{{ text_value }}</span>
+          {% unless forloop.last %}
+            <span class="ai-marquee-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="ai-marquee-content-{{ ai_gen_id }}" aria-hidden="true">
+      {% for i in (1..5) %}
+        {% assign text_key = 'text_' | append: i %}
+        {% assign text_value = block.settings[text_key] %}
+        {% if text_value != blank %}
+          <span class="ai-marquee-item-{{ ai_gen_id }}">{{ text_value }}</span>
+          {% unless forloop.last %}
+            <span class="ai-marquee-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="ai-marquee-content-{{ ai_gen_id }}" aria-hidden="true">
+      {% for i in (1..5) %}
+        {% assign text_key = 'text_' | append: i %}
+        {% assign text_value = block.settings[text_key] %}
+        {% if text_value != blank %}
+          <span class="ai-marquee-item-{{ ai_gen_id }}">{{ text_value }}</span>
+          {% unless forloop.last %}
+            <span class="ai-marquee-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</infinite-marquee-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class InfiniteMarquee{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.setupInfiniteLoop();
+        this.handleVisibilityChange();
+      }
+
+      setupInfiniteLoop() {
+        const track = this.querySelector('.ai-marquee-track-{{ ai_gen_id }}');
+        if (!track) return;
+
+        const content = track.querySelector('.ai-marquee-content-{{ ai_gen_id }}');
+        if (!content) return;
+
+        const contentWidth = content.offsetWidth;
+        const containerWidth = this.offsetWidth;
+
+        if (contentWidth < containerWidth) {
+          const duplicatesNeeded = Math.ceil(containerWidth / contentWidth) + 2;
+          
+          for (let i = 0; i < duplicatesNeeded; i++) {
+            const clone = content.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
+          }
+        }
+      }
+
+      handleVisibilityChange() {
+        const track = this.querySelector('.ai-marquee-track-{{ ai_gen_id }}');
+        if (!track) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              track.style.animationPlayState = 'running';
+            } else {
+              track.style.animationPlayState = 'paused';
+            }
+          });
+        });
+
+        observer.observe(this);
+      }
+    }
+
+    customElements.define('infinite-marquee-{{ ai_gen_id }}', InfiniteMarquee{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Infinite marquee",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text 1",
+      "default": "Free shipping on orders over $50"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text 2",
+      "default": "30-day return policy"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text 3",
+      "default": "Customer support 24/7"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text 4",
+      "default": "Secure checkout"
+    },
+    {
+      "type": "text",
+      "id": "text_5",
+      "label": "Text 5",
+      "default": "Fast delivery"
+    },
+    {
+      "type": "text",
+      "id": "separator",
+      "label": "Separator",
+      "default": "•"
+    },
+    {
+      "type": "header",
+      "content": "Speed"
+    },
+    {
+      "type": "range",
+      "id": "speed_desktop",
+      "label": "Desktop speed",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "s",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "speed_mobile",
+      "label": "Mobile speed",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "s",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#B38B9D"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Separator color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "label": "Item spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    }
+  ],
+  "presets": [
+    {
+      "name": "Infinite marquee"
+    }
+  ]
+}
+{% endschema %}

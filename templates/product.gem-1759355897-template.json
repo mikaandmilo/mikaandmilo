@@ -1,0 +1,677 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "product__breadcrumb",
+      "disabled": true,
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "main": {
+      "type": "product__main",
+      "blocks": {
+        "rating_JbadVE": {
+          "type": "rating",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "display_savings": false
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient_form": true
+          }
+        },
+        "text_jpBn9d": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"https://mika-milo.com/pages/size-charts\" target=\"_blank\" title=\"https://mika-milo.com/pages/size-charts\"><strong>Size Guide:</strong></a></p><p></p><p></p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "one_click_upsell_on_page_iKMBdz": {
+          "type": "shopify://apps/one-click-upsell/blocks/on-page/bfe6e378-b73a-4871-b8d3-7d6ede22678e",
+          "settings": {}
+        },
+        "complementary_products_7zmgBC": {
+          "type": "complementary_products",
+          "settings": {
+            "heading": "Pairs well with",
+            "product_recommendation_limit": 3,
+            "products_per_slide": 3
+          }
+        },
+        "vendor_7T4d6N": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "rating_JbadVE",
+        "title",
+        "price",
+        "form",
+        "text_jpBn9d",
+        "description",
+        "one_click_upsell_on_page_iKMBdz",
+        "complementary_products_7zmgBC",
+        "vendor_7T4d6N"
+      ],
+      "settings": {
+        "product_images_position": "left",
+        "set_product_height": false,
+        "product_height": 800,
+        "video_looping": false,
+        "gallery_arrows": true,
+        "enable_zoom": true,
+        "enable_product_lightbox": true,
+        "slideshow_speed": 0,
+        "slideshow_transition": "fade",
+        "display_thumbnails": true,
+        "thumbnail_position": "bottom-thumbnails",
+        "enable_thumbnail_slider": true,
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 50,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ".button--add-to-cart {\n  background-color: #BA7156; /* your fill color */\n  color: #fff; /* text color */\n}"
+      }
+    },
+    "blocks_jg7nYw": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5a77066_7cmEqF": {
+          "type": "ai_gen_block_5a77066",
+          "settings": {
+            "text_1": "Organic Fabrics",
+            "text_2": "Machine Washable",
+            "text_3": "Award-Winning",
+            "text_4": "Heirloom Quality",
+            "text_5": "Worldwide Shipping",
+            "speed_desktop": 200,
+            "speed_mobile": 200,
+            "background_color": "#b38b9d",
+            "text_color": "#ffffff",
+            "font_size": 18,
+            "font_weight": "400",
+            "item_spacing": 50,
+            "padding_top": 20,
+            "padding_bottom": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5a77066_7cmEqF"
+      ],
+      "settings": {}
+    },
+    "index_image_with_text_overlay_xVWFB9": {
+      "type": "index__image-with-text-overlay",
+      "disabled": true,
+      "name": "Image with text overlay",
+      "settings": {
+        "image": "shopify://shop_images/Screenshot_2025-09-24_at_4.44.05_PM.png",
+        "mobile_image": "shopify://shop_images/Screenshot_2025-09-24_at_4.44.05_PM.png",
+        "link": "shopify://pages/awards",
+        "pretext": "",
+        "title": "",
+        "subtitle": "",
+        "pretext_color": "#000000",
+        "heading_color": "#000000",
+        "subheading_color": "#000000",
+        "text_alignment": "center",
+        "text_horizontal_position": "center",
+        "text_vertical_position": "middle",
+        "text_width": 40,
+        "background_color": "#ffffff",
+        "background_opacity": 77,
+        "border_color": "#ffffff",
+        "border_width": 0,
+        "button_1": "",
+        "button_1_link": "",
+        "button_1_style": "button--link-style",
+        "button_2": "",
+        "button_2_link": "",
+        "button_2_style": "button--link-style",
+        "width": "wide",
+        "padding_top": 66,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_below_image": true,
+        "mobile_preheading": "",
+        "mobile_heading": "",
+        "mobile_subheading": "",
+        "pretext_color_mobile": "rgba(0,0,0,0)",
+        "heading_color_mobile": "rgba(0,0,0,0)",
+        "subheading_color_mobile": "rgba(0,0,0,0)",
+        "text_alignment_mobile": "same_as_desktop",
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_rich_text_mVafqq": {
+      "type": "index__rich-text",
+      "name": "Rich text",
+      "settings": {
+        "title": "",
+        "heading_font": "archivo_black_n4",
+        "heading_alignment": "center",
+        "heading_size": 24,
+        "text": "",
+        "text_font": "open_sans_n4",
+        "text_alignment": "left",
+        "text_size": 17,
+        "columns": 2,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button--primary",
+        "button_alignment": "center",
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background": "#ffffff",
+        "gradient": "#ffffff",
+        "gradient_rotation": 100,
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_title": "",
+        "mobile_text": "",
+        "mobile_alignment": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_gallery_xUyiNe": {
+      "type": "index__gallery",
+      "blocks": {
+        "image_eBFAxT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_e60dc932-9636-45c9-8cdd-5851b384f686.jpg",
+            "mobile_image": "shopify://shop_images/2_46351212-6e1a-4c3d-b640-223f162d7d2f.jpg",
+            "link": "shopify://products/love-hearts-ruffled-cardigan"
+          }
+        },
+        "image_eHKpki": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3_58184ed7-ad9f-4a3b-8bab-45e7ca584248.jpg",
+            "mobile_image": "shopify://shop_images/3_58184ed7-ad9f-4a3b-8bab-45e7ca584248.jpg",
+            "link": "shopify://products/lightning-bolt-jumper-chalk"
+          }
+        },
+        "image_pBJC9c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_46351212-6e1a-4c3d-b640-223f162d7d2f.jpg",
+            "mobile_image": "shopify://shop_images/2_46351212-6e1a-4c3d-b640-223f162d7d2f.jpg",
+            "link": "shopify://products/love-hearts-pencil-mini-skirt-bubble-gum"
+          }
+        },
+        "image_gxWMyk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_7543cf62-b610-4fbd-aa01-c0ee4da948b4.jpg",
+            "mobile_image": "shopify://shop_images/4_7543cf62-b610-4fbd-aa01-c0ee4da948b4.jpg",
+            "link": "shopify://products/striped-rocket-jumper-cobalt-organic-cotton-cashmere"
+          }
+        }
+      },
+      "block_order": [
+        "image_eBFAxT",
+        "image_eHKpki",
+        "image_pBJC9c",
+        "image_gxWMyk"
+      ],
+      "disabled": true,
+      "name": "Gallery",
+      "settings": {
+        "gallery_type": "classic",
+        "images_per_row": 4,
+        "crop_images": false,
+        "enable_lightbox": true,
+        "overlay_color": "#000000",
+        "link_color": "#ffffff",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "mobile_layout": "stacked",
+        "crop_images_mobile": false,
+        "show_arrows": true,
+        "show_navigation_dots": true,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "recommendations": {
+      "type": "product__recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_style": "slider",
+        "product_recommendations_heading": "You may also like",
+        "products_per": 3,
+        "recommended_products_limit": 6,
+        "align_height": false,
+        "collection_height": 200,
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "175909032157d05714": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8b90492_zBNEzW": {
+          "type": "ai_gen_block_8b90492",
+          "settings": {
+            "heading": "Featured In & Awarded By",
+            "text_alignment": "center",
+            "image_1": "shopify://shop_images/5.png",
+            "image_2": "shopify://shop_images/4.png",
+            "image_3": "shopify://shop_images/3.png",
+            "image_4": "shopify://shop_images/gempages_567233400272847913-9633b755-5d7e-426c-9db7-83b29575d1b7.png",
+            "image_5": "shopify://shop_images/gempages_567233400272847913-f925da6b-5eee-4b5c-8f07-01f3e1fba163.png",
+            "image_6": "shopify://shop_images/gempages_567233400272847913-97397f46-6a28-4bda-a6b2-26111c273414.jpg",
+            "image_7": "shopify://shop_images/gempages_567233400272847913-7f46447c-385c-4842-8cf3-534a97b0d1be.jpg",
+            "image_8": "shopify://shop_images/gempages_567233400272847913-ae0394c9-c1f0-4e6a-bf6c-735411721372.png",
+            "image_9": "shopify://shop_images/gempages_567233400272847913-d12eea89-241e-46a2-8278-565f22c1bbf9.jpg",
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "heading_size": 28,
+            "image_spacing": 30,
+            "border_radius": 12,
+            "control_color": "#000000",
+            "control_hover_color": "#333333",
+            "control_icon_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8b90492_zBNEzW"
+      ],
+      "settings": {}
+    },
+    "index_featured_collection_CyNFJX": {
+      "type": "index__featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "title": "Multi Award Winning Knitwear",
+        "collection": "aw25",
+        "products_per": 4,
+        "products_limit": 8,
+        "align_height": false,
+        "collection_height": 200,
+        "button_label": "",
+        "button_style": "button--primary",
+        "collection_style": "slider",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 52,
+        "padding_bottom": 20,
+        "animation": "none",
+        "collection_layout_mobile": "slider",
+        "mobile_products_per_row": "1",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_faq_zjmBth": {
+      "type": "index__faq",
+      "blocks": {
+        "heading_6BdniY": {
+          "type": "heading",
+          "settings": {
+            "title": "FAQ"
+          }
+        },
+        "content_mQCHXb": {
+          "type": "content",
+          "settings": {
+            "title": "What materials do you use?",
+            "answer": "<p>We use organic cotton and cashmere blends, chosen for their softness, safety, and durability.</p>"
+          }
+        },
+        "content_FVVhQU": {
+          "type": "content",
+          "settings": {
+            "title": "Are the clothes machine washable?",
+            "answer": "<p>Yes — all our knitwear is designed to handle regular washing while staying soft and keeping its shape.</p>"
+          }
+        },
+        "content_Y3Vpma": {
+          "type": "content",
+          "settings": {
+            "title": "Do the products last through hand-me-downs?",
+            "answer": "<p>Absolutely. Our pieces are made with heirloom quality so they can be worn, washed, and passed down.</p>"
+          }
+        },
+        "content_JxjMnW": {
+          "type": "content",
+          "settings": {
+            "title": "Where do you ship?",
+            "answer": "<p>We ship worldwide, straight from our online store to your door.</p>"
+          }
+        },
+        "content_tEKyTz": {
+          "type": "content",
+          "settings": {
+            "title": "What makes Mika & Milo different?",
+            "answer": "<p>Unlike fast fashion, our knitwear combines eco-friendly fabrics with award-winning design built to last.</p>"
+          }
+        },
+        "content_8ikKeD": {
+          "type": "content",
+          "settings": {
+            "title": "What if the size doesn’t fit?",
+            "answer": "<p>You can return or exchange your item following our hassle-free refund and exchange policy.</p>"
+          }
+        },
+        "image_6wGqhK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3_139e0eeb-6f94-4350-8fac-5cabe883d36f.png"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6BdniY",
+        "content_mQCHXb",
+        "content_FVVhQU",
+        "content_Y3Vpma",
+        "content_JxjMnW",
+        "content_tEKyTz",
+        "content_8ikKeD",
+        "image_6wGqhK"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "title": "",
+        "width": "standard",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "animation": "none",
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_rich_text_ym6NEr": {
+      "type": "index__rich-text",
+      "name": "Rich text",
+      "settings": {
+        "title": "Out in the Wld",
+        "heading_font": "archivo_black_n4",
+        "heading_alignment": "center",
+        "heading_size": 20,
+        "text": "",
+        "text_font": "anton_n4",
+        "text_alignment": "left",
+        "text_size": 14,
+        "columns": 2,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "button--primary",
+        "button_alignment": "center",
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background": "#ffffff",
+        "gradient": "#ffffff",
+        "gradient_rotation": 180,
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_title": "",
+        "mobile_text": "",
+        "mobile_alignment": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_gallery_LDYkBP": {
+      "type": "index__gallery",
+      "blocks": {
+        "image_NrkE8x": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_e60dc932-9636-45c9-8cdd-5851b384f686.jpg",
+            "mobile_image": "shopify://shop_images/2_46351212-6e1a-4c3d-b640-223f162d7d2f.jpg",
+            "link": ""
+          }
+        },
+        "image_MQp8VB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/3_58184ed7-ad9f-4a3b-8bab-45e7ca584248.jpg",
+            "mobile_image": "shopify://shop_images/3_58184ed7-ad9f-4a3b-8bab-45e7ca584248.jpg",
+            "link": ""
+          }
+        },
+        "image_HLJHAa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_46351212-6e1a-4c3d-b640-223f162d7d2f.jpg",
+            "mobile_image": "shopify://shop_images/2_46351212-6e1a-4c3d-b640-223f162d7d2f.jpg",
+            "link": ""
+          }
+        },
+        "image_fWEkKt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/4_7543cf62-b610-4fbd-aa01-c0ee4da948b4.jpg",
+            "mobile_image": "shopify://shop_images/4_7543cf62-b610-4fbd-aa01-c0ee4da948b4.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_NrkE8x",
+        "image_MQp8VB",
+        "image_HLJHAa",
+        "image_fWEkKt"
+      ],
+      "name": "Gallery",
+      "settings": {
+        "gallery_type": "classic",
+        "images_per_row": 4,
+        "crop_images": false,
+        "enable_lightbox": true,
+        "overlay_color": "#000000",
+        "link_color": "#ffffff",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "mobile_layout": "slider",
+        "crop_images_mobile": false,
+        "show_arrows": true,
+        "show_navigation_dots": true,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 38,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_faq_pEDhJ3": {
+      "type": "index__faq",
+      "blocks": {
+        "heading_XkFKQc": {
+          "type": "heading",
+          "settings": {
+            "title": "Section heading"
+          }
+        },
+        "content_Xd9JJM": {
+          "type": "content",
+          "settings": {
+            "title": "Why Organic Cotton?",
+            "answer": "<p>At MIKA & MILO, we believe in saving the planet, one organic sweater at a time. We all know that cotton is <em>the  </em>best material use for our Little Ones. After all, it is natural, breathable and super easy to wash. However, did you know that you need a staggering 20,00 litres of water to produce just 1KG! That's pretty crazy right? That's why at MIKA & MILO we use GOTS certified organic cotton. It uses far less water, burns less CO2 and uses ZERO chemicals, make it a win for our Little Ones, the farmers who grow it and the planet which we all call home. Plus, we go one step further and add a dash of cashmere to the mix for extra softness. No wonder we've won BEST CHILDREN'S ECO BRAND at the Junior Design Awards 2023. </p>"
+          }
+        },
+        "content_3VDqX9": {
+          "type": "content",
+          "settings": {
+            "title": "Why Cashmere?",
+            "answer": "<p>We add just a dash of cashmere for extra softness. After all, surely our Little Ones deserve only the best.</p>"
+          }
+        },
+        "content_TMHhrt": {
+          "type": "content",
+          "settings": {
+            "title": "Why Do You Plant Trees?",
+            "answer": "<p>We plants trees every month with the International Tree Foundation as our all wooded friends are not only majestically beautiful. They keep our planet nice and cool as they absorb a lot of that carbon dioxide which is raising temperatures across the globe. And that's why we plants lots and lots of trees every month. </p>"
+          }
+        },
+        "heading_wtFNDR": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "Section heading"
+          }
+        },
+        "content_rWhKbb": {
+          "type": "content",
+          "settings": {
+            "title": "Why We Use Compost Bags?",
+            "answer": "<p>We wrap all the products that we send out in recyclable tissue paper and then we pop them in a compostable bag so that you don't have to worry about they ending up in some poor whale's stomach. </p>"
+          }
+        },
+        "content_aXVAmy": {
+          "type": "content",
+          "settings": {
+            "title": "How Many Awards Have You Won?",
+            "answer": "<p>We have won 3 GOLD Junior Design Awards including the following:</p><p>Best Children's Eco Brand, 2023</p><p>Best Children's Fashion Brand, 2022</p><p>Best Children's Knitwear Brand, 2021</p>"
+          }
+        },
+        "content_AYkxVQ": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "What is your question?",
+            "answer": "<p>Provide the answer to the question here.</p>"
+          }
+        },
+        "image_fMPBAX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/karl-wiggers--X401Lkrm0g-unsplash.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XkFKQc",
+        "content_Xd9JJM",
+        "content_3VDqX9",
+        "content_TMHhrt",
+        "heading_wtFNDR",
+        "content_rWhKbb",
+        "content_aXVAmy",
+        "content_AYkxVQ",
+        "image_fMPBAX"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "FAQ",
+        "width": "standard",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "animation": "none",
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "17593157296e3526af": {
+      "type": "apps",
+      "blocks": {
+        "klaviyo_reviews_product_reviews_RTBPQT": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/product-reviews/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "klaviyo_reviews_product_reviews_RTBPQT"
+      ],
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "blocks_jg7nYw",
+    "index_image_with_text_overlay_xVWFB9",
+    "index_rich_text_mVafqq",
+    "index_gallery_xUyiNe",
+    "recommendations",
+    "175909032157d05714",
+    "index_featured_collection_CyNFJX",
+    "index_faq_zjmBth",
+    "index_rich_text_ym6NEr",
+    "index_gallery_LDYkBP",
+    "index_faq_pEDhJ3",
+    "17593157296e3526af"
+  ]
+}

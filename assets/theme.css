@@ -1,0 +1,28 @@
+/* 1) Container ne sme da prelazi ekran */
+.ai-marquee-container-aalyzyth3mjnnl2n3aaigenblock5a77066wzqbwz{
+  box-sizing: border-box;     /* width sada uključuje padding */
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  position: relative;
+}
+
+/* 2) Track bude blok (ne inline) i ne prelomi sadržaj */
+.ai-marquee-track-aalyzyth3mjnnl2n3aaigenblock5a77066wzqbwz{
+  display: flex !important;   /* umesto inline-flex */
+  flex-wrap: nowrap;
+  min-width: 100%;
+  will-change: transform;
+}
+
+/* 3) Itemi se ne šire i ne lome */
+.ai-marquee-item-aalyzyth3mjnnl2n3aaigenblock5a77066wzqbwz{
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* 4) Safety net za ceo sajt (ako nešto drugo pravi skrol) */
+html, body{ 
+  max-width: 100%;
+  overflow-x: hidden !important;
+}

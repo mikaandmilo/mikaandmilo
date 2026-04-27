@@ -1,0 +1,638 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_8tjK3t": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "Custom liquid",
+      "settings": {
+        "custom_liquid": "{% comment %} Editorial Full-Width Stacked Image Gallery {% endcomment %}\n\n<style>\n  .editorial-gallery {\n    display: flex;\n    flex-direction: column;\n    gap: 6px;\n    padding: 0;\n    margin: 0;\n  }\n\n  .editorial-gallery__item {\n    width: 100%;\n    display: block;\n  }\n\n  .editorial-gallery__item img {\n    display: block;\n    width: 100%;\n    height: auto;\n    aspect-ratio: 3 / 4;\n    object-fit: cover;\n  }\n\n  @media (max-width: 749px) {\n    .editorial-gallery__item img {\n      aspect-ratio: 4 / 5;\n    }\n  }\n</style>\n\n<div class=\"editorial-gallery\">\n  {% for media in product.media %}\n    {% if media.media_type == 'image' %}\n      <div class=\"editorial-gallery__item\">\n        <img\n          src=\"{{ media | image_url: width: 2000 }}\"\n          alt=\"{{ media.alt | escape }}\"\n          width=\"{{ media.width }}\"\n          height=\"{{ media.height }}\"\n          loading=\"{% if forloop.first %}eager{% else %}lazy{% endif %}\"\n        >\n      </div>\n    {% endif %}\n  {% endfor %}\n</div>"
+      }
+    },
+    "breadcrumbs": {
+      "type": "product__breadcrumb",
+      "disabled": true,
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "main": {
+      "type": "product__main",
+      "blocks": {
+        "rating_JbadVE": {
+          "type": "rating",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "display_savings": false
+          }
+        },
+        "text_jpBn9d": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>95% organic cotton, 5% cashmere — soft, non-itch and gentle on sensitive skin</strong></p><p>Machine-washable for everyday wear<br/>28-day returns · Free delivery over $165 · US duties included</p>"
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient_form": true
+          }
+        },
+        "text_KH3zVh": {
+          "type": "text",
+          "settings": {
+            "text": "<p></p><p></p><p></p><p></p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "complementary_products_7zmgBC": {
+          "type": "complementary_products",
+          "disabled": true,
+          "settings": {
+            "heading": "Pairs well with",
+            "product_recommendation_limit": 3,
+            "products_per_slide": 3
+          }
+        },
+        "vendor_7T4d6N": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "rating_JbadVE",
+        "title",
+        "price",
+        "text_jpBn9d",
+        "form",
+        "text_KH3zVh",
+        "description",
+        "complementary_products_7zmgBC",
+        "vendor_7T4d6N"
+      ],
+      "custom_css": [],
+      "settings": {
+        "product_images_position": "left",
+        "set_product_height": false,
+        "product_height": 800,
+        "video_looping": false,
+        "gallery_arrows": true,
+        "enable_zoom": true,
+        "enable_product_lightbox": true,
+        "slideshow_speed": 0,
+        "slideshow_transition": "fade",
+        "display_thumbnails": true,
+        "thumbnail_position": "bottom-thumbnails",
+        "enable_thumbnail_slider": true,
+        "width": "wide",
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": "button[type=\"submit\"],\n.button--primary,\n.product_form .add_to_cart {\n  background-color: #ba7055 !important;\n  color: #ffffff !important;\n  border-color: #ba7055 !important;\n}\nbutton[type=\"submit\"]:hover,\n.button--primary:hover,\n.product_form .add_to_cart:hover {\n  background-color: #9d5a47 !important;\n  color: #ffffff !important;\n  border-color: #9d5a47 !important;\n}"
+      }
+    },
+    "blocks_w9DyGh": {
+      "type": "_blocks",
+      "name": "Static text bar",
+      "settings": {}
+    },
+    "blocks_jg7nYw": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5a77066_7cmEqF": {
+          "type": "ai_gen_block_5a77066",
+          "disabled": true,
+          "settings": {
+            "text_1": "Organic Cotton & Cashmere",
+            "text_2": "Multi Award-Winning",
+            "text_3": "US Duty-Included Shipping",
+            "text_4": "",
+            "text_5": "",
+            "speed_desktop": 200,
+            "speed_mobile": 200,
+            "background_color": "#f8f3ed",
+            "text_color": "#2c2c2c",
+            "font_size": 18,
+            "font_weight": "700",
+            "item_spacing": 50,
+            "padding_top": 20,
+            "padding_bottom": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5a77066_7cmEqF"
+      ],
+      "settings": {}
+    },
+    "index_heading_cgcPkD": {
+      "type": "index__heading",
+      "name": "Heading",
+      "settings": {
+        "preheading": "",
+        "title": "Why parents love MIKA & MILO",
+        "subheading": "",
+        "heading_alignment": "center",
+        "vertical_spacing": "medium",
+        "preheading_color": "rgba(0,0,0,0)",
+        "heading_color": "rgba(0,0,0,0)",
+        "subheading_color": "rgba(0,0,0,0)",
+        "background": "rgba(0,0,0,0)",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 68,
+        "animation": "none",
+        "mobile_text_alignment": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_icon_with_text_column_GYiVrJ": {
+      "type": "index__icon-with-text-column",
+      "blocks": {
+        "logo_image_dL4c4g": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "bunny",
+            "title": "Soft, Non-Itch",
+            "text": "<p>Gentle on sensitive skin and comfortable for every day.</p>",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "logo_image_TDKNaA": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "basket",
+            "title": "Machine-Washable",
+            "text": "<p>Easy-care knitwear made for everyday life.</p>",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "logo_image_zVkJqm": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "gem",
+            "title": "Made to Last",
+            "text": "<p>Thoughtfully made to be worn, washed, and handed down.</p>",
+            "button_label": "",
+            "link": ""
+          }
+        },
+        "logo_image_8b74jX": {
+          "type": "logo_image",
+          "settings": {
+            "icon_label": "star",
+            "title": "Premium Natural Fibres",
+            "text": "<p>Organic cotton and cashmere for softness, breathability, and lasting quality.</p>",
+            "button_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_dL4c4g",
+        "logo_image_TDKNaA",
+        "logo_image_zVkJqm",
+        "logo_image_8b74jX"
+      ],
+      "name": "Text columns with icons",
+      "settings": {
+        "icons_per_row": 4,
+        "align_text": "center",
+        "icon_size": "medium",
+        "button_style": "button--primary",
+        "icon_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background": "#faf5f0",
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 0,
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "none",
+        "mobile_text_alignment": "none",
+        "mobile_icon_size": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "blocks_4WkHB7": {
+      "type": "_blocks",
+      "name": "Awarded by carousel",
+      "settings": {}
+    },
+    "index_faq_zjmBth": {
+      "type": "index__faq",
+      "blocks": {
+        "heading_6BdniY": {
+          "type": "heading",
+          "settings": {
+            "title": "Your Questions, Answered"
+          }
+        },
+        "content_mQCHXb": {
+          "type": "content",
+          "settings": {
+            "title": "What are MIKA & MILO clothes made from?",
+            "answer": "<p>We use a luxuriously soft blend of<strong> GOTS-certified organic cotton and cashmere</strong>, chosen for sensitive skin, durability, and low environmental impact.</p><p>Each knit is crafted in <strong>Inner Mongolia</strong>, home of the world’s finest cashmere. The region’s icy winters produce an ultra-soft fiber, enough for just one baby-sized sweater per goat per year.</p><p>By choosing MIKA & MILO, you’re investing in a better choice for your little ones, the makers, and the planet.</p>"
+          }
+        },
+        "content_FVVhQU": {
+          "type": "content",
+          "settings": {
+            "title": "Can I machine-wash MIKA & MILO knitwear?",
+            "answer": "<p>Yes — all our knitwear is designed to handle <strong>regular washing </strong>on a  cool, delicate cycle while staying soft and keeping its shape.</p>"
+          }
+        },
+        "content_Y3Vpma": {
+          "type": "content",
+          "settings": {
+            "title": "Will they last long enough to pass on?",
+            "answer": "<p>Absolutely. Every piece is <strong>heirloom-quality</strong>, made to be worn, washed, and passed down, while keeping shape, softness, and color.</p>"
+          }
+        },
+        "content_JxjMnW": {
+          "type": "content",
+          "settings": {
+            "title": "Where do you ship?",
+            "answer": "<p>We ship <strong>worldwide  </strong>directly from our studio.<br/><br/>For our <strong>U.S. customers</strong>, all prices include import duty — so there are <em>no hidden fees </em>at checkout.</p>"
+          }
+        },
+        "content_tEKyTz": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "title": "What makes Mika & Milo different from other children's brands?",
+            "answer": "<p>We bridge the gap between <strong>conscious craftsmanship </strong>and <strong>award-winning design</strong>.</p><p>Unlike fast fashion, we use <strong>organic yarns and eco-certified dyes</strong>, crafting each piece to last through generations — because our kids (and their planet) deserve the very best.</p>"
+          }
+        },
+        "content_8ikKeD": {
+          "type": "content",
+          "settings": {
+            "title": "What is your returns policy if the size doesn't fit?",
+            "answer": "<p>We offer a <strong>hassle-free returns</strong> and exchange policy. Please visit our <a href=\"https://mika-milo.com/pages/delivery-returns\" target=\"_blank\" title=\"https://mika-milo.com/pages/delivery-returns\"><strong>Delivery & Returns</strong></a> and <a href=\"https://cdn.shopify.com/s/files/1/0332/2786/6248/files/2025_Size_GUIDE.pdf?v=1759449946\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0332/2786/6248/files/2025_Size_GUIDE.pdf?v=1759449946\"><strong>Size Guide </strong></a>pages to find your perfect fit.</p><p>For any other questions, reach out to <a href=\"https://mailto:aiko@mika-milo.com/\" target=\"_blank\"><strong>aiko@mika-milo.com</strong></a>— we’re always happy to help. 💌</p>"
+          }
+        },
+        "image_6wGqhK": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/1_7c21b487-5660-437e-b092-076bda0b620d.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6BdniY",
+        "content_mQCHXb",
+        "content_FVVhQU",
+        "content_Y3Vpma",
+        "content_JxjMnW",
+        "content_tEKyTz",
+        "content_8ikKeD",
+        "image_6wGqhK"
+      ],
+      "disabled": true,
+      "name": "FAQ",
+      "settings": {
+        "title": "",
+        "width": "standard",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "animation": "none",
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "blocks_aeY7kB": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8b90492_Epyfkh": {
+          "type": "ai_gen_block_8b90492",
+          "disabled": true,
+          "settings": {
+            "heading": "Awarded by. Featured In.",
+            "text_alignment": "center",
+            "image_1": "shopify://shop_images/gempages_567233400272847913-f925da6b-5eee-4b5c-8f07-01f3e1fba163_5e2e0d51-d718-4c36-9c37-0c89ee005439.webp",
+            "image_2": "shopify://shop_images/gempages_567233400272847913-9633b755-5d7e-426c-9db7-83b29575d1b7_5544d421-290a-4516-8248-cef477f3ff7f.webp",
+            "image_3": "shopify://shop_images/3_3_26e5112a-8713-4855-a955-d4dc44bac207.webp",
+            "image_4": "shopify://shop_images/4_4_90f308d2-42b7-4761-9bbd-5488f8679492.webp",
+            "image_5": "shopify://shop_images/5_4_582cb8fc-1bb5-4c6c-b69b-9a7c43342ae9.webp",
+            "image_6": "shopify://shop_images/gempages_567233400272847913-ae0394c9-c1f0-4e6a-bf6c-735411721372_cba5e570-7191-40b2-bba5-3768aa6c7a62.png",
+            "image_7": "shopify://shop_images/gempages_567233400272847913-7f46447c-385c-4842-8cf3-534a97b0d1be_f16589fc-820b-4095-aa8e-4b08f6c7d718.webp",
+            "image_8": "shopify://shop_images/gempages_567233400272847913-97397f46-6a28-4bda-a6b2-26111c273414_7d42e111-1854-409e-a2da-4b82d627d974.webp",
+            "image_9": "shopify://shop_images/gempages_567233400272847913-d12eea89-241e-46a2-8278-565f22c1bbf9_cc890a49-533f-4f84-82f8-e0b62bd50ee9.webp",
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "heading_size": 20,
+            "image_spacing": 25,
+            "border_radius": 10,
+            "control_color": "#000000",
+            "control_hover_color": "#333333",
+            "control_icon_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8b90492_Epyfkh"
+      ],
+      "name": "Image carousel",
+      "settings": {}
+    },
+    "blocks_hGzgU4": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8b90492_hHRCMz": {
+          "type": "ai_gen_block_8b90492",
+          "disabled": true,
+          "settings": {
+            "heading": "Real Kids | Real Adventures",
+            "text_alignment": "center",
+            "image_1": "shopify://shop_images/7.jpg",
+            "image_2": "shopify://shop_images/2_1829aceb-58b1-433b-9e68-e65eb5b09027.jpg",
+            "image_3": "shopify://shop_images/5_399019f7-ff98-4a60-8b28-fe2fabeb9a22.jpg",
+            "image_4": "shopify://shop_images/Untitled_design_9c1a1077-f928-4927-9b9a-08260a0bcfb2.jpg",
+            "image_5": "shopify://shop_images/4_7e023884-2c5e-4b40-91ce-5db36d91513d.jpg",
+            "image_6": "shopify://shop_images/UGC_Stills.jpg",
+            "image_7": "shopify://shop_images/1_9e7132fb-3f63-4b1a-8199-bdc4807dff25.jpg",
+            "image_8": "shopify://shop_images/3_51962fa1-3bb9-4bb4-8cf6-9836719cec0f.jpg",
+            "image_9": "shopify://shop_images/Untitled_design_1_8167208d-ac23-400e-9203-ad8843ee38b0.jpg",
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "heading_size": 20,
+            "image_spacing": 5,
+            "border_radius": 8,
+            "control_color": "#000000",
+            "control_hover_color": "#333333",
+            "control_icon_color": "#ffffff"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_8b90492_7DCKi4": {
+          "type": "ai_gen_block_8b90492",
+          "disabled": true,
+          "settings": {
+            "heading": "",
+            "text_alignment": "center",
+            "image_1": "shopify://shop_images/WhatsApp_Image_2025-09-26_at_16.25.03.jpg",
+            "image_2": "shopify://shop_images/1_5c54f6e3-152e-4a2b-b5c8-52c1b9b1b8d7.jpg",
+            "image_3": "shopify://shop_images/7_28239ee6-46b9-42a4-b2fb-e109c1fa2bc1.jpg",
+            "image_4": "shopify://shop_images/10.jpg",
+            "image_5": "shopify://shop_images/12.jpg",
+            "image_6": "shopify://shop_images/6_d610a890-63d6-4e3d-ac80-99b8cbc1d3e5.jpg",
+            "image_7": "shopify://shop_images/8.jpg",
+            "image_8": "shopify://shop_images/4_7a78f9c0-f32e-4a32-b350-9e161a8f3f6a.jpg",
+            "image_9": "shopify://shop_images/3_890a32e0-84a6-42dc-8a8c-1f200c67dd32.jpg",
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "heading_size": 20,
+            "image_spacing": 10,
+            "border_radius": 10,
+            "control_color": "#000000",
+            "control_hover_color": "#333333",
+            "control_icon_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8b90492_hHRCMz",
+        "ai_gen_block_8b90492_7DCKi4"
+      ],
+      "name": "Image carousel",
+      "settings": {}
+    },
+    "index_featured_collection_rVbUPM": {
+      "type": "index__featured-collection",
+      "disabled": true,
+      "name": "Featured collection",
+      "settings": {
+        "title": "Best Sellers",
+        "collection": "spring-collection",
+        "products_per": 6,
+        "products_limit": 21,
+        "align_height": false,
+        "collection_height": 400,
+        "button_label": "shop now",
+        "button_style": "button--secondary",
+        "collection_style": "slider",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "collection_layout_mobile": "slider",
+        "mobile_products_per_row": "2",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "index_featured_collection_CyNFJX": {
+      "type": "index__featured-collection",
+      "disabled": true,
+      "name": "Featured collection",
+      "settings": {
+        "title": "Multi Award Winning Knitwear",
+        "collection": "aw25",
+        "products_per": 4,
+        "products_limit": 8,
+        "align_height": false,
+        "collection_height": 200,
+        "button_label": "",
+        "button_style": "button--primary",
+        "collection_style": "slider",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 52,
+        "padding_bottom": 20,
+        "animation": "none",
+        "collection_layout_mobile": "slider",
+        "mobile_products_per_row": "1",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "recommendations": {
+      "type": "product__recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_style": "slider",
+        "product_recommendations_heading": "You may also like",
+        "products_per": 3,
+        "recommended_products_limit": 6,
+        "align_height": false,
+        "collection_height": 200,
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "176629072236b868de": {
+      "type": "apps",
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "17770196623c9bb2b6": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6d27f41_3ETzbP": {
+          "type": "ai_gen_block_6d27f41",
+          "settings": {
+            "heading": "Awarded by",
+            "text_alignment": "center",
+            "logo_1": "shopify://shop_images/gempages_567233400272847913-f925da6b-5eee-4b5c-8f07-01f3e1fba163_5e2e0d51-d718-4c36-9c37-0c89ee005439.webp",
+            "logo_2": "shopify://shop_images/gempages_567233400272847913-9633b755-5d7e-426c-9db7-83b29575d1b7_5544d421-290a-4516-8248-cef477f3ff7f.webp",
+            "logo_3": "shopify://shop_images/3_3_26e5112a-8713-4855-a955-d4dc44bac207.webp",
+            "logo_4": "shopify://shop_images/4_4_90f308d2-42b7-4761-9bbd-5488f8679492.webp",
+            "logo_5": "shopify://shop_images/5_4_582cb8fc-1bb5-4c6c-b69b-9a7c43342ae9.webp",
+            "desktop_width_percent": 100,
+            "section_padding": 10,
+            "heading_spacing": 10,
+            "logo_spacing": 45,
+            "logo_padding": 10,
+            "logo_max_height": 100,
+            "grayscale": 0,
+            "logo_opacity": 1,
+            "heading_color": "#000000",
+            "carousel_dots_color": "#000000",
+            "heading_font": "cabin_n6",
+            "heading_size": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6d27f41_3ETzbP"
+      ],
+      "settings": {}
+    },
+    "17769492795737aede": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "177694945723141fa0": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1776949704f457bf19": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "index_featured_collection_6YbwKQ": {
+      "type": "index__featured-collection",
+      "disabled": true,
+      "name": "Featured collection",
+      "settings": {
+        "title": "You May Also Like",
+        "collection": "spring-collection",
+        "products_per": 5,
+        "products_limit": 50,
+        "align_height": false,
+        "collection_height": 400,
+        "button_label": "Shop Bestsellers",
+        "button_style": "button--primary",
+        "collection_style": "slider",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "collection_layout_mobile": "grid",
+        "mobile_products_per_row": "1",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1776866650cb41fcab": {
+      "type": "apps",
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_8tjK3t",
+    "breadcrumbs",
+    "main",
+    "blocks_w9DyGh",
+    "blocks_jg7nYw",
+    "index_heading_cgcPkD",
+    "index_icon_with_text_column_GYiVrJ",
+    "blocks_4WkHB7",
+    "index_faq_zjmBth",
+    "blocks_aeY7kB",
+    "blocks_hGzgU4",
+    "index_featured_collection_rVbUPM",
+    "index_featured_collection_CyNFJX",
+    "recommendations",
+    "176629072236b868de",
+    "17770196623c9bb2b6",
+    "17769492795737aede",
+    "177694945723141fa0",
+    "1776949704f457bf19",
+    "index_featured_collection_6YbwKQ",
+    "1776866650cb41fcab"
+  ]
+}

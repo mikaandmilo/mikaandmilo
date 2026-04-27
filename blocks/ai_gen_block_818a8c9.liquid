@@ -1,0 +1,501 @@
+{% doc %}
+  @prompt
+    Create a reusable Shopify section named “Benefits Marquee” that renders a full-width, sticky-looking banner with an infinite marquee of short benefit labels. Match this spec exactly:
+    
+    Design
+    
+    Background: #B38B9D
+    
+    Text: white, bold/semibold, anti-aliased
+    
+    Font size: 18–20px desktop, 16px mobile
+    
+    Item spacing (gap): 64px desktop, 40px mobile
+    
+    Vertical padding: 14px desktop, 12px mobile
+    
+    The track must never overflow the viewport; clip with a container and add 16px side padding on mobile.
+    
+    Optional soft fade on left/right edges (CSS mask-image) only on mobile.
+    
+    Content (default items)
+    
+    “Organic Fabrics”, “Machine Washable”, “Award-Winning”, “Heirloom Quality”, “Worldwide Shipping”
+    
+    Make items editable via a blocks repeater (text input). Duplicate internally so looping is seamless.
+    
+    Behavior
+    
+    Smooth, infinite leftward scroll using CSS keyframes (no JS if possible).
+    
+    Desktop speed ~ 25s per cycle; mobile speed ~ 35s per cycle (slower).
+    
+    Pause on hover (desktop) and pause when in prefers-reduced-motion.
+    
+    Accessible: aria-hidden on duplicate track; no horizontal scrollbar at any breakpoint.
+    
+    Controls in theme editor
+    
+    Background color (default #B38B9D)
+    
+    Text size (desktop/mobile)
+    
+    Gap (desktop/mobile)
+    
+    Speed (desktop/mobile, in seconds)
+    
+    Toggle: edge fade (on/off)
+    
+    Code requirements
+    
+    Section schema with blocks: { type: "text", id: "label" }
+    
+    Container class: .marquee-wrap { width:100%; max-width:100vw; overflow:hidden; }
+    
+    Track class: .marquee__track with display:inline-flex; white-space:nowrap; animation: marquee var(--speed,25s) linear infinite; gap: var(--gap,64px);
+    
+    Duplicate the list to ensure seamless loop.
+    
+    Mobile tweaks with media queries.
+    
+    Global safeguards:
+    
+    img, svg { max-width:100%; height:auto; }
+    
+    *, *::before, *::after { box-sizing:border-box; }
+    
+    body { overflow-x:hidden; } as a fallback (avoid relying on it).
+    
+    @media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
+    
+    Pause on hover: .marquee:hover .marquee__track { animation-play-state, Don't duplicate text on marquee. For each item/benefit I add, I want to see only one of that benefit, not two. Also while benefits are scrolling, and when I see the last one, after that one I should see the first one, since it's an infinite loop. It should not "reset" at the end, Update the “Benefits Marquee” section so that:
+    
+    True Infinite Loop
+    
+    The marquee must never “reset” or show empty space at the end of the scroll.
+    
+    After the last benefit is shown, the first, second, and so on should immediately follow in the same flow.
+    
+    No Duplicate Blocks
+    
+    Do not create duplicates of the same benefit text.
+    
+    Each benefit should only appear once per cycle, in the same order as defined in the blocks.
+    
+    Seamless Transition
+    
+    The track should continuously wrap around itself so that when the last item leaves the viewport, the first item comes right after it.
+    
+    Animation should remain perfectly smooth with no visible jump or reset.
+    
+    Implementation Notes
+    
+    Use a single track that is programmatically cloned for looping, but keep aria-hidden on the cloned copy for accessibility.
+    
+    Ensure spacing (gap) is preserved between the last and first item so the flow looks natural.
+    
+    Confirm that no blank gap is visible between the last and first item.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  .marquee-wrap-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.desktop_padding }}px 0;
+    position: relative;
+  }
+
+  .marquee-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+  }
+
+  .marquee__track-{{ ai_gen_id }} {
+    display: inline-flex;
+    white-space: nowrap;
+    gap: {{ block.settings.desktop_gap }}px;
+    will-change: transform;
+  }
+
+  .marquee__content-{{ ai_gen_id }} {
+    display: inline-flex;
+    gap: {{ block.settings.desktop_gap }}px;
+    flex-shrink: 0;
+  }
+
+  .marquee__item-{{ ai_gen_id }} {
+    color: white;
+    font-weight: 600;
+    font-size: {{ block.settings.desktop_font_size }}px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    flex-shrink: 0;
+  }
+
+  .marquee-{{ ai_gen_id }}:hover .marquee__track-{{ ai_gen_id }} {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee__track-{{ ai_gen_id }} {
+      animation: none !important;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .marquee-wrap-{{ ai_gen_id }} {
+      padding: {{ block.settings.mobile_padding }}px 16px;
+    }
+
+    .marquee__track-{{ ai_gen_id }} {
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .marquee__content-{{ ai_gen_id }} {
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .marquee__item-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_font_size }}px;
+    }
+
+    {% if block.settings.enable_edge_fade %}
+      .marquee-{{ ai_gen_id }}::before,
+      .marquee-{{ ai_gen_id }}::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .marquee-{{ ai_gen_id }}::before {
+        left: 0;
+        background: linear-gradient(to right, {{ block.settings.background_color }}, transparent);
+      }
+
+      .marquee-{{ ai_gen_id }}::after {
+        right: 0;
+        background: linear-gradient(to left, {{ block.settings.background_color }}, transparent);
+      }
+    {% endif %}
+  }
+{% endstyle %}
+
+<div class="marquee-wrap-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="marquee-{{ ai_gen_id }}">
+    <div class="marquee__track-{{ ai_gen_id }}" id="marquee-track-{{ ai_gen_id }}">
+      <div class="marquee__content-{{ ai_gen_id }}" id="marquee-content-{{ ai_gen_id }}">
+        {% if block.settings.benefit_1 != blank %}
+          <span class="marquee__item-{{ ai_gen_id }}">{{ block.settings.benefit_1 }}</span>
+        {% endif %}
+        {% if block.settings.benefit_2 != blank %}
+          <span class="marquee__item-{{ ai_gen_id }}">{{ block.settings.benefit_2 }}</span>
+        {% endif %}
+        {% if block.settings.benefit_3 != blank %}
+          <span class="marquee__item-{{ ai_gen_id }}">{{ block.settings.benefit_3 }}</span>
+        {% endif %}
+        {% if block.settings.benefit_4 != blank %}
+          <span class="marquee__item-{{ ai_gen_id }}">{{ block.settings.benefit_4 }}</span>
+        {% endif %}
+        {% if block.settings.benefit_5 != blank %}
+          <span class="marquee__item-{{ ai_gen_id }}">{{ block.settings.benefit_5 }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    class BenefitsMarquee{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.track = null;
+        this.content = null;
+        this.clone = null;
+        this.isDesktop = window.innerWidth > 749;
+        this.animationId = null;
+        this.startTime = null;
+        this.pausedTime = 0;
+        this.isPaused = false;
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('#marquee-track-{{ ai_gen_id }}');
+        this.content = this.querySelector('#marquee-content-{{ ai_gen_id }}');
+        
+        if (!this.track || !this.content) return;
+
+        this.setupMarquee();
+        this.startAnimation();
+        this.setupEventListeners();
+      }
+
+      setupMarquee() {
+        this.clone = this.content.cloneNode(true);
+        this.clone.setAttribute('aria-hidden', 'true');
+        this.track.appendChild(this.clone);
+      }
+
+      getSpeed() {
+        return this.isDesktop ? {{ block.settings.desktop_speed }} : {{ block.settings.mobile_speed }};
+      }
+
+      getGap() {
+        return this.isDesktop ? {{ block.settings.desktop_gap }} : {{ block.settings.mobile_gap }};
+      }
+
+      startAnimation() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          return;
+        }
+
+        const contentWidth = this.content.offsetWidth + this.getGap();
+        const speed = this.getSpeed() * 1000;
+        
+        const animate = (currentTime) => {
+          if (!this.startTime) {
+            this.startTime = currentTime - this.pausedTime;
+          }
+
+          if (!this.isPaused) {
+            const elapsed = currentTime - this.startTime;
+            const progress = (elapsed % speed) / speed;
+            const translateX = -(progress * contentWidth);
+            
+            this.track.style.transform = `translateX(${translateX}px)`;
+          }
+
+          this.animationId = requestAnimationFrame(animate);
+        };
+
+        this.animationId = requestAnimationFrame(animate);
+      }
+
+      pauseAnimation() {
+        if (this.animationId && this.startTime) {
+          this.isPaused = true;
+          this.pausedTime = performance.now() - this.startTime;
+        }
+      }
+
+      resumeAnimation() {
+        if (this.isPaused) {
+          this.isPaused = false;
+          this.startTime = null;
+        }
+      }
+
+      setupEventListeners() {
+        this.addEventListener('mouseenter', () => {
+          if (this.isDesktop) {
+            this.pauseAnimation();
+          }
+        });
+
+        this.addEventListener('mouseleave', () => {
+          if (this.isDesktop) {
+            this.resumeAnimation();
+          }
+        });
+
+        window.addEventListener('resize', () => {
+          const wasDesktop = this.isDesktop;
+          this.isDesktop = window.innerWidth > 749;
+          
+          if (wasDesktop !== this.isDesktop) {
+            this.restartAnimation();
+          }
+        });
+      }
+
+      restartAnimation() {
+        if (this.animationId) {
+          cancelAnimationFrame(this.animationId);
+        }
+        this.startTime = null;
+        this.pausedTime = 0;
+        this.isPaused = false;
+        this.startAnimation();
+      }
+
+      disconnectedCallback() {
+        if (this.animationId) {
+          cancelAnimationFrame(this.animationId);
+        }
+      }
+    }
+
+    customElements.define('benefits-marquee-{{ ai_gen_id }}', BenefitsMarquee{{ ai_gen_id }});
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const marqueeElement = document.querySelector('.marquee-wrap-{{ ai_gen_id }}');
+      if (marqueeElement && !customElements.get('benefits-marquee-{{ ai_gen_id }}')) {
+        marqueeElement.outerHTML = `<benefits-marquee-{{ ai_gen_id }}>${marqueeElement.innerHTML}</benefits-marquee-{{ ai_gen_id }}>`;
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Benefits marquee",
+  "tag": null,
+  "class": "benefits-marquee-block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Benefits"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1",
+      "label": "Benefit 1",
+      "default": "Organic Fabrics"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2",
+      "label": "Benefit 2",
+      "default": "Machine Washable"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3",
+      "label": "Benefit 3",
+      "default": "Award-Winning"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4",
+      "label": "Benefit 4",
+      "default": "Heirloom Quality"
+    },
+    {
+      "type": "text",
+      "id": "benefit_5",
+      "label": "Benefit 5",
+      "default": "Worldwide Shipping"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#B38B9D"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_edge_fade",
+      "label": "Enable edge fade (mobile only)",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Desktop settings"
+    },
+    {
+      "type": "range",
+      "id": "desktop_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "desktop_gap",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Item spacing",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "desktop_padding",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_speed",
+      "min": 15,
+      "max": 40,
+      "step": 1,
+      "unit": "s",
+      "label": "Animation speed",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "Mobile settings"
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "min": 20,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Item spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding",
+      "min": 8,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_speed",
+      "min": 20,
+      "max": 50,
+      "step": 1,
+      "unit": "s",
+      "label": "Animation speed",
+      "default": 35
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits marquee"
+    }
+  ]
+}
+{% endschema %}

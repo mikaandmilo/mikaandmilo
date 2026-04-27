@@ -1,0 +1,348 @@
+{% doc %}
+  @prompt
+    static benefits bar exactly like the moving marquee below it
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-benefits-bar-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_vertical }}px 0;
+    overflow: hidden;
+  }
+
+  .ai-benefits-bar__container-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: {{ block.settings.item_spacing }}px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-benefits-bar__item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: {{ block.settings.icon_text_spacing }}px;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    white-space: nowrap;
+  }
+
+  .ai-benefits-bar__icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-benefits-bar__icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    fill: {{ block.settings.icon_color }};
+  }
+
+  .ai-benefits-bar__text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.text_font.family }}, {{ block.settings.text_font.fallback_families }};
+    font-weight: {{ block.settings.text_font.weight }};
+    font-style: {{ block.settings.text_font.style }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-benefits-bar__container-{{ ai_gen_id }} {
+      gap: {{ block.settings.item_spacing | times: 0.7 }}px;
+    }
+
+    .ai-benefits-bar__item-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+      gap: {{ block.settings.icon_text_spacing | times: 0.8 }}px;
+    }
+
+    .ai-benefits-bar__icon-{{ ai_gen_id }} {
+      width: {{ block.settings.icon_size | times: 0.8 }}px;
+      height: {{ block.settings.icon_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-benefits-bar-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-benefits-bar__container-{{ ai_gen_id }}">
+    {% if block.settings.show_benefit_1 and block.settings.benefit_1_text != blank %}
+      <div class="ai-benefits-bar__item-{{ ai_gen_id }}">
+        {% if block.settings.benefit_1_icon != blank %}
+          <div class="ai-benefits-bar__icon-{{ ai_gen_id }}">
+            {{ block.settings.benefit_1_icon }}
+          </div>
+        {% endif %}
+        <span class="ai-benefits-bar__text-{{ ai_gen_id }}">{{ block.settings.benefit_1_text }}</span>
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_benefit_2 and block.settings.benefit_2_text != blank %}
+      <div class="ai-benefits-bar__item-{{ ai_gen_id }}">
+        {% if block.settings.benefit_2_icon != blank %}
+          <div class="ai-benefits-bar__icon-{{ ai_gen_id }}">
+            {{ block.settings.benefit_2_icon }}
+          </div>
+        {% endif %}
+        <span class="ai-benefits-bar__text-{{ ai_gen_id }}">{{ block.settings.benefit_2_text }}</span>
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_benefit_3 and block.settings.benefit_3_text != blank %}
+      <div class="ai-benefits-bar__item-{{ ai_gen_id }}">
+        {% if block.settings.benefit_3_icon != blank %}
+          <div class="ai-benefits-bar__icon-{{ ai_gen_id }}">
+            {{ block.settings.benefit_3_icon }}
+          </div>
+        {% endif %}
+        <span class="ai-benefits-bar__text-{{ ai_gen_id }}">{{ block.settings.benefit_3_text }}</span>
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_benefit_4 and block.settings.benefit_4_text != blank %}
+      <div class="ai-benefits-bar__item-{{ ai_gen_id }}">
+        {% if block.settings.benefit_4_icon != blank %}
+          <div class="ai-benefits-bar__icon-{{ ai_gen_id }}">
+            {{ block.settings.benefit_4_icon }}
+          </div>
+        {% endif %}
+        <span class="ai-benefits-bar__text-{{ ai_gen_id }}">{{ block.settings.benefit_4_text }}</span>
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_benefit_5 and block.settings.benefit_5_text != blank %}
+      <div class="ai-benefits-bar__item-{{ ai_gen_id }}">
+        {% if block.settings.benefit_5_icon != blank %}
+          <div class="ai-benefits-bar__icon-{{ ai_gen_id }}">
+            {{ block.settings.benefit_5_icon }}
+          </div>
+        {% endif %}
+        <span class="ai-benefits-bar__text-{{ ai_gen_id }}">{{ block.settings.benefit_5_text }}</span>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Static benefits bar",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "label": "Space between items",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "icon_text_spacing",
+      "label": "Icon to text spacing",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#f8f3ed"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "text_font",
+      "label": "Font",
+      "default": "gill_sans_nova_n4"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 3,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Benefit 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_benefit_1",
+      "label": "Show benefit 1",
+      "default": true
+    },
+    {
+      "type": "html",
+      "id": "benefit_1_icon",
+      "label": "Icon SVG",
+      "default": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"/></svg>"
+    },
+    {
+      "type": "text",
+      "id": "benefit_1_text",
+      "label": "Text",
+      "default": "Free shipping over $100"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_benefit_2",
+      "label": "Show benefit 2",
+      "default": true
+    },
+    {
+      "type": "html",
+      "id": "benefit_2_icon",
+      "label": "Icon SVG",
+      "default": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z\"/></svg>"
+    },
+    {
+      "type": "text",
+      "id": "benefit_2_text",
+      "label": "Text",
+      "default": "Secure checkout"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_benefit_3",
+      "label": "Show benefit 3",
+      "default": true
+    },
+    {
+      "type": "html",
+      "id": "benefit_3_icon",
+      "label": "Icon SVG",
+      "default": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z\"/></svg>"
+    },
+    {
+      "type": "text",
+      "id": "benefit_3_text",
+      "label": "Text",
+      "default": "Easy returns"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_benefit_4",
+      "label": "Show benefit 4",
+      "default": false
+    },
+    {
+      "type": "html",
+      "id": "benefit_4_icon",
+      "label": "Icon SVG"
+    },
+    {
+      "type": "text",
+      "id": "benefit_4_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Benefit 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_benefit_5",
+      "label": "Show benefit 5",
+      "default": false
+    },
+    {
+      "type": "html",
+      "id": "benefit_5_icon",
+      "label": "Icon SVG"
+    },
+    {
+      "type": "text",
+      "id": "benefit_5_text",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Static benefits bar"
+    }
+  ]
+}
+{% endschema %}

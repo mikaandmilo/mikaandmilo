@@ -1,0 +1,162 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "17268275892900f06e": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "width": "wide",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "footer_icon_bar": {
+      "type": "footer__icon-bar",
+      "blocks": {
+        "text_1": {
+          "type": "text",
+          "settings": {
+            "icon": "",
+            "text": "Girls",
+            "link": "shopify://collections/girls-aw25"
+          }
+        },
+        "text_2": {
+          "type": "text",
+          "settings": {
+            "icon": "",
+            "text": "Boys",
+            "link": "shopify://collections/boys-aw25"
+          }
+        },
+        "text_6xh3Hz": {
+          "type": "text",
+          "settings": {
+            "icon": "",
+            "text": "Baby",
+            "link": "shopify://collections/award-winning-organic-cotton-cashmere-for-babies"
+          }
+        },
+        "text_3": {
+          "type": "text",
+          "settings": {
+            "icon": "",
+            "text": "Gifts",
+            "link": "shopify://collections/gifts"
+          }
+        },
+        "text_4": {
+          "type": "text",
+          "settings": {
+            "icon": "",
+            "text": "Socks",
+            "link": "shopify://collections/socks"
+          }
+        },
+        "text_KhfLLT": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "icon": "",
+            "text": "Knitting 101",
+            "link": "shopify://pages/knitting-101"
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2",
+        "text_6xh3Hz",
+        "text_3",
+        "text_4",
+        "text_KhfLLT"
+      ],
+      "settings": {
+        "show_icon_bar": true,
+        "icon_position": "row",
+        "alignment": "center",
+        "mobile_alignment": "none",
+        "size": "medium",
+        "background": "#fbf7f6",
+        "link_color": "#2c2c2c",
+        "link_hover_color": "#2c2c2c",
+        "text_color": "#f8f3ed",
+        "width": "standard",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "footer": {
+      "type": "footer-centered",
+      "blocks": {
+        "logo": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/mika-and-milo-cashmere-for-kids-babies-logo_200x_2x_1e4f1ad1-6903-4128-a2ec-dd27bc91d5a3.png",
+            "size": "medium"
+          }
+        },
+        "link_list": {
+          "type": "link_list",
+          "disabled": true,
+          "settings": {
+            "menu": "footer-menu"
+          }
+        },
+        "link_list_TERgQ6": {
+          "type": "link_list",
+          "settings": {
+            "menu": "footer-about-menu-1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "title": "About MIKA & MILO",
+            "content": "<p>Six-time Junior Design Award winner. Drawing on four generations of Scottish textile heritage, we make children’s knitwear in 95% organic cotton and 5% cashmere — soft, non-itch, machine-washable, and made to last.</p><p>Made for today. Kept for tomorrow.</p>"
+          }
+        },
+        "social_k3W6rb": {
+          "type": "social",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "logo",
+        "link_list",
+        "link_list_TERgQ6",
+        "text",
+        "social_k3W6rb"
+      ],
+      "custom_css": [],
+      "settings": {
+        "copyright_text": "",
+        "display_designed_by": true,
+        "display_shopify": false,
+        "show_follow_on_shop": true,
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "display_payment_methods": true,
+        "css_class": "",
+        "custom_css": "@media (max-width: 768px) {\n  #shopify-section-sections--19158741811392__footer > footer > section.footer__content.section.is-width-wide.has-background.has-padding-top.has-padding-bottom > div {\n    flex-direction: column;\n    gap: 15px;\n  }\n}"
+      }
+    }
+  },
+  "order": [
+    "17268275892900f06e",
+    "footer_icon_bar",
+    "footer"
+  ]
+}

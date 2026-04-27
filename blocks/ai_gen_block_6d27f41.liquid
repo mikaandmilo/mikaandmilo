@@ -1,0 +1,667 @@
+{% doc %}
+  @prompt
+    Awarded by row with 5 images on desk top and with 2 images on the mobile view which slides so only 2 images. seen at a time. images must be visible on desk top and mobile: please match the awarded by section on homepage: AI generated
+    
+    
+    Awarded by row with 4 images with 2 images on the mobile view which slides so only 2 images. seen at a time, can we make it 5 images on desk top
+    
+    Content
+    Heading
+    
+    
+    
+    
+    
+    Awarded by
+    Text alignment
+    
+    Left
+    
+    Center
+    
+    Right
+    Logos
+    Logo 1
+    Upload images
+    No file chosen
+    
+    gempages_567233400272847913-f925da6b-5eee-4b5c-8f07-01f3e1fba163_5e2e0d51-d718-4c36-9c37-0c89ee00
+    5439.webp
+    Logo 2
+    Upload images
+    No file chosen
+    
+    gempages_567233400272847913-9633b755-5d7e-426c-9db7-83b29575d1b7_5544d421-290a-4516-8248-cef477f3
+    ff7f.webp
+    Logo 3
+    Upload images
+    No file chosen
+    
+    3_3_26e5112a-8713-4855-a955-d4dc44ba
+    c207.webp
+    Logo 4
+    Upload images
+    No file chosen
+    
+    4_4_90f308d2-42b7-4761-9bbd-5488f867
+    9492.webp
+    Logo 5
+    Upload images
+    No file chosen
+    
+    5_4_582cb8fc-1bb5-4c6c-b69b-9a7c4334
+    2ae9.webp
+    Style
+    Desktop width
+    
+    100
+    Section padding
+    
+    20
+    Heading spacing
+    
+    25
+    Logo spacing
+    
+    40
+    Logo padding
+    
+    10
+    Logo max height
+    
+    100
+    Grayscale
+    
+    0
+    Logo opacity
+    
+    1
+    Colors
+    Heading
+    
+    #000000
+    Carousel dots
+    
+    #000000
+    Typography
+    Heading size
+    
+    
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-awarded-by-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding }}px 0;
+  }
+
+  .ai-awarded-by-container-{{ ai_gen_id }} {
+    width: 100%;
+  }
+
+  .ai-awarded-by-heading-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    margin: 0 0 {{ block.settings.heading_spacing }}px;
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+  }
+
+  .ai-awarded-by-logos-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: {{ block.settings.logo_spacing }}px;
+    flex-wrap: wrap;
+  }
+
+  .ai-awarded-by-logo-{{ ai_gen_id }} {
+    padding: {{ block.settings.logo_padding }}px;
+    flex: 0 0 auto;
+  }
+
+  .ai-awarded-by-logo-{{ ai_gen_id }} img {
+    max-height: {{ block.settings.logo_max_height }}px;
+    width: auto;
+    height: auto;
+    display: block;
+    filter: grayscale({{ block.settings.grayscale }}%);
+    opacity: {{ block.settings.logo_opacity }};
+    transition: filter 0.3s ease, opacity 0.3s ease;
+  }
+
+  .ai-awarded-by-logo-{{ ai_gen_id }} img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+
+  .ai-awarded-by-carousel-{{ ai_gen_id }} {
+    display: none;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .ai-awarded-by-carousel-track-{{ ai_gen_id }} {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: {{ block.settings.logo_spacing }}px;
+  }
+
+  .ai-awarded-by-carousel-slide-{{ ai_gen_id }} {
+    flex: 0 0 calc(50% - {{ block.settings.logo_spacing | divided_by: 2.0 }}px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: {{ block.settings.logo_padding }}px;
+  }
+
+  .ai-awarded-by-carousel-slide-{{ ai_gen_id }} img {
+    max-height: {{ block.settings.logo_max_height }}px;
+    width: auto;
+    height: auto;
+    display: block;
+    filter: grayscale({{ block.settings.grayscale }}%);
+    opacity: {{ block.settings.logo_opacity }};
+  }
+
+  .ai-awarded-by-dots-{{ ai_gen_id }} {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .ai-awarded-by-dot-{{ ai_gen_id }} {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: {{ block.settings.carousel_dots_color }};
+    opacity: 0.3;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-awarded-by-dot-{{ ai_gen_id }}.active {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-awarded-by-logos-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-awarded-by-carousel-{{ ai_gen_id }} {
+      display: block;
+    }
+
+    .ai-awarded-by-dots-{{ ai_gen_id }} {
+      display: flex;
+    }
+  }
+{% endstyle %}
+
+<awarded-by-{{ ai_gen_id }} class="ai-awarded-by-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-awarded-by-container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-awarded-by-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="ai-awarded-by-logos-{{ ai_gen_id }}">
+      {% if block.settings.logo_1 %}
+        <div class="ai-awarded-by-logo-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.logo_1 | image_url: width: 400 }}"
+            alt="Award logo 1"
+            loading="lazy"
+            width="{{ block.settings.logo_1.width }}"
+            height="{{ block.settings.logo_1.height }}"
+          >
+        </div>
+      {% endif %}
+
+      {% if block.settings.logo_2 %}
+        <div class="ai-awarded-by-logo-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.logo_2 | image_url: width: 400 }}"
+            alt="Award logo 2"
+            loading="lazy"
+            width="{{ block.settings.logo_2.width }}"
+            height="{{ block.settings.logo_2.height }}"
+          >
+        </div>
+      {% endif %}
+
+      {% if block.settings.logo_3 %}
+        <div class="ai-awarded-by-logo-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.logo_3 | image_url: width: 400 }}"
+            alt="Award logo 3"
+            loading="lazy"
+            width="{{ block.settings.logo_3.width }}"
+            height="{{ block.settings.logo_3.height }}"
+          >
+        </div>
+      {% endif %}
+
+      {% if block.settings.logo_4 %}
+        <div class="ai-awarded-by-logo-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.logo_4 | image_url: width: 400 }}"
+            alt="Award logo 4"
+            loading="lazy"
+            width="{{ block.settings.logo_4.width }}"
+            height="{{ block.settings.logo_4.height }}"
+          >
+        </div>
+      {% endif %}
+
+      {% if block.settings.logo_5 %}
+        <div class="ai-awarded-by-logo-{{ ai_gen_id }}">
+          <img
+            src="{{ block.settings.logo_5 | image_url: width: 400 }}"
+            alt="Award logo 5"
+            loading="lazy"
+            width="{{ block.settings.logo_5.width }}"
+            height="{{ block.settings.logo_5.height }}"
+          >
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-awarded-by-carousel-{{ ai_gen_id }}">
+      <div class="ai-awarded-by-carousel-track-{{ ai_gen_id }}">
+        {% if block.settings.logo_1 %}
+          <div class="ai-awarded-by-carousel-slide-{{ ai_gen_id }}">
+            <img
+              src="{{ block.settings.logo_1 | image_url: width: 400 }}"
+              alt="Award logo 1"
+              loading="lazy"
+              width="{{ block.settings.logo_1.width }}"
+              height="{{ block.settings.logo_1.height }}"
+            >
+          </div>
+        {% endif %}
+
+        {% if block.settings.logo_2 %}
+          <div class="ai-awarded-by-carousel-slide-{{ ai_gen_id }}">
+            <img
+              src="{{ block.settings.logo_2 | image_url: width: 400 }}"
+              alt="Award logo 2"
+              loading="lazy"
+              width="{{ block.settings.logo_2.width }}"
+              height="{{ block.settings.logo_2.height }}"
+            >
+          </div>
+        {% endif %}
+
+        {% if block.settings.logo_3 %}
+          <div class="ai-awarded-by-carousel-slide-{{ ai_gen_id }}">
+            <img
+              src="{{ block.settings.logo_3 | image_url: width: 400 }}"
+              alt="Award logo 3"
+              loading="lazy"
+              width="{{ block.settings.logo_3.width }}"
+              height="{{ block.settings.logo_3.height }}"
+            >
+          </div>
+        {% endif %}
+
+        {% if block.settings.logo_4 %}
+          <div class="ai-awarded-by-carousel-slide-{{ ai_gen_id }}">
+            <img
+              src="{{ block.settings.logo_4 | image_url: width: 400 }}"
+              alt="Award logo 4"
+              loading="lazy"
+              width="{{ block.settings.logo_4.width }}"
+              height="{{ block.settings.logo_4.height }}"
+            >
+          </div>
+        {% endif %}
+
+        {% if block.settings.logo_5 %}
+          <div class="ai-awarded-by-carousel-slide-{{ ai_gen_id }}">
+            <img
+              src="{{ block.settings.logo_5 | image_url: width: 400 }}"
+              alt="Award logo 5"
+              loading="lazy"
+              width="{{ block.settings.logo_5.width }}"
+              height="{{ block.settings.logo_5.height }}"
+            >
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-awarded-by-dots-{{ ai_gen_id }}"></div>
+  </div>
+</awarded-by-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AwardedBy{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.currentIndex = 0;
+        this.slidesPerView = 2;
+        this.autoplayInterval = null;
+        this.autoplayDelay = 3000;
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('.ai-awarded-by-carousel-track-{{ ai_gen_id }}');
+        this.slides = this.querySelectorAll('.ai-awarded-by-carousel-slide-{{ ai_gen_id }}');
+        this.dotsContainer = this.querySelector('.ai-awarded-by-dots-{{ ai_gen_id }}');
+
+        if (!this.track || this.slides.length === 0) return;
+
+        this.totalSlides = this.slides.length;
+        this.maxIndex = Math.max(0, this.totalSlides - this.slidesPerView);
+
+        this.createDots();
+        this.updateCarousel();
+        this.startAutoplay();
+
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+
+        this.track.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+          isDragging = true;
+          this.stopAutoplay();
+        });
+
+        this.track.addEventListener('touchmove', (e) => {
+          if (!isDragging) return;
+          currentX = e.touches[0].clientX;
+        });
+
+        this.track.addEventListener('touchend', () => {
+          if (!isDragging) return;
+          isDragging = false;
+
+          const diff = startX - currentX;
+
+          if (Math.abs(diff) > 50) {
+            if (diff > 0 && this.currentIndex < this.maxIndex) {
+              this.currentIndex++;
+            } else if (diff < 0 && this.currentIndex > 0) {
+              this.currentIndex--;
+            }
+          }
+
+          this.updateCarousel();
+          this.startAutoplay();
+        });
+      }
+
+      createDots() {
+        if (!this.dotsContainer) return;
+
+        this.dotsContainer.innerHTML = '';
+
+        const numDots = this.maxIndex + 1;
+
+        for (let i = 0; i < numDots; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'ai-awarded-by-dot-{{ ai_gen_id }}';
+          dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+
+          if (i === 0) {
+            dot.classList.add('active');
+          }
+
+          dot.addEventListener('click', () => {
+            this.currentIndex = i;
+            this.updateCarousel();
+            this.stopAutoplay();
+            this.startAutoplay();
+          });
+
+          this.dotsContainer.appendChild(dot);
+        }
+      }
+
+      updateCarousel() {
+        if (!this.track) return;
+
+        const slideWidth = this.slides[0].offsetWidth;
+        const gap = {{ block.settings.logo_spacing }};
+        const offset = -(this.currentIndex * (slideWidth + gap));
+
+        this.track.style.transform = `translateX(${offset}px)`;
+
+        const dots = this.dotsContainer.querySelectorAll('.ai-awarded-by-dot-{{ ai_gen_id }}');
+        dots.forEach((dot, index) => {
+          if (index === this.currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      startAutoplay() {
+        this.stopAutoplay();
+        this.autoplayInterval = setInterval(() => {
+          this.currentIndex++;
+          if (this.currentIndex > this.maxIndex) {
+            this.currentIndex = 0;
+          }
+          this.updateCarousel();
+        }, this.autoplayDelay);
+      }
+
+      stopAutoplay() {
+        if (this.autoplayInterval) {
+          clearInterval(this.autoplayInterval);
+          this.autoplayInterval = null;
+        }
+      }
+
+      disconnectedCallback() {
+        this.stopAutoplay();
+      }
+    }
+
+    customElements.define('awarded-by-{{ ai_gen_id }}', AwardedBy{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Awarded by",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Awarded by"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Logos"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_1",
+      "label": "Logo 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_2",
+      "label": "Logo 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_3",
+      "label": "Logo 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_4",
+      "label": "Logo 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_5",
+      "label": "Logo 5"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Heading spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "logo_spacing",
+      "label": "Logo spacing",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "logo_padding",
+      "label": "Logo padding",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "logo_max_height",
+      "label": "Logo max height",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "grayscale",
+      "label": "Grayscale",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "logo_opacity",
+      "label": "Logo opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "carousel_dots_color",
+      "label": "Carousel dots",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Awarded by"
+    }
+  ]
+}
+{% endschema %}

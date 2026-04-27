@@ -1,0 +1,263 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay": {
+      "type": "index__image-with-text-overlay",
+      "settings": {
+        "image": "shopify://shop_images/trending__page--ourstory-iwto-01--May2021.jpg",
+        "link": "",
+        "pretext": "",
+        "title": "Our Story",
+        "subtitle": "<p>founded in 2015</p>",
+        "pretext_color": "#000000",
+        "heading_color": "#000000",
+        "subheading_color": "#000000",
+        "text_alignment": "center",
+        "text_horizontal_position": "center",
+        "text_vertical_position": "middle",
+        "text_width": 60,
+        "background_color": "#ffffff",
+        "background_opacity": 77,
+        "border_color": "#ffffff",
+        "border_width": 0,
+        "button_1": "",
+        "button_1_link": "",
+        "button_1_style": "button--secondary",
+        "button_2": "",
+        "button_2_link": "",
+        "button_2_style": "button--secondary",
+        "width": "wide",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "fadeIn",
+        "mobile_text_below_image": true,
+        "pretext_color_mobile": "rgba(0,0,0,0)",
+        "heading_color_mobile": "rgba(0,0,0,0)",
+        "subheading_color_mobile": "rgba(0,0,0,0)",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1636472344aa77aa45": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "1636472344aa77aa45-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/trending__page--ourstory-iwt-01--May2021.jpg",
+            "image_link": ""
+          }
+        },
+        "1636472344aa77aa45-2": {
+          "type": "text",
+          "settings": {
+            "title": "Inspiration",
+            "heading_size": "large",
+            "text": "<p>We're inspired by the trends of the season, but also by timeless silhouettes and styles. Our products are then sketched out by our designers with both of these in mind – this is where the magic happens! </p>",
+            "alignment": "left",
+            "vertical_position": "center",
+            "button_label": "",
+            "link": "",
+            "button_style": "button--primary",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "1636472344aa77aa45-0",
+        "1636472344aa77aa45-2"
+      ],
+      "settings": {
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 40,
+        "padding_bottom": 20,
+        "animation": "fadeIn",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1636473008feb1d679": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "",
+        "collection": "staff-pick",
+        "products_per": 4,
+        "products_limit": 4,
+        "align_height": false,
+        "collection_height": 200,
+        "collection_style": "grid",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 40,
+        "padding_bottom": 20,
+        "animation": "fadeIn",
+        "mobile_products_per_row": "2",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "16364734808578d336": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "16364734808578d336-2": {
+          "type": "text",
+          "settings": {
+            "title": "Production",
+            "heading_size": "large",
+            "text": "<p>We then meet with our production team to have the styles made in factories that are safe environments, with fair wages and hours for all employees. Ethical manufacturing is a top priority for us.</p>",
+            "alignment": "left",
+            "vertical_position": "center",
+            "button_label": "",
+            "link": "",
+            "button_style": "button--primary",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        },
+        "16364734808578d336-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/trending__page--ourstory-iwt-02--May2021.jpg",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16364734808578d336-2",
+        "16364734808578d336-0"
+      ],
+      "settings": {
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "fadeIn",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1636473577dc23d96e": {
+      "type": "index__featured-collection",
+      "settings": {
+        "title": "",
+        "collection": "best-seller",
+        "products_per": 4,
+        "products_limit": 4,
+        "align_height": false,
+        "collection_height": 200,
+        "collection_style": "grid",
+        "width": "wide",
+        "show_gutter": true,
+        "padding_top": 40,
+        "padding_bottom": 20,
+        "animation": "fadeIn",
+        "mobile_products_per_row": "2",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1636474370c25681e4": {
+      "type": "index__image-with-text",
+      "blocks": {
+        "1636474370c25681e4-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/trending__page--ourstory-iwt-03--May2021.jpg",
+            "image_link": ""
+          }
+        },
+        "1636474370c25681e4-2": {
+          "type": "text",
+          "settings": {
+            "title": "Direct to consumer",
+            "heading_size": "large",
+            "text": "<p>We cut out the middlemen so we can sell our products directly to you, our lovely customers! This means that we can offer lower prices and provide top and ongoing support when you need us.</p>",
+            "alignment": "left",
+            "vertical_position": "center",
+            "button_label": "",
+            "link": "",
+            "button_style": "button--primary",
+            "background": "rgba(0,0,0,0)",
+            "text_color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "1636474370c25681e4-0",
+        "1636474370c25681e4-2"
+      ],
+      "settings": {
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "fadeIn",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1636474595d314e754": {
+      "type": "index__video",
+      "settings": {
+        "iframe_video": "https://www.youtube.com/watch?v=UrZhG-6_x3Q&ab&ab_",
+        "html5_video": "",
+        "autoplay": false,
+        "autoloop": true,
+        "mute_video": false,
+        "controls": true,
+        "aspect_ratio": "16:9",
+        "image": "shopify://shop_images/trending__page--ourstory-video-01--May2021.jpg",
+        "pretext": "latest video",
+        "title": "Styling our new arrivals",
+        "subtitle": "",
+        "pretext_color": "#000000",
+        "heading_color": "#000000",
+        "subheading_color": "#000000",
+        "text_align": "center",
+        "horizontal_text_position": "center",
+        "vertical_text_position": "center",
+        "button_label": "Play video",
+        "button_style": "button--secondary",
+        "text_width": 70,
+        "overlay_style": "text_only",
+        "video_overlay_color": "#ffffff",
+        "background_opacity": 77,
+        "gradient": "rgba(0,0,0,0)",
+        "gradient_rotation": 180,
+        "width": "wide",
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "animation": "fadeIn",
+        "mobile_text_below_video": true,
+        "pretext_color_mobile": "rgba(0,0,0,0)",
+        "heading_color_mobile": "rgba(0,0,0,0)",
+        "subheading_color_mobile": "rgba(0,0,0,0)",
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay",
+    "1636472344aa77aa45",
+    "1636473008feb1d679",
+    "16364734808578d336",
+    "1636473577dc23d96e",
+    "1636474370c25681e4",
+    "1636474595d314e754"
+  ]
+}

@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement_bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "homepage_only": false,
+        "enable_sticky": true,
+        "show_close_icon": false,
+        "icon_label": "tag",
+        "text": "<p><strong>Free delivery over $165 • US duties included • 28-day returns</strong></p>",
+        "mobile_text": "<p><strong>Free delivery over $165 • US duties included</strong></p>",
+        "alignment": "center",
+        "size": "regular",
+        "button_label": "",
+        "link": "",
+        "button_style": "button--primary",
+        "background": "#fbf7f6",
+        "text_color": "#3a3a3a",
+        "width": "wide",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "header_top_bar": {
+      "type": "header-centered__top-bar",
+      "disabled": true,
+      "settings": {
+        "show_social_icons": true,
+        "text": "<p><strong>Cloud-Soft Organic Knits Your Kids Will Love</strong></p><p><strong>Scottish Heritage Meets Inner Mongolian Craftsmanship</strong></p>",
+        "top_bar_background": "#ffffff",
+        "top_bar_link": "rgba(0,0,0,0)",
+        "top_bar_link_hover": "rgba(0,0,0,0)",
+        "top_bar_text": "rgba(0,0,0,0)",
+        "font": "titillium_web_n4",
+        "font_style": "none",
+        "font_size": 14,
+        "letter_spacing": 0,
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "display_search": true,
+        "icon_style": "icons",
+        "cart_button_background": "#000000",
+        "cart_button_text": "#ffffff",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "header": {
+      "type": "header-centered",
+      "settings": {
+        "logo": "shopify://shop_images/mika-and-milo-award-winning-planet-friendly-knitwear-black-logo.png",
+        "logo_width": 300,
+        "logo_position": "between",
+        "main_linklist": "main-menu",
+        "menu_spacing": "default",
+        "dropdown_click": false,
+        "enable_overlay": false,
+        "show_text_shadow": false,
+        "overlay_background": "rgba(0,0,0,0)",
+        "overlay_background_opacity": 0,
+        "overlay_link_color": "rgba(0,0,0,0)",
+        "overlay_link_hover_color": "rgba(0,0,0,0)",
+        "overlay_logo_width": 80,
+        "enable_sticky": true,
+        "display_search": true,
+        "sticky_background_opacity": 90,
+        "scroll_logo_width": 200,
+        "width": "standard",
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1726827464e7721b3e": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "width": "standard",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "1777012449dd420800": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement_bar",
+    "header_top_bar",
+    "header",
+    "1726827464e7721b3e",
+    "1777012449dd420800"
+  ]
+}

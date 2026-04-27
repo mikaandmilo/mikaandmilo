@@ -1,0 +1,91 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "contact": {
+      "type": "index__contact-form",
+      "blocks": {
+        "819ccdac-5c74-43bc-b47b-4b11cc82382a": {
+          "type": "textfield",
+          "settings": {
+            "label": "Name",
+            "required": true
+          }
+        },
+        "a8554837-a77c-4c87-8398-15cb200375c5": {
+          "type": "email",
+          "settings": {
+            "label": "Email"
+          }
+        },
+        "7e1d82af-5007-4835-9ba9-5a2466fa0729": {
+          "type": "textfield",
+          "settings": {
+            "label": "Order number",
+            "required": false
+          }
+        },
+        "2c4c88ee-aa41-4614-a720-b3290bee6e48": {
+          "type": "dropdown",
+          "settings": {
+            "label": "Topic",
+            "required": true,
+            "options_1": "Products",
+            "options_2": "Orders + Payments",
+            "options_3": "Returns + Exchanges",
+            "options_4": "Shipping + Tracking",
+            "options_5": "Other",
+            "options_6": "",
+            "options_7": "",
+            "options_8": "",
+            "options_9": "",
+            "options_10": ""
+          }
+        },
+        "433fc484-88c1-4ec8-8a8d-fc063586f91e": {
+          "type": "textarea",
+          "settings": {
+            "label": "Message",
+            "required": true
+          }
+        }
+      },
+      "block_order": [
+        "819ccdac-5c74-43bc-b47b-4b11cc82382a",
+        "a8554837-a77c-4c87-8398-15cb200375c5",
+        "7e1d82af-5007-4835-9ba9-5a2466fa0729",
+        "2c4c88ee-aa41-4614-a720-b3290bee6e48",
+        "433fc484-88c1-4ec8-8a8d-fc063586f91e"
+      ],
+      "settings": {
+        "content_image": "shopify://shop_images/250119_MikaMilo_SHOT_02_054.jpg",
+        "title": "Contact Us",
+        "content_text": "<p>For all questions relating to our website, online purchases, please email us at <a href=\"mailto:shop@bebe-organic.com\">aiko@mika-milo.com</a> or fill out the form here.</p><p>If you are interested in wholesale opportunities or would like to become an agent for <strong>MIKA & MILO, </strong>please contact us at <a href=\"mailto:wholesale@bebe-organic.com\">aiko@mika-milo.com</a></p>",
+        "text_alignment": "left",
+        "social_enable": false,
+        "background": "#f1e9e7",
+        "text_color": "#000000",
+        "form_position": "right",
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "animation": "none",
+        "mobile_text_alignment": "none",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "contact"
+  ]
+}

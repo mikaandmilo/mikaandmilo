@@ -1,0 +1,212 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "collection__main",
+      "blocks": {
+        "d72c3293-416a-4a2d-83ec-40951cbf485f": {
+          "type": "featured_promo",
+          "disabled": true,
+          "settings": {
+            "promo_background": "#ffffff",
+            "promo_text": "#000000",
+            "promo_image": "shopify:\/\/shop_images\/LILY_SIERAANGELBACK_e1874a18-f1be-43f4-a76a-64e1b437449b.jpg",
+            "richtext": "<p>Browse our picks of the season.<\/p>",
+            "promo_link": "shopify:\/\/collections\/aw24",
+            "button_label": "Shop now",
+            "button_style": "button--primary"
+          }
+        },
+        "192cea91-c7c6-4704-820b-b2c0eadaee8c": {
+          "type": "faceted_filtering",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "d72c3293-416a-4a2d-83ec-40951cbf485f",
+        "192cea91-c7c6-4704-820b-b2c0eadaee8c"
+      ],
+      "settings": {
+        "collection_breadcrumb": true,
+        "collection_tags": true,
+        "collection_sort": true,
+        "show_sidebar": false,
+        "sidebar_position": "left",
+        "show_promo_banner": false,
+        "image": "shopify:\/\/shop_images\/Untitled_1800_x_300_px_1500_x_200_px_1500_x_120_px_1500_x_100_px_450_x_220_px_1800_x_900_px.jpg",
+        "image_darken": false,
+        "promo_title": "",
+        "promo_text": "",
+        "banner_height": "medium",
+        "align_height": false,
+        "collection_height": 200,
+        "products_per_row": 4,
+        "mobile_products_per_row": "2",
+        "pagination_limit": 47,
+        "pagination_type": "infinite_scroll",
+        "width": "wide",
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "blocks_jEQMVG": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8b90492_HNeRAA": {
+          "type": "ai_gen_block_8b90492",
+          "settings": {
+            "heading": "Featured In & Awarded By",
+            "text_alignment": "center",
+            "image_1": "shopify:\/\/shop_images\/gempages_567233400272847913-ae0394c9-c1f0-4e6a-bf6c-735411721372_a6e59d19-7876-423c-8b60-3a95718f73ab.png",
+            "image_2": "shopify:\/\/shop_images\/gempages_567233400272847913-7f46447c-385c-4842-8cf3-534a97b0d1be.webp",
+            "image_3": "shopify:\/\/shop_images\/gempages_567233400272847913-97397f46-6a28-4bda-a6b2-26111c273414.webp",
+            "image_4": "shopify:\/\/shop_images\/gempages_567233400272847913-d12eea89-241e-46a2-8278-565f22c1bbf9.webp",
+            "image_5": "shopify:\/\/shop_images\/gempages_567233400272847913-f925da6b-5eee-4b5c-8f07-01f3e1fba163.webp",
+            "image_6": "shopify:\/\/shop_images\/gempages_567233400272847913-9633b755-5d7e-426c-9db7-83b29575d1b7.webp",
+            "image_7": "shopify:\/\/shop_images\/3_3.webp",
+            "image_8": "shopify:\/\/shop_images\/4_4.webp",
+            "image_9": "shopify:\/\/shop_images\/5_4.webp",
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "heading_size": 26,
+            "image_spacing": 30,
+            "border_radius": 8,
+            "control_color": "#000000",
+            "control_hover_color": "#333333",
+            "control_icon_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8b90492_HNeRAA"
+      ],
+      "name": "Image carousel",
+      "settings": {}
+    },
+    "blocks_UDhYpa": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_8b90492_eWDi7N": {
+          "type": "ai_gen_block_8b90492",
+          "settings": {
+            "heading": "As Seen In The Wild",
+            "text_alignment": "center",
+            "image_1": "shopify:\/\/shop_images\/7.jpg",
+            "image_2": "shopify:\/\/shop_images\/2_1829aceb-58b1-433b-9e68-e65eb5b09027.jpg",
+            "image_3": "shopify:\/\/shop_images\/5_399019f7-ff98-4a60-8b28-fe2fabeb9a22.jpg",
+            "image_4": "shopify:\/\/shop_images\/1_9e7132fb-3f63-4b1a-8199-bdc4807dff25.jpg",
+            "image_5": "shopify:\/\/shop_images\/4_7e023884-2c5e-4b40-91ce-5db36d91513d.jpg",
+            "image_6": "shopify:\/\/shop_images\/1_fc70ffc0-1ce8-4d43-9f00-47f7b8eba785.jpg",
+            "image_7": "shopify:\/\/shop_images\/Untitled_design_9c1a1077-f928-4927-9b9a-08260a0bcfb2.jpg",
+            "image_8": "shopify:\/\/shop_images\/6.jpg",
+            "image_9": "shopify:\/\/shop_images\/3_51962fa1-3bb9-4bb4-8cf6-9836719cec0f.jpg",
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "heading_size": 26,
+            "image_spacing": 30,
+            "border_radius": 8,
+            "control_color": "#000000",
+            "control_hover_color": "#333333",
+            "control_icon_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_8b90492_eWDi7N"
+      ],
+      "name": "Image carousel",
+      "settings": {}
+    },
+    "index_faq_iRzKfe": {
+      "type": "index__faq",
+      "blocks": {
+        "heading_3NXhaC": {
+          "type": "heading",
+          "settings": {
+            "title": "Your Questions, Answered"
+          }
+        },
+        "content_7PKwLM": {
+          "type": "content",
+          "settings": {
+            "title": "What are your clothes made from and where?",
+            "answer": "<p>We use a luxuriously soft GOTS-certified organic cotton and cashmere blend, chosen for its gentle feel on sensitive skin, exceptional durability, and minimal environmental impact.<\/p><p>All of our knits are crafted in Inner Mongolia, the capital of the world's finest cashmere. The region's bitter winters help the goats to grow an incredibly fine, soft inner coat, which results in the most beautifully soft jumpers.<\/p><p>It's a truly precious material—did you know that one goat only produces enough cashmere for a single baby-sized sweater a year?<\/p><p>By choosing our knits, you're not just selecting a garment; you're choosing a better choice for your little ones, the farmers, and our planet—a true win-win-win.<\/p>"
+          }
+        },
+        "content_JMbKnG": {
+          "type": "content",
+          "settings": {
+            "title": "Are your clothes durable enough for hand-me-downs?",
+            "answer": "<p>Absolutely. We craft every piece with heirloom quality in mind. They are designed to be lovingly worn, washed, and passed down through the family, retaining their shape, softness, and color.<\/p>"
+          }
+        },
+        "content_zx8DKf": {
+          "type": "content",
+          "settings": {
+            "title": "Where do you ship?",
+            "answer": "<p>We offer worldwide shipping, delivering directly from our studio to your doorstep. For our US customers, shipping includes import duty with no hidden surprises. <\/p>"
+          }
+        },
+        "content_JEhFUL": {
+          "type": "content",
+          "settings": {
+            "title": "What makes MIKA & MILO different from other children's brands?",
+            "answer": "<p>We bridge the gap between conscious clothing and award-winning design. Unlike fast fashion, we only use eco-friendly organic yarn and dyes, and every piece is built to last—designed to be loved now and treasured later. After all, surely our kids and the planet they will inherit deserve only the best.<\/p>"
+          }
+        },
+        "content_RHzCD7": {
+          "type": "content",
+          "settings": {
+            "title": "What is your returns policy if the size doesn't fit?",
+            "answer": "<p>We offer a hassle-free returns and exchange policy. For full details, please visit our <a href=\"https:\/\/mika-milo.com\/pages\/delivery-returns\" target=\"_blank\" title=\"https:\/\/mika-milo.com\/pages\/delivery-returns\"><strong>Delivery & Returns page<\/strong><\/a><\/p><p>We highly recommend consulting our  <a href=\"https:\/\/mika-milo.com\/pages\/size-charts\" target=\"_blank\" title=\"https:\/\/mika-milo.com\/pages\/size-charts\"><strong>Size Guide<\/strong><\/a><strong>  <\/strong>before purchasing to find the perfect fit. <\/p><p>For any other questions, please don’t hesitate to email us at <a href=\"https:\/\/mailto:aiko@mika-milo.com\/\" target=\"_blank\"><strong>aiko@mika-milo.com<\/strong><\/a>.<\/p>"
+          }
+        },
+        "image_8thifE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_139e0eeb-6f94-4350-8fac-5cabe883d36f.png"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3NXhaC",
+        "content_7PKwLM",
+        "content_JMbKnG",
+        "content_zx8DKf",
+        "content_JEhFUL",
+        "content_RHzCD7",
+        "image_8thifE"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "title": "",
+        "width": "standard",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "animation": "none",
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "blocks_jEQMVG",
+    "blocks_UDhYpa",
+    "index_faq_iRzKfe"
+  ]
+}

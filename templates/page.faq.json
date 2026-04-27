@@ -1,0 +1,125 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "banner",
+      "settings": {
+        "image": "shopify://shop_images/trending__page--faq-01--May2021.jpg",
+        "image_darken": false,
+        "subtitle": "",
+        "width": "wide",
+        "banner_height": "large",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "main": {
+      "type": "index__faq",
+      "blocks": {
+        "16306825309648acac-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Orders & Shipping"
+          }
+        },
+        "16306825309648acac-1": {
+          "type": "content",
+          "settings": {
+            "title": "What if a product or size is out of stock?",
+            "answer": "<p>If a product or size is out of stock, you can fill out the 'back in stock' form to get notified of when we've restocked the product!</p>"
+          }
+        },
+        "16306825309648acac-2": {
+          "type": "content",
+          "settings": {
+            "title": "Can I return or exchange items?",
+            "answer": "<p>Yes you can. If you need to return or exchange your item, please notify us within <strong>7 days</strong> of when you received your package so we can start the process. If you do not let us know within the 7-day time frame, then, unfortunately, we cannot accept your return/exchange.</p>"
+          }
+        },
+        "16306825309648acac-3": {
+          "type": "content",
+          "settings": {
+            "title": "Do you ship internationally?",
+            "answer": "<p>Yes! We now ship worldwide. Shipping rates will vary on your country and preferred method. Please keep in mind your package may take a bit longer than expected due to customs.</p>"
+          }
+        },
+        "16306825309648acac-5": {
+          "type": "content",
+          "settings": {
+            "title": "Where can I find my tracking number?",
+            "answer": "<p>You’ll receive a shipping confirmation email that includes your tracking number once your order has been sent out. Please note that tracking links generally need 48-72 business hours to appear in the system.</p>"
+          }
+        },
+        "16306825309648acac-4": {
+          "type": "heading",
+          "settings": {
+            "title": "Fit & Sizing"
+          }
+        },
+        "16306825309648acac-6": {
+          "type": "content",
+          "settings": {
+            "title": "What is your manufacturing and production process?",
+            "answer": "<p>We believe that fashion should be accessible to everyone! We value quality in the manufacturing process of all of our garments and footwear. This means that we invest in high-quality machinery and also care about the life-work balance of our sewers and employees. All items must meet our quality standards before sent out so we can continue to be proud of our work and feel good about it! </p>"
+          }
+        },
+        "16306825309648acac-7": {
+          "type": "content",
+          "settings": {
+            "title": "How can I figure out my clothing size?",
+            "answer": "<p>Sizing can vary between our items, so we recommend using the size guide to determine your ideal size. A link to the 'size guide' will be included on every product page with detailed measurements. If you have any questions about sizing, feel free to reach out :)</p>"
+          }
+        },
+        "e39d3b40-6943-493b-bd98-e481a7aef7ed": {
+          "type": "content",
+          "settings": {
+            "title": "How can I figure out my shoe size?",
+            "answer": "<p>We recommend taking a look at the product details for each shoe to determine which size you should take. You can find the European size equivalent of our shoes by clicking the \"Size Guide\" on the product page. </p>"
+          }
+        },
+        "5af282b1-24b4-4540-b11f-92516dd53408": {
+          "type": "content",
+          "settings": {
+            "title": "Can I talk to someone about finding my fit?",
+            "answer": "<p>Absolutely! Just send us an email and we'll be able to help you choose the right size.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "16306825309648acac-0",
+        "16306825309648acac-1",
+        "16306825309648acac-2",
+        "16306825309648acac-3",
+        "16306825309648acac-5",
+        "16306825309648acac-4",
+        "16306825309648acac-6",
+        "16306825309648acac-7",
+        "e39d3b40-6943-493b-bd98-e481a7aef7ed",
+        "5af282b1-24b4-4540-b11f-92516dd53408"
+      ],
+      "settings": {
+        "title": "",
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 80,
+        "animation": "none",
+        "css_class": "",
+        "custom_css": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "main"
+  ]
+}

@@ -1,0 +1,328 @@
+{% doc %}
+  @prompt
+    Shopify section that shows a smooth, infinite marquee loop
+    
+    Background color #B38B9D
+    
+    Separate speed controls for mobile and desktop, can it be infinite loop, for content I need text 1,2,3,4,5, need to go all the time, without end and free space, desktop speed 80, mobile speed 80, 150 speed on desktop and 150 on mobile
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-marquee-container-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_top }}px 0 {{ block.settings.padding_bottom }}px;
+    overflow: hidden;                 /* seče sve van kontejnera */
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ai-marquee-track-{{ ai_gen_id }} {
+    display: inline-flex;
+    animation: ai-marquee-scroll-{{ ai_gen_id }} var(--ai-marquee-duration-{{ ai_gen_id }}) linear infinite;
+    will-change: transform;
+    gap: {{ block.settings.item_spacing }}px;
+  }
+
+  .ai-marquee-item-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    white-space: nowrap;
+  }
+
+  @keyframes ai-marquee-scroll-{{ ai_gen_id }} {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Desktop brzina */
+  @media screen and (min-width: 750px) {
+    .ai-marquee-container-{{ ai_gen_id }} {
+      --ai-marquee-duration-{{ ai_gen_id }}: {{ block.settings.speed_desktop }}s;
+    }
+  }
+
+  /* Mobile: fiksna širina 360px + centriranje */
+  @media screen and (max-width: 749px) {
+    .ai-marquee-container-{{ ai_gen_id }} {
+      --ai-marquee-duration-{{ ai_gen_id }}: {{ block.settings.speed_mobile }}s;
+      width: 360px;        /* fiksna širina na mobilu */
+      max-width: 100%;     /* ne prelazi ekran ako je uži */
+      margin: 0 auto;      /* centriranje */
+      padding-left: 0;     /* po želji ukloni bočne paddinge */
+      padding-right: 0;
+      overflow: hidden;    /* sigurnosno */
+    }
+
+    .ai-marquee-track-{{ ai_gen_id }} {
+      gap: clamp(12px, 4vw, {{ block.settings.item_spacing }}px);
+    }
+  }
+{% endstyle %}
+
+{% style %}
+/* 1) Klipuj baš wrapper koji animira – dodaj viewport omotač ako ga nema */
+.ai-marquee-viewport-{{ ai_gen_id }}{ overflow:hidden; width:100%; }
+
+/* 2) Drži marquee u 360px “okviru” i centriraj */
+@media (max-width: 749px){
+  .ai-marquee-container-{{ ai_gen_id }}{
+    width: 100%;
+    max-width: 360px;      /* fiksni gornji limit */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  /* 3) Spreči da ancestor-i šire layout na mobilu */
+  .ai-marquee-container-{{ ai_gen_id }}:where(*) {
+    box-sizing: border-box;
+  }
+  /* 4) Ako neki parent koristi 100vw – prebij u 100% (samo za ovu sekciju) */
+  .ai-marquee-container-{{ ai_gen_id }} .use-viewport,
+  .ai-marquee-container-{{ ai_gen_id }} [style*="width:100vw"]{
+    width: 100% !important;
+  }
+  /* 5) Osiguranje: nikakav unutrašnji padding neće probiti 360px “frame” */
+  .ai-marquee-viewport-{{ ai_gen_id }}{
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+  }
+}
+/* 6) Apsolutni fallback ako nešto drugo na strani pravi skrol */
+@media (max-width: 749px){
+  html, body { overflow-x:hidden; }
+}
+{% endstyle %}
+
+
+
+
+<marquee-component-{{ ai_gen_id }}
+  class="ai-marquee-container-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-marquee-track-{{ ai_gen_id }}" id="ai-marquee-track-{{ ai_gen_id }}">
+    {% for repeat in (1..10) %}
+      {% if block.settings.text_1 != blank %}
+        <div class="ai-marquee-item-{{ ai_gen_id }}">
+          {{ block.settings.text_1 }}
+        </div>
+      {% endif %}{% if block.settings.text_2 != blank %}
+        <div class="ai-marquee-item-{{ ai_gen_id }}">
+          {{ block.settings.text_2 }}
+        </div>
+      {% endif %}
+      {% if block.settings.text_3 != blank %}
+        <div class="ai-marquee-item-{{ ai_gen_id }}">
+          {{ block.settings.text_3 }}
+        </div>
+      {% endif %}
+      {% if block.settings.text_4 != blank %}
+        <div class="ai-marquee-item-{{ ai_gen_id }}">
+          {{ block.settings.text_4 }}
+        </div>
+      {% endif %}
+      {% if block.settings.text_5 != blank %}
+        <div class="ai-marquee-item-{{ ai_gen_id }}">
+          {{ block.settings.text_5 }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</marquee-component-{{ ai_gen_id }}><script>
+  (function() {
+    class MarqueeComponent{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('#ai-marquee-track-{{ ai_gen_id }}');
+        this.setupInfiniteMarquee();
+      }
+
+      setupInfiniteMarquee() {
+        if (!this.track) return;
+
+        const trackContent = this.track.innerHTML;
+        this.track.innerHTML = trackContent + trackContent;
+
+        this.track.addEventListener('animationiteration', () => {
+          this.track.style.transform = 'translateX(0)';
+        });
+      }
+    }
+
+    customElements.define('marquee-component-{{ ai_gen_id }}', MarqueeComponent{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Infinite marquee",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text 1",
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text 2",
+      "default": "2"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text 3",
+      "default": "3"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text 4",
+      "default": "4"
+    },
+    {
+      "type": "text",
+      "id": "text_5",
+      "label": "Text 5",
+      "default": "5"
+    },
+    {
+      "type": "header",
+      "content": "Speed settings"
+    },
+    {
+      "type": "range",
+      "id": "speed_desktop",
+      "min": 5,
+      "max": 200,
+      "step": 5,
+      "unit": "s",
+      "label": "Desktop speed",
+      "default": 150,
+      "info": "Lower numbers = faster speed"
+    },
+    {
+      "type": "range",
+      "id": "speed_mobile",
+      "min": 5,
+      "max": 200,
+      "step": 5,
+      "unit": "s",
+      "label": "Mobile speed",
+      "default": 150,
+      "info": "Lower numbers = faster speed"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#B38B9D"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Font size",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "min": 20,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Item spacing",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Infinite marquee"
+    }
+  ]
+}
+{% endschema %}

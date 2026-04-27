@@ -1,0 +1,133 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "banner",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/mika-and-milo-award-winning-planet-friendly-knitwear-popup-banner.jpg",
+        "image_darken": true,
+        "subtitle": "",
+        "width": "wide",
+        "banner_height": "medium",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "main": {
+      "type": "page-content__main",
+      "settings": {
+        "show_heading": true,
+        "heading_alignment": "left",
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "css_class": "",
+        "custom_css": ""
+      }
+    },
+    "grid_LhxeCd": {
+      "type": "grid",
+      "blocks": {
+        "grid_item_77FxWL": {
+          "type": "grid_item",
+          "settings": {
+            "grid_image": "shopify://shop_images/gempages_567233400272847913-f925da6b-5eee-4b5c-8f07-01f3e1fba163.webp",
+            "mobile_grid_image": "shopify://shop_images/gempages_567233400272847913-f925da6b-5eee-4b5c-8f07-01f3e1fba163.webp",
+            "link": "shopify://pages/junior-design-awards-2025",
+            "heading": "2025",
+            "text": "<strong>BEST CHILDREN'S KNITWEAR B</strong>",
+            "button_label": "LEARN MORE",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        },
+        "grid_item_Veqn7t": {
+          "type": "grid_item",
+          "settings": {
+            "grid_image": "shopify://shop_images/JDA_2023_Logo_Gold.jpg",
+            "mobile_grid_image": "shopify://shop_images/JDA_2023_Logo_Gold.jpg",
+            "link": "shopify://pages/press-awards",
+            "heading": "2023",
+            "text": "<strong>BEST CHILDREN'S ECO BRAND</strong>",
+            "button_label": "Learn More",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        },
+        "grid_item_eWfbjw": {
+          "type": "grid_item",
+          "settings": {
+            "grid_image": "shopify://shop_images/JDA_2022_Logos-Gold_861c6d6c-7a6c-4824-aa20-2cd7280f0fd5.png",
+            "mobile_grid_image": "shopify://shop_images/JDA_2022_Logos-Gold_861c6d6c-7a6c-4824-aa20-2cd7280f0fd5.png",
+            "link": "shopify://pages/2022",
+            "heading": "2022",
+            "text": "<strong>BEST CHILDREN'S FASHION BRAND</strong>",
+            "button_label": "LEARN MORE",
+            "button_style": "button--primary",
+            "text_color": "rgba(0,0,0,0)",
+            "overlay_background": "rgba(0,0,0,0)",
+            "overlay_background_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "grid_item_77FxWL",
+        "grid_item_Veqn7t",
+        "grid_item_eWfbjw"
+      ],
+      "name": "Grid",
+      "settings": {
+        "column_count": 3,
+        "align_height": false,
+        "image_height": 300,
+        "border_radius": 0,
+        "enable_zoom": true,
+        "show_text_below_image": true,
+        "heading_size": "regular",
+        "text_alignment": "center",
+        "text_horizontal_position": "center",
+        "text_vertical_position": "middle",
+        "text_width": 80,
+        "text_color": "rgba(0,0,0,0)",
+        "overlay_background": "rgba(0,0,0,0)",
+        "overlay_background_opacity": 0,
+        "section_background_color": "rgba(0,0,0,0)",
+        "width": "standard",
+        "show_gutter": true,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "animation": "none",
+        "mobile_heading_size": "same_as_desktop",
+        "mobile_text_alignment": "same_as_desktop",
+        "mobile_text_horizontal_position": "same_as_desktop",
+        "mobile_text_vertical_position": "same_as_desktop",
+        "mobile_text_width": 100,
+        "mobile_layout": "slider",
+        "show_arrows": false,
+        "show_nav_buttons": true,
+        "mobile_padding_top": 20,
+        "mobile_padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "main",
+    "grid_LhxeCd"
+  ]
+}

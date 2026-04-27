@@ -1,0 +1,614 @@
+{% doc %}
+  @prompt
+    Create a two-row static logo display section for a premium children's knitwear brand. Each row has a label centered above the logos. Top row label: "Awarded by" with 4 award logos below, displayed horizontally with generous spacing. Bottom row label: "Featured in" with 4 press/media logos below, displayed horizontally with generous spacing. All 8 logo images customizable via theme settings. Clean, minimal, editorial design. Ample padding between the two rows. On desktop: static, no scrolling, logos evenly spaced in a row. On mobile: each row becomes a sliding carousel showing 2 logos at a time with swipe/slide functionality, with the label centered above the carousel., can you change the font fo the awarded by featured in so that it mathces the rest of the website
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-logo-display-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding_top }}px 0 {{ block.settings.section_padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-logo-display-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-logo-display-row-{{ ai_gen_id }} {
+    margin-bottom: {{ block.settings.row_spacing }}px;
+  }
+
+  .ai-logo-display-row-{{ ai_gen_id }}:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-logo-display-label-{{ ai_gen_id }} {
+    text-align: center;
+    font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+    font-weight: {{ settings.nav__font.weight }};
+    font-style: {{ settings.nav__font.style }};
+    font-size: {{ block.settings.label_font_size }}px;
+    color: {{ block.settings.label_color }};
+    margin-bottom: {{ block.settings.label_spacing }}px;
+    text-transform: {{ block.settings.label_text_transform }};
+    letter-spacing: {{ block.settings.label_letter_spacing }}px;
+  }
+
+  .ai-logo-display-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: {{ block.settings.logo_spacing }}px;
+    align-items: center;
+  }
+
+  .ai-logo-display-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.logo_padding }}px;
+  }
+
+  .ai-logo-display-item-{{ ai_gen_id }} img {
+    max-width: 100%;
+    height: auto;
+    max-height: {{ block.settings.logo_max_height }}px;
+    object-fit: contain;
+    opacity: {{ block.settings.logo_opacity }};
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-logo-display-item-{{ ai_gen_id }} img:hover {
+    opacity: 1;
+  }
+
+  .ai-logo-display-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.logo_max_height }}px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
+
+  .ai-logo-display-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-logo-display-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding_top | times: 0.7 }}px 0 {{ block.settings.section_padding_bottom | times: 0.7 }}px;
+    }
+
+    .ai-logo-display-container-{{ ai_gen_id }} {
+      padding: 0 16px;
+    }
+
+    .ai-logo-display-label-{{ ai_gen_id }} {
+      font-size: {{ block.settings.label_font_size | times: 0.9 }}px;
+      margin-bottom: {{ block.settings.label_spacing | times: 0.8 }}px;
+    }
+
+    .ai-logo-display-grid-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-logo-display-carousel-{{ ai_gen_id }} {
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-logo-display-carousel-track-{{ ai_gen_id }} {
+      display: flex;
+      transition: transform 0.3s ease;
+      gap: {{ block.settings.logo_spacing }}px;
+    }
+
+    .ai-logo-display-carousel-item-{{ ai_gen_id }} {
+      flex: 0 0 calc(50% - {{ block.settings.logo_spacing | divided_by: 2 }}px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: {{ block.settings.logo_padding }}px;
+    }
+
+    .ai-logo-display-carousel-item-{{ ai_gen_id }} img {
+      max-width: 100%;
+      height: auto;
+      max-height: {{ block.settings.logo_max_height | times: 0.8 }}px;
+      object-fit: contain;
+      opacity: {{ block.settings.logo_opacity }};
+    }
+
+    .ai-logo-display-carousel-dots-{{ ai_gen_id }} {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .ai-logo-display-carousel-dot-{{ ai_gen_id }} {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: {{ block.settings.label_color }};
+      opacity: 0.3;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .ai-logo-display-carousel-dot-{{ ai_gen_id }}.active {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-logo-display-carousel-{{ ai_gen_id }} {
+      display: none;
+    }
+  }
+{% endstyle %}
+
+<logo-display-{{ ai_gen_id }}
+  class="ai-logo-display-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-logo-display-container-{{ ai_gen_id }}">
+    <div class="ai-logo-display-row-{{ ai_gen_id }}">
+      {% if block.settings.awards_label != blank %}
+        <div class="ai-logo-display-label-{{ ai_gen_id }}">
+          {{ block.settings.awards_label }}
+        </div>
+      {% endif %}
+
+      <div class="ai-logo-display-grid-{{ ai_gen_id }}">
+        {% for i in (1..4) %}
+          {% assign logo_key = 'award_logo_' | append: i %}
+          {% assign logo = block.settings[logo_key] %}
+          <div class="ai-logo-display-item-{{ ai_gen_id }}">
+            {% if logo %}
+              <img
+                src="{{ logo | image_url: width: 400 }}"
+                alt="{{ logo.alt | escape }}"
+                loading="lazy"
+                width="{{ logo.width }}"
+                height="{{ logo.height }}"
+              >
+            {% else %}
+              <div class="ai-logo-display-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="ai-logo-display-carousel-{{ ai_gen_id }}" data-carousel="awards">
+        <div class="ai-logo-display-carousel-track-{{ ai_gen_id }}" data-track>
+          {% for i in (1..4) %}
+            {% assign logo_key = 'award_logo_' | append: i %}
+            {% assign logo = block.settings[logo_key] %}
+            <div class="ai-logo-display-carousel-item-{{ ai_gen_id }}">
+              {% if logo %}
+                <img
+                  src="{{ logo | image_url: width: 300 }}"
+                  alt="{{ logo.alt | escape }}"
+                  loading="lazy"
+                  width="{{ logo.width }}"
+                  height="{{ logo.height }}"
+                >
+              {% else %}
+                <div class="ai-logo-display-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="ai-logo-display-carousel-dots-{{ ai_gen_id }}" data-dots></div>
+      </div>
+    </div>
+
+    <div class="ai-logo-display-row-{{ ai_gen_id }}">
+      {% if block.settings.press_label != blank %}
+        <div class="ai-logo-display-label-{{ ai_gen_id }}">
+          {{ block.settings.press_label }}
+        </div>
+      {% endif %}
+
+      <div class="ai-logo-display-grid-{{ ai_gen_id }}">
+        {% for i in (1..4) %}
+          {% assign logo_key = 'press_logo_' | append: i %}
+          {% assign logo = block.settings[logo_key] %}
+          <div class="ai-logo-display-item-{{ ai_gen_id }}">
+            {% if logo %}
+              <img
+                src="{{ logo | image_url: width: 400 }}"
+                alt="{{ logo.alt | escape }}"
+                loading="lazy"
+                width="{{ logo.width }}"
+                height="{{ logo.height }}"
+              >
+            {% else %}
+              <div class="ai-logo-display-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="ai-logo-display-carousel-{{ ai_gen_id }}" data-carousel="press">
+        <div class="ai-logo-display-carousel-track-{{ ai_gen_id }}" data-track>
+          {% for i in (1..4) %}
+            {% assign logo_key = 'press_logo_' | append: i %}
+            {% assign logo = block.settings[logo_key] %}
+            <div class="ai-logo-display-carousel-item-{{ ai_gen_id }}">
+              {% if logo %}
+                <img
+                  src="{{ logo | image_url: width: 300 }}"
+                  alt="{{ logo.alt | escape }}"
+                  loading="lazy"
+                  width="{{ logo.width }}"
+                  height="{{ logo.height }}"
+                >
+              {% else %}
+                <div class="ai-logo-display-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+        <div class="ai-logo-display-carousel-dots-{{ ai_gen_id }}" data-dots></div>
+      </div>
+    </div>
+  </div>
+</logo-display-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class LogoDisplay{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.carousels = [];
+      }
+
+      connectedCallback() {
+        if (window.innerWidth <= 749) {
+          this.initCarousels();
+        }
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth <= 749 && this.carousels.length === 0) {
+            this.initCarousels();
+          }
+        });
+      }
+
+      initCarousels() {
+        const carouselElements = this.querySelectorAll('.ai-logo-display-carousel-{{ ai_gen_id }}');
+        
+        carouselElements.forEach((carousel) => {
+          const track = carousel.querySelector('[data-track]');
+          const dotsContainer = carousel.querySelector('[data-dots]');
+          const items = track.querySelectorAll('.ai-logo-display-carousel-item-{{ ai_gen_id }}');
+          
+          if (items.length === 0) return;
+
+          const totalSlides = Math.ceil(items.length / 2);
+          let currentSlide = 0;
+
+          for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'ai-logo-display-carousel-dot-{{ ai_gen_id }}';
+            dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            if (i === 0) dot.classList.add('active');
+            
+            dot.addEventListener('click', () => {
+              currentSlide = i;
+              updateCarousel();
+            });
+            
+            dotsContainer.appendChild(dot);
+          }
+
+          const dots = dotsContainer.querySelectorAll('.ai-logo-display-carousel-dot-{{ ai_gen_id }}');
+
+          function updateCarousel() {
+            const slideWidth = track.offsetWidth;
+            track.style.transform = 'translateX(-' + (currentSlide * slideWidth) + 'px)';
+            
+            dots.forEach((dot, index) => {
+              if (index === currentSlide) {
+                dot.classList.add('active');
+              } else {
+                dot.classList.remove('active');
+              }
+            });
+          }
+
+          let startX = 0;
+          let currentX = 0;
+          let isDragging = false;
+
+          track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+          });
+
+          track.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
+          });
+
+          track.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            
+            const diff = startX - currentX;
+            
+            if (Math.abs(diff) > 50) {
+              if (diff > 0 && currentSlide < totalSlides - 1) {
+                currentSlide++;
+              } else if (diff < 0 && currentSlide > 0) {
+                currentSlide--;
+              }
+              updateCarousel();
+            }
+          });
+
+          this.carousels.push({ track, dots, updateCarousel });
+        });
+      }
+    }
+
+    customElements.define('logo-display-{{ ai_gen_id }}', LogoDisplay{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Logo display",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 800,
+      "max": 1600,
+      "step": 100,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "row_spacing",
+      "label": "Space between rows",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Labels"
+    },
+    {
+      "type": "text",
+      "id": "awards_label",
+      "label": "Awards label",
+      "default": "Awarded by"
+    },
+    {
+      "type": "text",
+      "id": "press_label",
+      "label": "Press label",
+      "default": "Featured in"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "label": "Label font size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "label_text_transform",
+      "label": "Label capitalization",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "label_letter_spacing",
+      "label": "Label letter spacing",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "label_spacing",
+      "label": "Space below label",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Logos"
+    },
+    {
+      "type": "range",
+      "id": "logo_spacing",
+      "label": "Space between logos",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "logo_padding",
+      "label": "Logo padding",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "logo_max_height",
+      "label": "Logo maximum height",
+      "min": 30,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "logo_opacity",
+      "label": "Logo opacity",
+      "min": 0.3,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.7
+    },
+    {
+      "type": "header",
+      "content": "Award logos"
+    },
+    {
+      "type": "image_picker",
+      "id": "award_logo_1",
+      "label": "Award logo 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "award_logo_2",
+      "label": "Award logo 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "award_logo_3",
+      "label": "Award logo 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "award_logo_4",
+      "label": "Award logo 4"
+    },
+    {
+      "type": "header",
+      "content": "Press logos"
+    },
+    {
+      "type": "image_picker",
+      "id": "press_logo_1",
+      "label": "Press logo 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "press_logo_2",
+      "label": "Press logo 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "press_logo_3",
+      "label": "Press logo 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "press_logo_4",
+      "label": "Press logo 4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo display"
+    }
+  ]
+}
+{% endschema %}
