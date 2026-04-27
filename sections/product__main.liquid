@@ -40,6 +40,38 @@
           css: section.settings.custom_css,
           id: section.id
   %}
+
+  @media only screen and (min-width: 799px) {
+    #shopify-section-{{ id }} .product_section {
+      align-items: flex-start;
+    }
+    #shopify-section-{{ id }} .product__images {
+      width: 60%;
+    }
+    #shopify-section-{{ id }} .product__information {
+      width: 36%;
+      position: sticky;
+      top: 100px;
+      align-self: flex-start;
+    }
+    #shopify-section-{{ id }} .product-gallery--left-thumbnails .product-gallery__thumbnails {
+      width: 72px;
+      margin-right: 12px;
+    }
+    #shopify-section-{{ id }} .product-gallery--left-thumbnails .product-gallery__main {
+      width: calc(100% - 84px);
+    }
+    #shopify-section-{{ id }} .is-slide-nav--true .product-gallery__thumbnail {
+      width: 100%;
+      margin-bottom: 6px;
+      opacity: 0.45;
+      transition: opacity 0.25s ease;
+    }
+    #shopify-section-{{ id }} .is-slide-nav--true .product-gallery__thumbnail.is-nav-selected,
+    #shopify-section-{{ id }} .is-slide-nav--true .product-gallery__thumbnail:hover {
+      opacity: 1;
+    }
+  }
 {% endstyle %}
 
 {% liquid
