@@ -675,6 +675,7 @@
         "image_UU4tde",
         "image_BeWFYX"
       ],
+      "disabled": true,
       "settings": {
         "show_border": true,
         "enable_images": true,
