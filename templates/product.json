@@ -112,7 +112,7 @@
         "padding_bottom": 10,
         "animation": "none",
         "css_class": "",
-        "custom_css": "button[type=\"submit\"],\n.button--primary,\n.product_form .add_to_cart {\n  background-color: #ba7055 !important;\n  color: #ffffff !important;\n  border-color: #ba7055 !important;\n}\nbutton[type=\"submit\"]:hover,\n.button--primary:hover,\n.product_form .add_to_cart:hover {\n  background-color: #9d5a47 !important;\n  color: #ffffff !important;\n  border-color: #9d5a47 !important;\n}"
+        "custom_css": "button[type=\"submit\"].button--add-to-cart,\n.button--add-to-cart {\n  background-color: #3a3a3a !important;\n  color: #ffffff !important;\n  border-color: #3a3a3a !important;\n}\nbutton[type=\"submit\"].button--add-to-cart:hover,\n.button--add-to-cart:hover {\n  background-color: #222222 !important;\n  color: #ffffff !important;\n  border-color: #222222 !important;\n}"
       }
     },
     "blocks_w9DyGh": {
@@ -496,6 +496,18 @@
         "custom_css": ""
       }
     },
+    "complete_the_look": {
+      "type": "product__complete-the-look",
+      "settings": {
+        "heading": "Complete the Look",
+        "products_limit": 4,
+        "width": "standard",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 24
+      }
+    },
     "recommendations": {
       "type": "product__recommendations",
       "settings": {
@@ -624,6 +636,7 @@
     "blocks_hGzgU4",
     "index_featured_collection_rVbUPM",
     "index_featured_collection_CyNFJX",
+    "complete_the_look",
     "recommendations",
     "176629072236b868de",
     "17770196623c9bb2b6",

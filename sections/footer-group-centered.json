@@ -22,80 +22,52 @@
         "custom_css": ""
       }
     },
-    "footer_icon_bar": {
-      "type": "footer__icon-bar",
+    "trust_bar": {
+      "type": "footer-trust-bar",
       "blocks": {
-        "text_1": {
-          "type": "text",
+        "item_delivery": {
+          "type": "item",
           "settings": {
-            "icon": "",
-            "text": "Girls",
-            "link": "shopify://collections/girls-aw25"
+            "icon": "truck",
+            "heading": "Free Delivery Over $165",
+            "text": "US duties included"
           }
         },
-        "text_2": {
-          "type": "text",
+        "item_returns": {
+          "type": "item",
           "settings": {
-            "icon": "",
-            "text": "Boys",
-            "link": "shopify://collections/boys-aw25"
+            "icon": "recycle",
+            "heading": "28-Day Returns",
+            "text": "Easy returns on all orders"
           }
         },
-        "text_6xh3Hz": {
-          "type": "text",
+        "item_organic": {
+          "type": "item",
           "settings": {
-            "icon": "",
-            "text": "Baby",
-            "link": "shopify://collections/award-winning-organic-cotton-cashmere-for-babies"
+            "icon": "leaf",
+            "heading": "Organic & Sustainable",
+            "text": "95% organic cotton, GOTS certified supplier"
           }
         },
-        "text_3": {
-          "type": "text",
+        "item_gift": {
+          "type": "item",
           "settings": {
-            "icon": "",
-            "text": "Gifts",
-            "link": "shopify://collections/gifts"
-          }
-        },
-        "text_4": {
-          "type": "text",
-          "settings": {
-            "icon": "",
-            "text": "Socks",
-            "link": "shopify://collections/socks"
-          }
-        },
-        "text_KhfLLT": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "icon": "",
-            "text": "Knitting 101",
-            "link": "shopify://pages/knitting-101"
+            "icon": "gift",
+            "heading": "Free Gift Wrapping",
+            "text": "Complimentary on every order"
           }
         }
       },
       "block_order": [
-        "text_1",
-        "text_2",
-        "text_6xh3Hz",
-        "text_3",
-        "text_4",
-        "text_KhfLLT"
+        "item_delivery",
+        "item_returns",
+        "item_organic",
+        "item_gift"
       ],
       "settings": {
-        "show_icon_bar": true,
-        "icon_position": "row",
-        "alignment": "center",
-        "mobile_alignment": "none",
-        "size": "medium",
-        "background": "#fbf7f6",
-        "link_color": "#2c2c2c",
-        "link_hover_color": "#2c2c2c",
-        "text_color": "#f8f3ed",
-        "width": "standard",
-        "css_class": "",
-        "custom_css": ""
+        "background_color": "#fbf7f6",
+        "text_color": "#3a3a3a",
+        "icon_color": "#3a3a3a"
       }
     },
     "footer": {
@@ -108,24 +80,31 @@
             "size": "medium"
           }
         },
-        "link_list": {
-          "type": "link_list",
-          "disabled": true,
+        "newsletter": {
+          "type": "newsletter",
           "settings": {
-            "menu": "footer-menu"
+            "newsletter_title": "Join Our Newsletter for 10% Off",
+            "newsletter_richtext": "<p>Always be the first to hear our latest and receive 10% off your first order.</p>",
+            "display_first_name": false,
+            "display_last_name": false
           }
         },
-        "link_list_TERgQ6": {
+        "link_list_shop": {
           "type": "link_list",
           "settings": {
-            "menu": "footer-about-menu-1"
+            "menu": "footer-shop"
           }
         },
-        "text": {
-          "type": "text",
+        "link_list_help": {
+          "type": "link_list",
           "settings": {
-            "title": "About MIKA & MILO",
-            "content": "<p>Six-time Junior Design Award winner. Drawing on four generations of Scottish textile heritage, we make children’s knitwear in 95% organic cotton and 5% cashmere — soft, non-itch, machine-washable, and made to last.</p><p>Made for today. Kept for tomorrow.</p>"
+            "menu": "footer-help"
+          }
+        },
+        "link_list_about": {
+          "type": "link_list",
+          "settings": {
+            "menu": "footer-about"
           }
         },
         "social_k3W6rb": {
@@ -135,9 +114,10 @@
       },
       "block_order": [
         "logo",
-        "link_list",
-        "link_list_TERgQ6",
-        "text",
+        "newsletter",
+        "link_list_shop",
+        "link_list_about",
+        "link_list_help",
         "social_k3W6rb"
       ],
       "custom_css": [],
@@ -150,13 +130,13 @@
         "show_currency_selector": true,
         "display_payment_methods": true,
         "css_class": "",
-        "custom_css": "@media (max-width: 768px) {\n  #shopify-section-sections--19158741811392__footer > footer > section.footer__content.section.is-width-wide.has-background.has-padding-top.has-padding-bottom > div {\n    flex-direction: column;\n    gap: 15px;\n  }\n}"
+        "custom_css": ""
       }
     }
   },
   "order": [
     "17268275892900f06e",
-    "footer_icon_bar",
+    "trust_bar",
     "footer"
   ]
 }

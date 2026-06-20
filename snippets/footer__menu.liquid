@@ -10,20 +10,23 @@ link_setting: <string>
 <div class="footer__menu is-justify-space-between {{ linklist_class }}">
 {% if menu_link != blank %}
   {% assign menu = linklists[menu_link] %}
-  <p class="footer__heading">
-    {% if link_setting != blank %}<a href="{{ link_setting }}">{% endif %}
-      {{ menu.title }}
-    {% if link_setting != blank %}</a>{% endif %}
-  </p>
-  <ul>
-    {% for link in menu.links %}
-      <li class="footer__menu-link">
-        <a href="{{ link.url }}" class="{% if link.active %}is-active{% endif %}">
-          {{ link.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+  <details class="footer__accordion" open>
+    <summary class="footer__heading">
+      {% if link_setting != blank %}<a href="{{ link_setting }}">{% endif %}
+        {{ menu.title }}
+      {% if link_setting != blank %}</a>{% endif %}
+      <span class="footer__accordion-chevron" aria-hidden="true"></span>
+    </summary>
+    <ul>
+      {% for link in menu.links %}
+        <li class="footer__menu-link">
+          <a href="{{ link.url }}" class="{% if link.active %}is-active{% endif %}">
+            {{ link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </details>
 {% else %}
   <p class="footer__heading">{{ 'homepage.onboarding.menu_title' | t }}</p>
   <p>{{ 'homepage.onboarding.no_content' | t }}</p>

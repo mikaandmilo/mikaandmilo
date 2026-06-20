@@ -56,6 +56,75 @@
           css: custom_css,
           id: id
   %}
+
+  /* Editorial grid — override float columns with CSS grid */
+  #shopify-section-{{ id }} .collection-matrix {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    gap: 6px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #shopify-section-{{ id }} .collection-matrix .column {
+    width: 100% !important;
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Large on LEFT — positions 1, 11, 21… */
+  #shopify-section-{{ id }} .collection-matrix .product__grid-item:nth-child(10n+1) {
+    grid-column: 1 / span 2;
+    grid-row: span 2;
+  }
+
+  /* Large on RIGHT — positions 6, 16, 26… */
+  #shopify-section-{{ id }} .collection-matrix .product__grid-item:nth-child(10n+6) {
+    grid-column: 3 / span 2;
+    grid-row: span 2;
+  }
+
+  /* Consistent portrait aspect ratio on all product images */
+  #shopify-section-{{ id }} .product__imageContainer {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #shopify-section-{{ id }} .product__imageContainer img,
+  #shopify-section-{{ id }} .product__imageContainer .placeholder-svg {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    max-height: none !important;
+  }
+
+  @media only screen and (max-width: 768px) {
+    #shopify-section-{{ id }} .collection-matrix {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: row;
+      gap: 4px;
+    }
+
+    /* Reset ALL desktop large-item rules for mobile */
+    #shopify-section-{{ id }} .collection-matrix .product__grid-item {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+
+    /* Items 1, 6, 11, 16… full-width portrait — matches desktop editorial pattern */
+    #shopify-section-{{ id }} .collection-matrix .product__grid-item:nth-child(10n+1),
+    #shopify-section-{{ id }} .collection-matrix .product__grid-item:nth-child(10n+6) {
+      grid-column: 1 / -1;
+      grid-row: span 1;
+    }
+  }
 {% endstyle %}
 
 <section class="section

@@ -16,17 +16,33 @@ enable_product_lightbox: <boolean>
 {% endif %}
 
 {% if stacked_gallery %}
+  {%- assign image_count = product.media | where: 'media_type', 'image' | size -%}
   <div class="product-gallery product-gallery--stacked">
+    {%- assign image_index = 0 -%}
     {%- for media in product.media -%}
       {%- if media.media_type == 'image' -%}
-        <div class="product-gallery__image">
+        {%- assign image_index = image_index | plus: 1 -%}
+        {%- if media.alt != blank and media.alt != product.title -%}
+          {%- assign media_alt = media.alt | escape -%}
+        {%- elsif image_count == 1 -%}
+          {%- assign media_alt = product.title | escape -%}
+        {%- else -%}
+          {%- assign media_alt = product.title | escape | append: ' — image ' | append: image_index | append: ' of ' | append: image_count -%}
+        {%- endif -%}
+        {%- assign cycle_position = image_index | minus: 1 | modulo: 3 -%}
+        {%- if cycle_position == 0 -%}
+          {%- assign size_class = 'product-gallery__image--full' -%}
+        {%- else -%}
+          {%- assign size_class = 'product-gallery__image--half' -%}
+        {%- endif -%}
+        <div class="product-gallery__image {{ size_class }}">
           <img
             src="{{ media | img_url: '1200x' }}"
             srcset="{{ media | img_url: '800x' }} 800w,
                     {{ media | img_url: '1200x' }} 1200w,
                     {{ media | img_url: '2000x' }} 2000w"
-            sizes="(min-width: 799px) 60vw, 100vw"
-            alt="{{ media.alt | escape }}"
+            sizes="(min-width: 799px) {% if cycle_position == 0 %}60vw{% else %}30vw{% endif %}, 100vw"
+            alt="{{ media_alt }}"
             width="{{ media.width }}"
             height="{{ media.height }}"
             loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
@@ -35,6 +51,21 @@ enable_product_lightbox: <boolean>
       {%- endif -%}
     {%- endfor -%}
   </div>
+  {%- if image_count > 1 -%}
+    <div class="product-gallery--stacked-nav" data-product-id="{{ product.id }}">
+      <button class="product-gallery--stacked-prev" aria-label="Previous image">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <div class="product-gallery--stacked-dots">
+        {%- for i in (1..image_count) -%}
+          <span class="product-gallery--stacked-dot{% if forloop.first %} is-active{% endif %}"></span>
+        {%- endfor -%}
+      </div>
+      <button class="product-gallery--stacked-next" aria-label="Next image">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+  {%- endif -%}
 {% else %}
 
 {%- assign display_thumbnails = display_thumbnails | default: object.settings.display_thumbnails -%}

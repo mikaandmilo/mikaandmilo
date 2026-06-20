@@ -59,26 +59,26 @@
     "header": {
       "type": "header-centered",
       "settings": {
-        "logo": "shopify://shop_images/mika-and-milo-award-winning-planet-friendly-knitwear-black-logo.png",
+        "logo": "shopify://shop_images/Untitled_600_x_200_mm.png",
         "logo_width": 300,
-        "logo_position": "between",
+        "logo_position": "left",
         "main_linklist": "main-menu",
         "menu_spacing": "default",
         "dropdown_click": false,
-        "enable_overlay": false,
-        "show_text_shadow": false,
+        "enable_overlay": true,
+        "show_text_shadow": true,
         "overlay_background": "rgba(0,0,0,0)",
         "overlay_background_opacity": 0,
-        "overlay_link_color": "rgba(0,0,0,0)",
-        "overlay_link_hover_color": "rgba(0,0,0,0)",
-        "overlay_logo_width": 80,
+        "overlay_link_color": "#ffffff",
+        "overlay_link_hover_color": "#ffffffb3",
+        "overlay_logo_width": 180,
         "enable_sticky": true,
         "display_search": true,
         "sticky_background_opacity": 90,
         "scroll_logo_width": 200,
         "width": "standard",
         "css_class": "",
-        "custom_css": ""
+        "custom_css": ".header__logo, .logo__content { width: 220px !important; max-width: 220px !important; } [data-enable_overlay='true'] .header__logo, [data-enable_overlay='true'] .logo__content { width: 200px !important; max-width: 200px !important; }"
       }
     },
     "1726827464e7721b3e": {

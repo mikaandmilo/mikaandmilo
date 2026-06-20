@@ -35,7 +35,13 @@
     },
     "header": {
       "type": "header-classic",
-      "settings": {}
+      "settings": {
+        "enable_overlay": true,
+        "overlay_background": "rgba(0,0,0,0)",
+        "overlay_background_opacity": 0,
+        "overlay_link_color": "#1a1a1a",
+        "overlay_link_hover_color": "#666666"
+      }
     },
     "mega_menu": {
       "type": "mega-menu",

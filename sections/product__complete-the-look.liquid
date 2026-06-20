@@ -1,0 +1,169 @@
+{% liquid
+  assign id = section.id
+  assign heading = section.settings.heading
+  assign products_limit = section.settings.products_limit
+%}
+
+{% style %}
+  #shopify-section-{{ id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    border-top: 1px solid #e8e0d8;
+  }
+
+  #shopify-section-{{ id }} .complete-the-look__heading {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  #shopify-section-{{ id }} .complete-the-look__products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  @media only screen and (max-width: 798px) {
+    #shopify-section-{{ id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+    #shopify-section-{{ id }} .complete-the-look__products {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+{% endstyle %}
+
+<section
+  class="section is-width-{{ section.settings.width }} complete-the-look"
+  data-section-id="{{ id }}"
+  data-product-id="{{ product.id }}"
+  data-url="{{ routes.product_recommendations_url }}"
+  data-limit="{{ products_limit }}"
+  data-intent="complementary"
+>
+  {% if recommendations.performed and recommendations.products_count > 0 %}
+    <div class="container">
+      {% if heading != blank %}
+        <div class="complete-the-look__heading">
+          {%
+            render 'heading',
+            title: heading,
+            heading_tag: 'h4',
+            context: 'complete-the-look',
+            text_alignment: 'center'
+          %}
+        </div>
+      {% endif %}
+      <div class="complete-the-look__products">
+        {% for product in recommendations.products limit: products_limit %}
+          {%
+            render 'product-thumbnail',
+            product: product,
+            context: 'complete_the_look',
+            grid_item_width: 'one-quarter column'
+          %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+<script>
+(function() {
+  var section = document.querySelector('[data-section-id="{{ id }}"]');
+  if (!section) return;
+
+  var url = section.dataset.url
+    + '?section_id={{ id }}'
+    + '&product_id=' + section.dataset.productId
+    + '&intent=complementary'
+    + '&limit=' + section.dataset.limit;
+
+  fetch(url)
+    .then(function(r) { return r.text(); })
+    .then(function(html) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      var incoming = doc.querySelector('[data-section-id="{{ id }}"]');
+      if (incoming && incoming.innerHTML.trim() !== '') {
+        section.innerHTML = incoming.innerHTML;
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Complete the look",
+  "templates": ["product"],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Complete the Look"
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Number of products",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "default": "standard",
+      "options": [
+        { "value": "standard", "label": "Standard" },
+        { "value": "wide", "label": "Wide" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 80,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 80,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Mobile top spacing",
+      "min": 0,
+      "max": 80,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Mobile bottom spacing",
+      "min": 0,
+      "max": 80,
+      "default": 24,
+      "unit": "px"
+    }
+  ]
+}
+{% endschema %}

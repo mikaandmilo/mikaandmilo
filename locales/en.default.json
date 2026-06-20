@@ -431,6 +431,9 @@
     },
     "language": {
       "dropdown_label": "Language"
+    },
+    "currency": {
+      "dropdown_label": "Currency"
     }
   },
   "gift_cards": {
@@ -571,7 +574,7 @@
       "sale_percentage_single_html": "Save {{ price_percent }}%",
       "sale_money_range_html": "Save up to {{ price }}",
       "sale_money_single_html": "Save {{ price }}",
-      "sold_out": "Coming soon",
+      "sold_out": "Sold Out",
       "sale": "Sale",
       "in_stock": "In stock"
     }
@@ -584,7 +587,7 @@
     },
     "product": {
       "select_variant": "Please select all your options",
-      "sold_out": "Coming soon",
+      "sold_out": "Sold Out",
       "unavailable": "Unavailable",
       "quantity": "Qty",
       "add_to_cart": "Add to cart",

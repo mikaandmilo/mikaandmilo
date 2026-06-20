@@ -63,6 +63,12 @@
       fill: {%- if overlay_link_hover_alpha != 0 -%}{{ section.settings.overlay_link_hover_color }}{%- endif -%};
     }
   {%- endif -%}
+  /* Logo black when not overlaying a hero image */
+  [data-enable_overlay="false"] .header__logo img,
+  [data-enable_overlay="false"] .header__logo svg {
+    filter: brightness(0);
+  }
+
   {%- if section.settings.enable_sticky -%}
     .header-sticky-wrapper.is-sticky .header {
       background-color: {{ settings.header_background | color_modify: 'alpha', sticky_background_alpha }};
@@ -74,6 +80,26 @@
 
     .mobile-menu--opened #mobile-header-sticky-wrapper.is-sticky .mobile-header {
       background-color: {{ settings.header_background }};
+    }
+  {%- endif -%}
+  {%- if section.settings.logo_position == 'left' -%}
+    .header-layout--left.navbar {
+      position: relative;
+    }
+    .header-layout--left .header__brand {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 1;
+    }
+    .header-layout--left .header__menu--1,
+    .header-layout--left .header__menu--2 {
+      flex: 1;
+    }
+    .header-layout--left .navbar-link::after,
+    .header-layout--left .header__link::after {
+      display: none !important;
     }
   {%- endif -%}
 {%- endcapture -%}
@@ -95,6 +121,7 @@
           css: custom_css,
           id: id
   %}
+
 {% endstyle %}
 
 {% comment %} HTML markup {% endcomment %}
@@ -314,6 +341,44 @@
                 {% endfor %}
               </div>
             </div>
+
+          {% elsif section.settings.logo_position == 'left' %}
+
+            {% comment %} Empty left column to balance the logo centre {% endcomment %}
+            <div class="header__menu header__menu--1" aria-hidden="true">
+              <div class="header__menu-items is-flex is-justify-start"></div>
+            </div>
+
+            {% comment %} Logo — absolutely centred via CSS {% endcomment %}
+            {{ logo }}
+
+            {% comment %} All nav items on right {% endcomment %}
+            <div class="header__menu header__menu--2">
+              <div class="header__menu-items is-flex is-flex-wrap is-justify-end">
+                {% for link in main_menu.links %}
+                  {% if link.links == blank %}
+                    <div class="navbar-item header__item {% if link.active or link.child_active %}is-active{% endif %}" data-navlink-handle="{{ link.title | handleize }}">
+                      <label for="mega-{{ link.title | handleize }}">
+                        <a href="{{ link.url }}" class="navbar-link header__link is-arrowless {% if link.active %}is-active{% endif %}">
+                          {{ link.title }}
+                        </a>
+                      </label>
+                    </div>
+                  {% else %}
+                    <div class="navbar-item header__item has-dropdown has-dropdown--{{ settings.dropdown_style }} is-hoverable {% if link.active or link.child_active %}is-active{% endif %}" aria-haspopup="true" aria-expanded="false" data-navlink-handle="{{ link.title | handleize }}">
+                      <label for="dropdown-{{ link.title | handleize }}">
+                        <a class="navbar-link header__link is-arrowless {% if link.active or link.child_active %}is-active{% endif %}"
+                          {% unless link.url == 'http://' or link.url == '' or link.url == 'https://' or link.url == '#' %} href="{{ link.url }}" {% endunless %}>
+                          {{ link.title }}
+                        </a>
+                      </label>
+                      {% render 'header__dropdown-menu', link: link, index: forloop.index %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+
           {% endif %}
 
         </nav>
@@ -431,6 +496,10 @@
           {
             "value": "between",
             "label": "Between menu"
+          },
+          {
+            "value": "left",
+            "label": "Nav right, logo centre"
           }
         ],
         "default": "between"

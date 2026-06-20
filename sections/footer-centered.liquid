@@ -26,6 +26,238 @@
           css: custom_css,
           id: id
   %}
+
+  @media only screen and (min-width: 769px) {
+    #shopify-section-{{ id }} .container.is-flex-column {
+      display: grid !important;
+      flex-direction: unset;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      align-items: start;
+      gap: 48px;
+    }
+    #shopify-section-{{ id }} .footer__block.block__logo {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 8px;
+    }
+    #shopify-section-{{ id }} .footer__block.block__newsletter {
+      grid-column: 1 / 2;
+      text-align: left;
+    }
+    #shopify-section-{{ id }} .footer__block.block__social {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: flex-start;
+    }
+    #shopify-section-{{ id }} .footer__block.block__link-list {
+      text-align: left;
+    }
+    #shopify-section-{{ id }} .footer__block.block__link-list .footer__menu {
+      justify-content: flex-start;
+    }
+  }
+
+  #shopify-section-{{ id }} .footer__block.block__newsletter .label {
+    display: none;
+  }
+
+  #shopify-section-{{ id }} .footer__block.block__newsletter .btn,
+  #shopify-section-{{ id }} .footer__block.block__newsletter .button,
+  #shopify-section-{{ id }} .footer__block.block__newsletter .button--secondary,
+  #shopify-section-{{ id }} .footer__block.block__newsletter [type="submit"] {
+    background-color: #4a4a4a !important;
+    border-color: #4a4a4a !important;
+    color: #ffffff !important;
+  }
+
+  #shopify-section-{{ id }} .footer__block.block__social .social-icons {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  #shopify-section-{{ id }} .footer__block.block__social .social-icons li {
+    margin: 0;
+  }
+
+  #shopify-section-{{ id }} .footer__newsletter-currency {
+    margin-top: 16px;
+    text-align: left;
+  }
+
+  #shopify-section-{{ id }} .footer-centered__disclosure {
+    display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    #shopify-section-{{ id }} .container.is-flex-column {
+      padding: 0 20px;
+      gap: 24px;
+    }
+    #shopify-section-{{ id }} .footer__block {
+      text-align: left;
+      width: 100%;
+    }
+    #shopify-section-{{ id }} .footer__block.block__logo {
+      display: flex;
+      justify-content: flex-start;
+    }
+    #shopify-section-{{ id }} .footer__block.block__social {
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+
+  /* Global breadcrumb colour and alignment */
+  .breadcrumb a,
+  .breadcrumb a:hover,
+  .breadcrumb li.is-active a,
+  .breadcrumb span {
+    color: #000000 !important;
+  }
+  .breadcrumb,
+  .breadcrumb ol,
+  .breadcrumb ul {
+    justify-content: flex-start !important;
+    text-align: left;
+  }
+
+  /* Previous / Next navigation — match breadcrumb */
+  .page-navigation__next,
+  .page-navigation__next:hover,
+  .page-navigation__divider {
+    color: #000000 !important;
+    font-size: 1rem !important;
+  }
+  .page-navigation-arrows {
+    justify-content: flex-start !important;
+  }
+
+  /* Product names black on mobile */
+  @media only screen and (max-width: 768px) {
+    .product-thumbnail__title {
+      color: #000000 !important;
+    }
+  }
+
+  /* Footer accordion — desktop: always open */
+  #shopify-section-{{ id }} .footer__accordion {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  #shopify-section-{{ id }} .footer__accordion > ul {
+    display: block !important;
+  }
+  #shopify-section-{{ id }} .footer__accordion summary {
+    list-style: none;
+    cursor: default;
+    pointer-events: none;
+  }
+  #shopify-section-{{ id }} .footer__accordion summary::-webkit-details-marker {
+    display: none;
+  }
+  #shopify-section-{{ id }} .footer__accordion-chevron {
+    display: none;
+  }
+
+  /* Footer accordion — mobile: collapsible */
+  @media only screen and (max-width: 768px) {
+    #shopify-section-{{ id }} .footer__accordion {
+      border-bottom: 1px solid #e8e4e0;
+      padding-bottom: 4px;
+    }
+    #shopify-section-{{ id }} .footer__accordion > ul {
+      display: none !important;
+    }
+    #shopify-section-{{ id }} .footer__accordion[open] > ul {
+      display: block !important;
+      padding-bottom: 12px;
+    }
+    #shopify-section-{{ id }} .footer__accordion summary {
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      pointer-events: auto;
+      padding: 12px 0;
+      margin-bottom: 0 !important;
+    }
+    #shopify-section-{{ id }} .footer__accordion-chevron {
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-right: 1.5px solid #3a3a3a;
+      border-bottom: 1.5px solid #3a3a3a;
+      transform: rotate(45deg);
+      margin-top: -4px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    #shopify-section-{{ id }} .footer__accordion[open] .footer__accordion-chevron {
+      transform: rotate(-135deg);
+      margin-top: 4px;
+    }
+  }
+
+  #shopify-section-{{ id }} .footer__menu .footer__heading {
+    display: block;
+    font-family: {{ settings.banner_heading__font.family }}, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #2c2c2c;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  #shopify-section-{{ id }} .footer__menu {
+    text-align: left;
+  }
+
+  #shopify-section-{{ id }} .footer__menu-link,
+  #shopify-section-{{ id }} .footer__menu-link a {
+    display: block;
+    font-family: {{ settings.banner_heading__font.family }}, sans-serif;
+    font-size: 15px;
+    color: #888888;
+    padding: 4px 0;
+    text-align: left;
+  }
+
+  #shopify-section-{{ id }} .footer__block.block__link-list,
+  #shopify-section-{{ id }} .footer__block.block__text {
+    text-align: left;
+  }
+
+  #shopify-section-{{ id }} .footer__block.block__newsletter h3 {
+    font-family: {{ settings.banner_heading__font.family }}, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 8px;
+  }
+
+  #shopify-section-{{ id }} .footer__block.block__newsletter p {
+    font-family: {{ settings.banner_heading__font.family }}, sans-serif;
+    font-size: 15px;
+    color: #888888;
+  }
+
+  #shopify-section-{{ id }} .footer__block.block__newsletter input,
+  #shopify-section-{{ id }} .footer__block.block__newsletter .btn,
+  #shopify-section-{{ id }} .footer__block.block__newsletter .button {
+    font-family: {{ settings.banner_heading__font.family }}, sans-serif;
+    font-size: 14px;
+  }
+
+  #shopify-section-{{ id }} .footer__block.block__text h3,
+  #shopify-section-{{ id }} .footer__block.block__text p {
+    font-family: {{ settings.banner_heading__font.family }}, sans-serif;
+  }
 {% endstyle %}
 
 {% comment %} HTML markup {% endcomment %}
@@ -82,6 +314,17 @@
               display_last_name: block.settings.display_last_name,
               id: 'footer',
             %}
+
+            {% if locale_selector or currency_selector or settings.show_multiple_currencies %}
+              <div class="footer__newsletter-currency">
+                {% render 'localization-switcher',
+                  id: 'footer__newsletter-selector',
+                  currency_selector: currency_selector,
+                  locale_selector: locale_selector,
+                  show_currency: section.settings.show_currency_selector
+                %}
+              </div>
+            {% endif %}
           {% elsif block.type == 'html' %}
 
             {{ block.settings.html_content }}
@@ -157,11 +400,28 @@
   </section>
 </footer>
 
+<script>
+  (function() {
+    function initFooterAccordions() {
+      if (window.innerWidth <= 768) {
+        document.querySelectorAll('#shopify-section-{{ id }} .footer__accordion').forEach(function(el) {
+          el.removeAttribute('open');
+        });
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFooterAccordions);
+    } else {
+      initFooterAccordions();
+    }
+  })();
+</script>
+
 {% schema %}
   {
     "name": "Footer",
     "class": "footer footer--centered",
-    "max_blocks": 5,
+    "max_blocks": 7,
     "settings": [
       {
         "type": "richtext",
