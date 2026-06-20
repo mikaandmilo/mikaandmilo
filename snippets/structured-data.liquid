@@ -311,6 +311,74 @@
   {%- assign now = 'now' | date: '%Y-%m-%d' | split: '-' -%}
   {% capture year_from_now %}{{ now[0] | plus: 1 }}-{{ now[1] }}-{{ now[2] | at_most: 28 }}{% endcapture %}
 
+  {%- comment -%}
+    Mika & Milo shipping + return policy values.
+    These must match the actual policy pages — Google penalises mismatched schema.
+    Update here if the policy changes; values flow through to both single Offer and AggregateOffer branches below.
+  {%- endcomment -%}
+  {%- assign mm_shipping_currency = 'USD' -%}
+  {%- assign mm_shipping_rate = '18.00' -%}
+  {%- assign mm_free_shipping_threshold = '165.00' -%}
+  {%- assign mm_handling_min = 1 -%}
+  {%- assign mm_handling_max = 2 -%}
+  {%- assign mm_transit_min = 7 -%}
+  {%- assign mm_transit_max = 10 -%}
+  {%- assign mm_return_days = 28 -%}
+  {%- assign mm_return_country = 'HK' -%}
+
+  {%- capture mm_shipping_and_return -%}
+    "shippingDetails": [
+      {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": {{ mm_shipping_rate | json }},
+          "currency": {{ mm_shipping_currency | json }}
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": ["US", "GB", "CA", "AU"]
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": {{ mm_handling_min }}, "maxValue": {{ mm_handling_max }}, "unitCode": "DAY"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": {{ mm_transit_min }}, "maxValue": {{ mm_transit_max }}, "unitCode": "DAY"}
+        }
+      },
+      {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": {{ mm_shipping_currency | json }}
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": ["US", "GB", "CA", "AU"]
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": {{ mm_handling_min }}, "maxValue": {{ mm_handling_max }}, "unitCode": "DAY"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": {{ mm_transit_min }}, "maxValue": {{ mm_transit_max }}, "unitCode": "DAY"}
+        },
+        "eligibleTransactionVolume": {
+          "@type": "PriceSpecification",
+          "minPrice": {{ mm_free_shipping_threshold | json }},
+          "priceCurrency": {{ mm_shipping_currency | json }}
+        }
+      }
+    ],
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": ["US", "GB", "CA", "AU"],
+      "returnPolicyCountry": {{ mm_return_country | json }},
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": {{ mm_return_days }},
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility"
+    }
+  {%- endcapture -%}
+
   <script type="application/ld+json">
   {
     "@context": "http://schema.org/",
@@ -330,34 +398,47 @@
       "sku": {{ selected_variant.sku | json }},
     {% endif %}
     {% if selected_variant.barcode != blank %}
-      "mpn": {{ selected_variant.barcode | json }},
+      "gtin": {{ selected_variant.barcode | json }},
     {% endif %}
-    {% if product.metafields.reviews.rating.value != blank %}
-      "review": {
-        "@type": "Review",
-          "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "{{ product.metafields.reviews.rating.value }}"
-        }
-      },
+    {% if product.metafields.reviews.rating.value != blank and product.metafields.reviews.rating_count != blank and product.metafields.reviews.rating_count != '0' %}
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "{{ product.metafields.reviews.rating.value }}",
         "reviewCount": "{{ product.metafields.reviews.rating_count }}"
       },
     {% endif %}
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": {{ cart.currency.iso_code | json }},
-      "price": {{ selected_variant.price | divided_by: 100.0 | json }},
-      "availability": "http://schema.org/{% if selected_variant.available %}InStock{% else %}OutOfStock{% endif %}",
-      "url": "{{ shop.url }}{{ selected_variant.url }}",
-      "seller": {
-        "@type": "Organization",
-        "name": {{ shop.name | json }}
-      },
-      "priceValidUntil": {{ year_from_now | json }}
-    }
+    {%- if product.variants.size > 1 -%}
+      {%- assign sorted_variants = product.variants | sort: 'price' -%}
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": {{ cart.currency.iso_code | json }},
+        "lowPrice": {{ sorted_variants.first.price | divided_by: 100.0 | json }},
+        "highPrice": {{ sorted_variants.last.price | divided_by: 100.0 | json }},
+        "offerCount": {{ product.variants.size }},
+        "availability": "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+        "url": "{{ shop.url }}{{ product.url }}",
+        "priceValidUntil": {{ year_from_now | json }},
+        "seller": {
+          "@type": "Organization",
+          "name": {{ shop.name | json }}
+        },
+        {{ mm_shipping_and_return }}
+      }
+    {%- else -%}
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": {{ cart.currency.iso_code | json }},
+        "price": {{ selected_variant.price | divided_by: 100.0 | json }},
+        "availability": "http://schema.org/{% if selected_variant.available %}InStock{% else %}OutOfStock{% endif %}",
+        "url": "{{ shop.url }}{{ selected_variant.url }}",
+        "seller": {
+          "@type": "Organization",
+          "name": {{ shop.name | json }}
+        },
+        "priceValidUntil": {{ year_from_now | json }},
+        {{ mm_shipping_and_return }}
+      }
+    {%- endif -%}
   }
   </script>
 {% endif %}
