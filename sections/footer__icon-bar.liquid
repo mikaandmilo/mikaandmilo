@@ -112,6 +112,7 @@
               is-flex-{{ section.settings.icon_position }}
             "
             href="{{ block.settings.link }}"
+            {% if block.settings.text == blank %}aria-label="{{ icon | replace: '-', ' ' | capitalize }}"{% endif %}
             {{ block.shopify_attributes }}
           >
         {% else %}

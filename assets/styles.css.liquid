@@ -13264,6 +13264,13 @@ shopify-payment-terms {
   font-size: {{ settings.banner_heading_size | append: 'px' }};
   text-transform: {{ settings.banner_heading_style }};
   color: {{ settings.banner_heading_color }};
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+}
+
+.banner__subheading,
+.image-with-text-overlay__subheading,
+.image-with-text-overlay__preheading {
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
 }
 @media only screen and (max-width: 1024px) {
   .banner__heading {
