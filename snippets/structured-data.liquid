@@ -457,6 +457,40 @@
   }
 </script>
 
+{% if template contains 'collection' and collection %}
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "CollectionPage",
+    "name": {{ collection.title | json }},
+    {%- if collection.description != blank -%}
+      "description": {{ collection.description | strip_html | strip_newlines | truncate: 300 | json }},
+    {%- endif -%}
+    "url": {{ canonical_url | json }},
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "url": "{{ shop.url }}"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": {{ collection.products_count }},
+      "itemListElement": [
+        {%- for product in collection.products limit: 24 -%}
+          {%- unless forloop.first -%},{%- endunless -%}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "url": "{{ shop.url }}{{ product.url }}",
+            "name": {{ product.title | json }}
+          }
+        {%- endfor -%}
+      ]
+    }
+  }
+  </script>
+{% endif %}
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
