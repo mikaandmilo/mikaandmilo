@@ -56,14 +56,25 @@
   {% if shop.customer_accounts_enabled %}
     {% comment %} Account icon {% endcomment %}
     {% if customer %}
-      {% comment %} Logout {% endcomment %}
-      <a href="{{ routes.account_url }}" class="header__link action-area__link" aria-label="{{ 'layout.customer.my_account' | t | escape }}">
-          {% render 'icon',
-                  name: 'avatar',
-                  icon_class: 'header__icon'
-          %}
-          <span class="icon-caption">{{ 'layout.customer.my_account' | t | escape }}</span>
-      </a>
+      {%- assign mm_first = customer.first_name | default: customer.name -%}
+      {%- capture mm_greeting -%}Welcome, {{ mm_first }}{%- endcapture -%}
+      <div class="header__account-wrap">
+        <a href="{{ routes.account_url }}" class="header__link action-area__link header__account-trigger" aria-label="{{ mm_greeting }}">
+            {% render 'icon',
+                    name: 'avatar',
+                    icon_class: 'header__icon'
+            %}
+            <span class="icon-caption">{{ mm_greeting }}</span>
+        </a>
+        <div class="header__account-dropdown" role="menu" aria-label="Account menu">
+          <p class="header__account-dropdown-greeting">{{ mm_greeting }}</p>
+          <a href="{{ routes.account_url }}" role="menuitem">Your account</a>
+          {%- if customer.orders_count > 0 -%}
+            <a href="{{ routes.account_url }}#orders" role="menuitem">Your orders ({{ customer.orders_count }})</a>
+          {%- endif -%}
+          <a href="{{ routes.account_logout_url }}" role="menuitem" class="header__account-dropdown-signout">Sign out</a>
+        </div>
+      </div>
     {% else %}
       {% comment %} Login {% endcomment %}
       <a href="{{ routes.account_login_url }}" class="header__link action-area__link" aria-label="{{ 'layout.customer.log_in' | t | escape }}">
@@ -74,6 +85,54 @@
           <span class="icon-caption">{{ 'layout.customer.log_in' | t | escape }}</span>
       </a>
     {% endif %}
+
+    {%- if customer -%}
+      <style>
+        .header__account-wrap { position: relative; display: inline-flex; }
+        .header__account-dropdown {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          min-width: 200px;
+          background: #fff;
+          color: #2a2120;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+          border: 1px solid #ece5e0;
+          padding: 14px 16px;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(4px);
+          transition: opacity 120ms ease, transform 120ms ease, visibility 120ms;
+          z-index: 50;
+          font-size: 13px;
+          line-height: 1.6;
+        }
+        .header__account-wrap:hover .header__account-dropdown,
+        .header__account-wrap:focus-within .header__account-dropdown {
+          opacity: 1; visibility: visible; transform: translateY(0);
+        }
+        .header__account-dropdown-greeting {
+          margin: 0 0 8px 0;
+          padding-bottom: 8px;
+          border-bottom: 1px solid #ece5e0;
+          font-weight: 500;
+          letter-spacing: 0.01em;
+        }
+        .header__account-dropdown a {
+          display: block;
+          padding: 4px 0;
+          color: inherit;
+          text-decoration: none;
+        }
+        .header__account-dropdown a:hover { color: #b3635a; }
+        .header__account-dropdown-signout {
+          margin-top: 6px;
+          padding-top: 6px;
+          border-top: 1px solid #ece5e0;
+          opacity: 0.75;
+        }
+      </style>
+    {%- endif -%}
   {% endif %}
 
   {% comment %} Cart icon {% endcomment %}
