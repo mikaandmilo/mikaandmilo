@@ -73,19 +73,40 @@
             {% endif %}
 
             <div class="announcement-bar__text text-align-{{ section.settings.alignment }}">
-              {% if section.settings.text != blank %}
-                <div class="is-hidden-mobile-only">
-                  {{- section.settings.text -}}
-                </div>
-              {% endif %}
-
-              <div class="is-hidden-desktop-only">
-                {% if section.settings.mobile_text != blank %}
-                  {{- section.settings.mobile_text -}}
-                {% else %}
-                  {{- section.settings.text -}}
+              {%- comment -%}
+                Dynamic free-shipping progress message.
+                Threshold: $165 USD (matches structured-data + checkout policy).
+                If cart is empty → show merchant's static text.
+                If cart < threshold → "Spend $X more to unlock complimentary shipping".
+                If cart >= threshold → "You've unlocked complimentary shipping ✓".
+              {%- endcomment -%}
+              {%- assign mm_free_shipping_threshold_cents = 16500 -%}
+              {%- if cart.item_count > 0 -%}
+                {%- assign mm_remaining_cents = mm_free_shipping_threshold_cents | minus: cart.total_price -%}
+                {%- if mm_remaining_cents > 0 -%}
+                  {%- capture mm_shipping_msg -%}
+                    Spend {{ mm_remaining_cents | money_without_trailing_zeros }} more to unlock complimentary shipping
+                  {%- endcapture -%}
+                {%- else -%}
+                  {%- assign mm_shipping_msg = 'You’ve unlocked complimentary shipping ✓' -%}
+                {%- endif -%}
+                <div class="is-hidden-mobile-only">{{- mm_shipping_msg -}}</div>
+                <div class="is-hidden-desktop-only">{{- mm_shipping_msg -}}</div>
+              {%- else -%}
+                {% if section.settings.text != blank %}
+                  <div class="is-hidden-mobile-only">
+                    {{- section.settings.text -}}
+                  </div>
                 {% endif %}
-              </div>
+
+                <div class="is-hidden-desktop-only">
+                  {% if section.settings.mobile_text != blank %}
+                    {{- section.settings.mobile_text -}}
+                  {% else %}
+                    {{- section.settings.text -}}
+                  {% endif %}
+                </div>
+              {%- endif -%}
 
               <p class="buttons">
                 {% if section.settings.button_label != blank %}

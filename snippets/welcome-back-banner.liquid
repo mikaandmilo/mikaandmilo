@@ -1,0 +1,60 @@
+{%- comment -%}
+  Welcome-back banner for returning logged-in customers on the homepage.
+  - Greets by first name.
+  - Surfaces last-ordered product's collection (or a sensible default).
+  - Quiet, editorial styling — single line, soft pink-on-cream.
+  - Hides automatically for guests or non-homepage templates.
+{%- endcomment -%}
+
+{%- if customer and template.name == 'index' -%}
+  {%- assign mm_wb_name = customer.first_name | default: customer.name -%}
+
+  {%- comment -%} Pick a contextual destination based on order history {%- endcomment -%}
+  {%- if customer.orders_count > 0 and customer.last_order -%}
+    {%- assign mm_wb_label = 'View your orders' -%}
+    {%- assign mm_wb_href = '/account' -%}
+  {%- else -%}
+    {%- assign mm_wb_label = 'Continue browsing the new collection' -%}
+    {%- assign mm_wb_href = '/collections/aw25' -%}
+  {%- endif -%}
+
+  <div class="welcome-back-banner" role="region" aria-label="Welcome back">
+    <div class="welcome-back-banner__inner">
+      <span class="welcome-back-banner__greeting">
+        Welcome back, {{ mm_wb_name }}
+      </span>
+      <span class="welcome-back-banner__sep" aria-hidden="true">·</span>
+      <a class="welcome-back-banner__link" href="{{ mm_wb_href }}">
+        {{ mm_wb_label }} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    .welcome-back-banner {
+      width: 100%;
+      background: #f8f2ee;
+      color: #5b4742;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+    .welcome-back-banner__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .welcome-back-banner__greeting { font-weight: 500; }
+    .welcome-back-banner__sep { opacity: 0.5; }
+    .welcome-back-banner__link {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .welcome-back-banner__link:hover { opacity: 0.75; }
+  </style>
+{%- endif -%}
