@@ -72,7 +72,7 @@
           "settings": {
             "grid_image": "shopify://shop_images/JDA2023Logos-01-a5f44e6_c39fb264-5cc2-43b1-99a6-7a542ec01551.png",
             "mobile_grid_image": "shopify://shop_images/JDA2023Logos-01-a5f44e6_c39fb264-5cc2-43b1-99a6-7a542ec01551.png",
-            "link": "shopify://pages/press-awards",
+            "link": "shopify://pages/awards-recognition",
             "heading": "2023",
             "text": "BEST CHILDREN'S ECO BRAND",
             "button_label": "LEARN MORE",
@@ -87,7 +87,7 @@
           "settings": {
             "grid_image": "shopify://shop_images/JDA_2022_Logos-Gold_3e4099a0-08d9-44f1-af11-c9d8ede7953a.png",
             "mobile_grid_image": "shopify://shop_images/JDA_2022_Logos-Gold_3e4099a0-08d9-44f1-af11-c9d8ede7953a.png",
-            "link": "shopify://pages/2022",
+            "link": "shopify://pages/awards-recognition",
             "heading": "2022",
             "text": "BEST CHILDREN'S FASHION BRAND",
             "button_label": "LEARN MORE",
@@ -102,7 +102,7 @@
           "settings": {
             "grid_image": "shopify://shop_images/WhatsApp_Image_2024-04-01_at_08.49.52.jpg",
             "mobile_grid_image": "shopify://shop_images/WhatsApp_Image_2024-04-01_at_08.49.52.jpg",
-            "link": "shopify://pages/2021",
+            "link": "shopify://pages/awards-recognition",
             "heading": "2021",
             "text": "BEST CHILDREN'S KNITWEAR BRAND",
             "button_label": "learn more",
