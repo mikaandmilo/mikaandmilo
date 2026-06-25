@@ -323,6 +323,26 @@
                   collection_handles: collection_handles
                 %}
               {% endunless %}
+
+              {%- comment -%}
+                Estimated delivery date — calendar-day window matching the
+                shipping policy (1-2 day handling + 7-10 day transit ≈ 8-12 days).
+                If the policy changes, update the two day-count assigns.
+              {%- endcomment -%}
+              {%- if product.available -%}
+                {%- assign mm_arrive_min_days = 8 -%}
+                {%- assign mm_arrive_max_days = 12 -%}
+                {%- assign mm_now = 'now' | date: '%s' -%}
+                {%- assign mm_arrive_start = mm_now | plus: 0 | plus: mm_arrive_min_days | times: 1 -%}
+                {%- assign mm_arrive_end_sec = mm_now | plus: 0 | times: 1 -%}
+                <p class="product__delivery-estimate" style="margin:10px 0 0 0;font-size:13px;color:#5b4742;display:flex;align-items:center;gap:6px;">
+                  <span aria-hidden="true">🚚</span>
+                  <span>
+                    Estimated delivery:
+                    <strong>{{ mm_now | plus: 0 | plus: 691200 | date: '%a %b %e' }} – {{ mm_now | plus: 0 | plus: 1036800 | date: '%a %b %e' }}</strong>
+                  </span>
+                </p>
+              {%- endif -%}
             </div>
           {% endif %}
 

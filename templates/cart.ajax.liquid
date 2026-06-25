@@ -213,6 +213,23 @@
         </div>
       {%- endif -%}
 
+      {% comment %} Free-shipping progress message (threshold $165 = 16500 cents) {% endcomment %}
+      {%- assign mm_free_threshold = 16500 -%}
+      {%- if cart.item_count > 0 -%}
+        {%- assign mm_remaining = mm_free_threshold | minus: cart.total_price -%}
+        <div class="ajax-cart__free-shipping" style="margin:12px 0;padding:10px 12px;background:#f8f2ee;color:#5b4742;font-size:13px;border-radius:2px;text-align:center;">
+          {%- if mm_remaining > 0 -%}
+            Spend {{ mm_remaining | money_without_trailing_zeros }} more to unlock complimentary shipping
+            <div style="height:4px;background:rgba(91,71,66,0.15);border-radius:2px;margin-top:8px;overflow:hidden;">
+              {%- assign mm_pct = cart.total_price | times: 100 | divided_by: mm_free_threshold -%}
+              <div style="width:{{ mm_pct }}%;height:100%;background:#b3635a;"></div>
+            </div>
+          {%- else -%}
+            <strong>You've unlocked complimentary shipping ✓</strong>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
       {% comment %} Subtotal {% endcomment %}
       <div class="ajax-cart__subtotal ajax-cart__details-row is-flex is-justify-space-between">
         <div class="ajax-cart__row-description">
