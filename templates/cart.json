@@ -50,7 +50,7 @@
         "text_size": 13,
         "columns": 1,
         "button_label": "",
-        "button_link": "shopify://pages/faqs",
+        "button_link": "shopify://pages/frequently-asked-questions",
         "button_style": "button--secondary",
         "button_alignment": "center",
         "heading_color": "#000000",
