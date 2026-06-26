@@ -770,6 +770,19 @@
         </div>
 
         <div class="cart-warning"></div>
+
+        {%- comment -%}
+          Mended for Life micro-badge — surfaces the lifetime repair promise
+          right under the buy button. Single line, subtle.
+        {%- endcomment -%}
+        <a href="/pages/mended" class="product__mended-badge" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:4px 0;color:#5b4742;font-size:12px;letter-spacing:0.02em;text-decoration:none;">
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+            <line x1="16" y1="8" x2="2" y2="22"/>
+            <line x1="17.5" y1="15" x2="9" y2="15"/>
+          </svg>
+          <span><strong style="font-weight:500;">Mended for Life</strong> — free repairs, forever</span>
+        </a>
       </div>
     {% endif %}
   {% endform %}

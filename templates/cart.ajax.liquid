@@ -243,6 +243,34 @@
         </span>
       </div>
 
+      {% comment %} Trust badges — sit between the subtotal and the checkout button, where it matters most {% endcomment %}
+      <div class="ajax-cart__trust-badges" style="display:flex;justify-content:space-around;align-items:flex-start;gap:8px;margin:14px 0 4px 0;padding:10px 4px;border-top:1px solid #ece5e0;font-size:11px;color:#5b4742;letter-spacing:0.02em;text-align:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9"/><polyline points="3 4 3 12 11 12"/>
+          </svg>
+          <span>28-day<br>returns</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/>
+          </svg>
+          <span>Mended<br>for life</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>
+          </svg>
+          <span>GOTS<br>organic</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <span>Secure<br>checkout</span>
+        </div>
+      </div>
+
       {% comment %} Total savings {% endcomment %}
       {% if settings.display_savings and total_saving > 0 %}
         <div class="ajax-cart__savings ajax-cart__details-row is-flex is-justify-space-between sale">
